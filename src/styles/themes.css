@@ -1,0 +1,36 @@
+:root {
+  /* --background: white;
+  --foreground: black; */
+  font-family: 'Neue Machina';
+  /* background-color: #FFF; */
+  color: #000;
+}
+
+[data-theme='dark'] {
+  /* --background: black;
+  --foreground: white; */
+  font-family: 'Neue Machina';
+  /* background-color: #000000; */
+}
+
+body {
+  --sb-track-color: #b6fac6;
+  --sb-thumb-color: #5fea80;
+  --sb-size: 7px;
+  scrollbar-color: var(--sb-thumb-color) 
+                   var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 25px;
+}
