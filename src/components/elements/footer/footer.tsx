@@ -65,7 +65,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className={'w-4/6 lg:w-1/6 row justify-between mt-12'}>
+      <div className={'w-4/6 lg:w-1/12 row justify-between mt-12'}>
         <Link href={'https://www.instagram.com/nexxosar/'} target={'_blank'}>
           <Image src={IconInstagram} alt={'icon'} />
         </Link>

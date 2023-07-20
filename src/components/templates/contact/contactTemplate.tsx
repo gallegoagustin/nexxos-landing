@@ -23,7 +23,7 @@ function ContactTemplate() {
       className={'full col lg:row centered py-32'}
       style={{
         background:
-          'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #50508D 0%, #2F2F4D 100%)',
+          'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
       }}
     >
       <div className={'columns-2 col w-3/4 lg:w-1/4'}>
@@ -44,7 +44,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-GREEN_MEDIUM font-bold my-1'}>celular nexxos</p>
+          <p className={'text-BLACK font-bold my-1'}>celular nexxos</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
@@ -59,7 +59,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-GREEN_MEDIUM font-bold my-1'}>mail nexxos</p>
+          <p className={'text-BLACK font-bold my-1'}>mail nexxos</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
@@ -77,9 +77,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-GREEN_MEDIUM font-bold my-1'}>
-            Contacta con nosotros
-          </p>
+          <p className={'text-GBLACK font-bold my-1'}>Contacta con nosotros</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
@@ -94,9 +92,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-GREEN_MEDIUM font-bold my-1'}>
-            direccion sede nexxos
-          </p>
+          <p className={'text-BLACK font-bold my-1'}>direccion sede nexxos</p>
         </div>
       </div>
       <div
