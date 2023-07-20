@@ -16,7 +16,7 @@ const navBarTabs = [
   },
   {
     value: 'contacto',
-    path: '/contacto',
+    path: '/contact',
     locale: 'contacto',
   },
 ];

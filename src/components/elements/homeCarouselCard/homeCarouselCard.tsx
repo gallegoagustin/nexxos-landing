@@ -27,7 +27,7 @@ function HomeCarouselCard({
           className={'rounded-2xl lg:rounded-none w-2/5 lg:w-1/2'}
         />
       )}
-      {isGif && (
+      {/* {isGif && (
         <div
           className={'w-1/2 h-[392px] bg-BLUE_DARK row centered rounded-l-2xl'}
         >
@@ -37,13 +37,13 @@ function HomeCarouselCard({
             }
           >
             <Image src={ArrowUpServices} alt={'icon'} className={'w-1/4'} />
-            {/* <div className={'col w-full ml-4'}>
+            <div className={'col w-full ml-4'}>
               <p>RENTA FLUIDA</p>
               <Image src={Counter} alt={'counter'} className={'w-1/2'} />
-            </div> */}
+            </div>
           </div>
         </div>
-      )}
+      )} */}
       <div
         className={`w-1/2 col  ${
           !text ? 'lg:justify-center' : 'justify-evenly'

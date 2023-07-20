@@ -26,10 +26,9 @@ import ImageCarousel6 from '../../../../public/images/carousel-item-images/simg2
 import ImageCarousel7 from '../../../../public/images/carousel-item-images/simhcd.png';
 import ImageCarousel8 from '../../../../public/images/carousel-item-images/simjuicio.png';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
-import ArrowRightBig from '../../../../public/images/icons/arrow-right-big.svg';
-import ArrowLeftBig from '../../../../public/images/icons/arrow-left-big.svg';
-import Counter from '../../../../public/images/counter.gif';
-import ArrowUpServices from '../../../../public/images/icons/arrow-up-services.svg';
+// import ArrowRightBig from '../../../../public/images/icons/arrow-right-big.svg';
+// import ArrowLeftBig from '../../../../public/images/icons/arrow-left-big.svg';
+// import ArrowUpServices from '../../../../public/images/icons/arrow-up-services.svg';
 import textContent from '../../../../public/locales/es/home.json';
 
 function HomeTemplate() {
@@ -340,7 +339,7 @@ function HomeTemplate() {
         </p>
         <div
           className={
-            'w-full flex-wrap lg:w-1/2 mt-8 row justify-evenly lg:justify-between'
+            'w-full lg:w-2/3 mt-8 row justify-evenly lg:justify-between'
           }
         >
           {carouselItems.map((item, index) => {
@@ -358,7 +357,7 @@ function HomeTemplate() {
                     currentSlide === index
                       ? {
                           background:
-                            'linear-gradient(260.43deg, #52EE90 -76.97%, #E0FFEC 113.29%)',
+                            'linear-gradient(260.43deg,#ababaa -76.97%, #F6F8FF 113.29%)',
                         }
                       : {}
                   }
@@ -463,10 +462,7 @@ function HomeTemplate() {
                       <p className={'font-light text-center'}>{item.text}</p>
                       <div className={'full col justify-end'}>
                         {item.text ? (
-                          <Link
-                            className={'main-red-button '}
-                            href={item.link}
-                          >
+                          <Link className={'main-red-button '} href={item.link}>
                             {item.buttonText.toUpperCase()}
                           </Link>
                         ) : (
@@ -525,7 +521,7 @@ function HomeTemplate() {
                       href={articles[0].link}
                       target={'_blank'}
                     >
-                      <p className={'text-xs text-BLUE_TEXT font-bold'}>
+                      <p className={'text-xs text-PURPLE_ONU font-bold'}>
                         SEGUIR LEYENDO
                       </p>
                       <Image
@@ -544,7 +540,7 @@ function HomeTemplate() {
             {articles.length &&
               articles.slice(1, articles.length).map((article, index) => {
                 return (
-                  <div key={index} className={'col w-1/3 mt-8'}>
+                  <div key={index} className={'col w-1/3 mt-8 mr-4'}>
                     <div className={'w-full row centered'}>
                       <Image
                         src={article.image}
@@ -562,7 +558,7 @@ function HomeTemplate() {
                         </p>
                       )}
                       {article.from && (
-                        <div className={'w-full row justify-between'}>
+                        <div className={'w-full row justify-between mt-4'}>
                           <p className={'text-GREY_DARK text-xs'}>
                             {article.from}
                           </p>
@@ -571,7 +567,7 @@ function HomeTemplate() {
                             href={article.link}
                             target={'_blank'}
                           >
-                            <p className={'text-xs text-BLUE_TEXT font-bold'}>
+                            <p className={'text-xs text-PURPLE_ONU font-bold'}>
                               SEGUIR LEYENDO
                             </p>
                             <Image
@@ -625,7 +621,7 @@ function HomeTemplate() {
                             href={article.link}
                             target={'_blank'}
                           >
-                            <p className={'text-xs text-BLUE_TEXT font-bold'}>
+                            <p className={'text-xs text-PURPLE_ONU font-bold'}>
                               SEGUIR LEYENDO
                             </p>
                             <Image
@@ -651,18 +647,24 @@ function HomeTemplate() {
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
       >
         <h1 className={'hidden lg:inline text-3xl text-RED_MEDIUM'}>
-          Opiniones de nuestros clientes
+          Opiniones de la gente
         </h1>
         <h1 className={'lg:hidden text-3xl text-RED_MEDIUM text-center'}>
           Opiniones de
           <br />
-          nuestros clientes
+          la gente
         </h1>
         <div
           className={'w-5/6 row justify-between items-center'}
           ref={reviewsRef}
         >
-          {/* <Image src={ArrowLeftBig} alt={'arrow'} width={36} className={'cursor-pointer'} onClick={() => reviewsApi?.scrollPrev()} /> */}
+          {/* <Image
+            src={ArrowLeftBig}
+            alt={'arrow'}
+            width={36}
+            className={'cursor-pointer'}
+            onClick={() => reviewsApi?.scrollPrev()}
+          /> */}
           <div
             className={
               'hidden md:flex mt-12 pb-2 row w-full justify-between overflow-hidden'
@@ -685,10 +687,10 @@ function HomeTemplate() {
                       'row rounded-lg bg-GREY_LIGHT mt-8 items-center p-4'
                     }
                   >
-                    {/* <Image src={item.image} alt={'image'} className={'w-1/5'} /> */}
+                    <Image src={item.image} alt={'image'} className={'w-1/5'} />
                     <div className={'col ml-4'}>
                       <p className={'font-bold'}>{item.name}</p>
-                      <p className={'text-xs'}>{item.city}</p>
+                      <p className={'text-xs'}>{item.type}</p>
                     </div>
                   </div>
                 </div>
@@ -719,7 +721,7 @@ function HomeTemplate() {
                   >
                     <div className={'col ml-4'}>
                       <p className={'font-bold'}>{item.name}</p>
-                      <p className={'text-xs'}>{item.city}</p>
+                      <p className={'text-xs'}>{item.type}</p>
                     </div>
                   </div>
                 </div>

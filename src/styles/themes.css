@@ -14,8 +14,8 @@
 }
 
 body {
-  --sb-track-color: #b6fac6;
-  --sb-thumb-color: #5fea80;
+  --sb-track-color: #F6F8FF;
+  --sb-thumb-color: #989897;
   --sb-size: 7px;
   scrollbar-color: var(--sb-thumb-color) 
                    var(--sb-track-color);

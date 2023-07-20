@@ -5,20 +5,20 @@ import Review3 from '../../public/images/reviews/review3.svg';
 const reviews = [
   {
     name: 'Jesús',
-    city: 'Madrid',
-    text: 'Descubri esta empresa hace poco porque necesitaba dinero para un gasto inesperado y al tener pisos en alquiler vi que podian adelantarme la renta de un año. Les contacte y me ayudaron con todo super rapido. Un acierto.',
+    type: 'Voluntario',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review1,
   },
   {
     name: 'Pablo',
-    city: 'Málaga',
-    text: 'Propietarios e inquilinos disfrutan de estos productos, altamente recomendable, muy simple hacerse web3 con poca o ninguna experiencia.',
+    type: 'Profesor',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review2,
   },
   {
-    name: 'Alejandro',
-    city: 'Barcelona',
-    text: 'La categoría de inversor fue una de mis mejores inversiones del año, excelente equipo y excelente atención al cliente.',
+    name: 'Paula',
+    type: 'Participante',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review3,
   },
 ];
