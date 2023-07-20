@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import './themes.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@import './fonts.css';
+
+@layer base {
+  body {
+    @apply bg-APP_BACKGROUND font-vietnam;
+  }
+  h1 {
+    @apply text-xl !font-normal font-avaunt;
+  }
+  h2 {
+    @apply text-lg !font-normal font-avaunt;
+  }
+  p {
+    @apply text-sm;
   }
 }
+      
+@layer components {
+  .full {
+    @apply w-full h-full;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .col {
+    @apply flex flex-col;
+  }
+
+  .row {
+    @apply flex flex-row;
+  }
+
+  .centered {
+    @apply justify-center items-center;
+  }
+
+  .main-red-button {
+    @apply bg-RED_MEDIUM text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-md text-sm;
+  }
 }

@@ -1,16 +1,19 @@
-import PropTypes, { InferProps } from "prop-types";
-
-function Layout({ children }: Props) {
+import PropTypes, { InferProps } from 'prop-types';
+import NavBar from '../../elements/navBar/navBar.container';
+import Footer from '@/components/elements/footer/footer';
+function Layout({ children, activeTab }: Props) {
   return (
-    <div className={"w-full min-h-[100vh] col"}>
+    <div className={'w-full min-h-[100vh] col'}>
+      <NavBar activeTab={activeTab} />
       <div>{children}</div>
-      <h1>LAYOUT</h1>
+      <Footer />
     </div>
   );
 }
 
 Layout.propTypes = {
   children: PropTypes.element,
+  activeTab: PropTypes.string.isRequired,
 };
 
 type Props = InferProps<typeof Layout.propTypes>;

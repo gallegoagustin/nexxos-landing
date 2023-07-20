@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "home": "home",
+        "services": "nuestros servicios",
+        "contact": "contacto",
+        "academy": "academy",
+        "beUser": "hazte usuario",
+        "userArea": "área usuario",
+        "pro": "nash21 pro"
+    }
+}
