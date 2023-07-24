@@ -8,7 +8,7 @@ import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouse
 import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
-import Landing1 from '../../../../public/images/landing1.png';
+import Landing1 from '../../../../public/images/landing1.jpeg';
 import Icon1 from '../../../../public/images/icons/isotipos/onu.png';
 import Icon2 from '../../../../public/images/icons/isotipos/oea.png';
 import Icon3 from '../../../../public/images/icons/isotipos/rastros.png';
@@ -60,24 +60,18 @@ function HomeTemplate() {
   ]);
 
   const [currentSlide, setCurrentSlide] = React.useState<number>(2);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [
-    autoplay.current,
-  ]);
-  const [emblaRef2, emblaApi2] = useEmblaCarousel(
-    { loop: true, startIndex: 2 },
-    [autoplay2.current]
-  );
-  const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [
-    autoplayIcons.current,
-  ]);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [autoplay.current]);
+  const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true, startIndex: 2 }, [autoplay2.current]);
+  const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [autoplayIcons.current]);
   const [reviewsRef, reviewsApi] = useEmblaCarousel({
     loop: true,
     startIndex: 1,
   });
-  const [articlesRef, articlesApi] = useEmblaCarousel(
-    { loop: true, startIndex: 1 },
-    [autoplayArticles.current]
-  );
+  const [articlesRef, articlesApi] = useEmblaCarousel({
+    loop: true,
+    startIndex: 1,
+  });
 
   const carouselItems = [
     { title: 'Sim ONU', icon: Icon1, id: 0 },
@@ -306,9 +300,9 @@ function HomeTemplate() {
         className={`w-full bg-no-repeat py-20 px-10 lg:py-32 lg:px-24`}
         style={{
           background: `url(${Landing1.src})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'auto',
           backgroundRepeat: 'no-repeat',
-          backgroundPositionY: '12%',
+          backgroundPositionY: 'center',
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
         }}
       >
@@ -393,7 +387,7 @@ function HomeTemplate() {
                     subtitle={item.subtitle}
                     text={item.text}
                     buttonText={item.buttonText}
-                    image={item.image}
+                    image={item.image.src}
                   />
                 </div>
               );
@@ -414,7 +408,7 @@ function HomeTemplate() {
                       'full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
                     }
                   >
-                    {/* {!item.isGif && (
+                    {!item.isGif && (
                       <Image
                         src={item.image}
                         alt={'image'}
@@ -447,7 +441,7 @@ function HomeTemplate() {
                           </div>
                         </div>
                       </div>
-                    )} */}
+                    )}
                     <div className={'w-2/3 col h-full p-1 lg:p-4'}>
                       <p className={'font-bold text-RED_MEDIUM text-center'}>
                         {item.title.toUpperCase()}

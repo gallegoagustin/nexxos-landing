@@ -23,7 +23,7 @@ function NavBar({ activeTab }: Props) {
         >
           <div className={'w-1/5 h-full row justify-start items-center'}>
             <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+              <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
             </Link>
           </div>
           <nav className={'w-2/5 h-full row justify-between items-center'}>
@@ -45,7 +45,7 @@ function NavBar({ activeTab }: Props) {
               );
             })}
           </nav>
-          <div className={'w-2/5 h-full row justify-end items-center'}>
+          {/* <div className={'w-2/5 h-full row justify-end items-center'}>
             <Link
               href={'/contact'}
               className={
@@ -63,7 +63,7 @@ function NavBar({ activeTab }: Props) {
             >
               <p>SECCION 2</p>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={'lg:hidden col font-vietnam'}>
@@ -74,7 +74,7 @@ function NavBar({ activeTab }: Props) {
         >
           <div className={'w-1/5 h-full row justify-start items-center'}>
             <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+              <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
             </Link>
           </div>
           <button className={'w-1/6 h-full row justify-end items-center'}>
@@ -104,13 +104,13 @@ function NavBar({ activeTab }: Props) {
             >
               <div className={'w-1/5 h-full row justify-start items-center'}>
                 <Link href={'/'}>
-                  <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+                  <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
                 </Link>
               </div>
               <button className={'w-1/6 h-full row justify-end items-center'}>
                 <Image
                   src={BurgerIcon}
-                  alt={'icon nash21'}
+                  alt={'icon nexxos'}
                   style={{ transform: 'scale(0.5)' }}
                   className={'cursor-pointer'}
                   onClick={() => {

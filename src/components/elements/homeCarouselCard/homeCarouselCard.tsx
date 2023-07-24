@@ -24,6 +24,8 @@ function HomeCarouselCard({
         <Image
           src={image}
           alt={'image'}
+          width={100}
+          height={100}
           className={'rounded-2xl lg:rounded-none w-2/5 lg:w-1/2'}
         />
       )}

@@ -6,12 +6,12 @@ const navBarTabs = [
   },
   {
     value: 'nuestras actividades',
-    path: '/actividades',
+    path: '/activities',
     locale: 'actividades',
   },
   {
     value: 'conocenos',
-    path: '/conocenos',
+    path: '/meetus',
     locale: 'conocenos',
   },
   {
