@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import iconNexxos from '../../../../public/images/icons/nexxos-classic.png';
 import Image from 'next/image';
-import axios from 'axios';
+import { sendContactForm } from '@/lib/api';
+import SuccessModal from '@/components/elements/modals/succesModal';
 
 function ContactTemplate() {
   const [name, setName] = useState('');
@@ -9,6 +10,21 @@ function ContactTemplate() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [type, setType] = useState('voluntario');
+  const [isLoading, setIsLoading] = useState(false);
+  const [sendError, setSendError] = useState('');
+
+  // Estado para controlar el mensaje de éxito y el modal
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // Función para abrir el modal de éxito
+  const handleSuccessModalOpen = () => {
+    setIsSuccess(true);
+  };
+
+  // Función para cerrar el modal de éxito
+  const handleSuccessModalClose = () => {
+    setIsSuccess(false);
+  };
 
   const [formErrors, setFormErrors] = useState({
     name: false,
@@ -20,8 +36,15 @@ function ContactTemplate() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Antes de enviar, verificar si hay errores
+    console.log(
+      '----- FORM VALUES -----',
+      name,
+      lastname,
+      email,
+      message,
+      type
+    );
+    // Antes de enviar, validaciones:
     const hasErrors = !name || !lastname || !email || !message || !type;
 
     if (hasErrors) {
@@ -33,19 +56,20 @@ function ContactTemplate() {
         type: !type,
       });
     } else {
+      setIsLoading(true);
       try {
-        // Enviar el formulario al servidor
-        await axios.post('/send-email', {
-          name,
-          lastname,
-          email,
-          message,
-          type,
-        });
-        console.log('Formulario enviado correctamente');
-        // mostrar un mensaje de éxito y redireccionar al usuario
+        await sendContactForm({ name, lastname, email, message, type });
+        handleSuccessModalOpen();
+        setEmail('');
+        setName('');
+        setLastname('');
+        setMessage('');
+        // mostrar un mensaje de éxito.
       } catch (error) {
-        console.log('Error al enviar el formulario:', error);
+        setIsLoading(false);
+        setSendError(error.message);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -165,6 +189,9 @@ function ContactTemplate() {
         }
         style={{ height: '630px', maxHeight: '650px' }}
       >
+        {sendError && (
+          <h1 className="text-center text-RED_MEDIUM">{sendError}</h1>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="flex items-center mb-1">
             <h1>Nombre</h1>
@@ -242,7 +269,7 @@ function ContactTemplate() {
             )}
           </div>
           <div className="flex items-center mb-1">
-            <h1>Tipo</h1>
+            <h1>Rol</h1>
             <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
           </div>
           <select
@@ -250,18 +277,22 @@ function ContactTemplate() {
             onChange={(e) => setType(e.target.value)}
             className="w-full p-2 rounded-lg"
           >
-            <option value="voluntario">Voluntario</option>
-            <option value="participante">Participante</option>
-            <option value="profesor">Profesor</option>
+            <option value="estudiante">Estudiante</option>
+            <option value="docente">Docente</option>
+            <option value="directivo">Directivo</option>
+            <option value="other">Otro</option>
+
           </select>
           <button
             type="submit"
             className="main-red-button text-WHITE py-2 px-4 rounded-lg my-8"
+            disabled={isLoading}
           >
-            Enviar
+            {isLoading ? 'Enviando...' : 'Enviar'}
           </button>
         </form>
       </div>
+      <SuccessModal isOpen={isSuccess} onClose={handleSuccessModalClose} />
     </main>
   );
 }
