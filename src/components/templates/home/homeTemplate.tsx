@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -26,12 +26,26 @@ import ImageCarousel6 from '../../../../public/images/carousel-item-images/simg2
 import ImageCarousel7 from '../../../../public/images/carousel-item-images/simhcd.png';
 import ImageCarousel8 from '../../../../public/images/carousel-item-images/simjuicio.png';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
-// import ArrowRightBig from '../../../../public/images/icons/arrow-right-big.svg';
-// import ArrowLeftBig from '../../../../public/images/icons/arrow-left-big.svg';
-// import ArrowUpServices from '../../../../public/images/icons/arrow-up-services.svg';
 import textContent from '../../../../public/locales/es/home.json';
 
 function HomeTemplate() {
+  // Agregar un estado para determinar si es pantalla pequeña o no
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Verificar el tamaño de la pantalla y actualizar el estado
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Llamarlo inicialmente para ajustar el estado
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const autoplayOptions = {
     delay: 3500,
     rootNode: (emblaRoot) => emblaRoot.parentElement,
@@ -50,8 +64,6 @@ function HomeTemplate() {
 
   const autoplayIcons = useRef(Autoplay(autoplayOptionsIcons));
 
-  const autoplayArticles = useRef(Autoplay(autoplayOptions));
-
   const [allianceCarousel, setAllianceCarousel] = React.useState([
     ...alliances,
     ...alliances,
@@ -59,11 +71,16 @@ function HomeTemplate() {
     ...alliances,
   ]);
 
-  const [currentSlide, setCurrentSlide] = React.useState<number>(2);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [autoplay.current]);
-  const [emblaRef2, emblaApi2] = useEmblaCarousel({ loop: true, startIndex: 2 }, [autoplay2.current]);
-  const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [autoplayIcons.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [
+    autoplay.current,
+  ]);
+  const [emblaRef2, emblaApi2] = useEmblaCarousel(
+    { loop: true, startIndex: 2 },
+    [autoplay2.current]
+  );
+  const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [
+    autoplayIcons.current,
+  ]);
   const [reviewsRef, reviewsApi] = useEmblaCarousel({
     loop: true,
     startIndex: 1,
@@ -74,19 +91,19 @@ function HomeTemplate() {
   });
 
   const carouselItems = [
-    { title: 'Sim ONU', icon: Icon1, id: 0 },
-    { title: 'Sim OEA', icon: Icon2, id: 1 },
-    { title: 'Sim Rastros', icon: Icon3, id: 2 },
-    { title: 'Sim Sena', icon: Icon4, id: 3 },
-    { title: 'Sim Electoral', icon: Icon5, id: 4 },
-    { title: 'Sim G20', icon: Icon6, id: 5 },
-    { title: 'Sim HCD', icon: Icon7, id: 6 },
-    { title: 'Sim Juicio', icon: Icon8, id: 7 },
+    { title: 'sim.onu', icon: Icon1, id: 0 },
+    { title: 'sim.oea', icon: Icon2, id: 1 },
+    { title: 'sim.rastros', icon: Icon3, id: 2 },
+    { title: 'sim.sena', icon: Icon4, id: 3 },
+    { title: 'sim.electoral', icon: Icon5, id: 4 },
+    { title: 'sim.g20', icon: Icon6, id: 5 },
+    { title: 'sim.hcd', icon: Icon7, id: 6 },
+    { title: 'sim.juicio', icon: Icon8, id: 7 },
   ];
 
   const carouselCards = [
     {
-      title: 'Sim.onu',
+      title: 'sim.onu',
       subtitle: 'Simulacro de la Organización de las Naciones Unidas',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
       buttonText: 'saber más',
@@ -94,7 +111,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.oea',
+      title: 'sim.oea',
       subtitle: 'Simulacro de la Organización de los Estados Americanos',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
       buttonText: 'saber más',
@@ -102,7 +119,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.rastros',
+      title: 'sim.rastros',
       subtitle: 'Simulacro de una Investigación Forense',
       text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
       buttonText: 'saber más',
@@ -110,7 +127,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.sena',
+      title: 'sim.sena',
       subtitle: 'Simulacro de la honorable Cámara de Senadores de la Argentina',
       text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes interesados representarán a un senador ficticio, pero de un partido político real con representación en dicha cámara. Con dicha información, y poniéndose en el papel de dicho senador, deberá escribir una ley que presentará para debatir durante el simulacro. El participante tendrá primero una entrevista con los organizadores para que se le asigne un senador. Recibirá la información sobre el funcionario a representar, entre la cual habrá información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
@@ -118,7 +135,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.electoral',
+      title: 'sim.electoral',
       subtitle: 'Simulacro de un debate presidencial y ministerial',
       text: 'sim.electoral es una edición especial ofrecida sólo en años electivos. El simulacro, focalizado dentro del área de las ciencias sociales, propone a los participantes la posibilidad de ponerse en la piel de los candidatos presidenciales y de su equipo de canciller y ministros, o bien participar del formato prensa, con el objetivo de cubrir el debate desde distintas líneas editoriales a través del relevamiento periodístico y fotográfico. A lo largo de la actividad los participantes que desempeñen el rol de políticos debatirán de distintas maneras sus respectivos proyectos de país.',
       buttonText: 'saber más',
@@ -126,7 +143,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.G20',
+      title: 'sim.g20',
       subtitle: 'Simulacro del Grupo de los 20',
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el poderoso Grupo de los 20, que engloba a una veintena de las principales potencias mundiales. Quienes participen de esta actividad podrán hacerlo como cancilleres, presidentes o primeros ministros, y debatirán problemáticas preseleccionadas teniendo en cuenta la postura del gobierno al que representan con respecto a dicho tópico, así también como el contexto mundial y la geopolítica actual.',
       buttonText: 'saber más',
@@ -134,7 +151,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.hcd',
+      title: 'sim.hcd',
       subtitle: 'Simulacro del Honorable Concejo Deliberante',
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
       buttonText: 'saber más',
@@ -142,7 +159,7 @@ function HomeTemplate() {
       link: '/services',
     },
     {
-      title: 'Sim.juicio',
+      title: 'sim.juicio',
       subtitle: 'Simulacro de un Juicio por Jurados',
       text: 'En esta actividad se recrea el desarrollo de un juicio por jurados, con sus respectivas dinámicas y momentos, a partir del tratamiento de un caso. A su vez se implementará en la actividad una modalidad de prensa, que se ocupará de cubrir el avance del juicio a lo largo de todas las jornadas.',
       buttonText: 'saber más',
@@ -217,8 +234,6 @@ function HomeTemplate() {
     if (!emblaApi) return;
 
     emblaApi.on('scroll', () => {
-      const slide = emblaApi.slidesInView();
-      setCurrentSlide(slide[0]);
       flushSync(() => onScroll());
     });
 
@@ -257,8 +272,6 @@ function HomeTemplate() {
     if (!emblaApi2) return;
 
     emblaApi2.on('scroll', () => {
-      const slide = emblaApi2.slidesInView();
-      setCurrentSlide(slide[0]);
       flushSync(() => onScroll());
     });
 
@@ -279,7 +292,6 @@ function HomeTemplate() {
   const handleCarouselSlideSelection = (slide: number) => {
     autoplay.current.reset();
     emblaApi?.scrollTo(slide);
-    setCurrentSlide(slide);
   };
 
   React.useEffect(() => {
@@ -300,23 +312,23 @@ function HomeTemplate() {
         className={`w-full bg-no-repeat py-20 px-10 lg:py-32 lg:px-24`}
         style={{
           background: `url(${Landing1.src})`,
-          backgroundSize: 'auto',
+          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: 'center',
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
         }}
       >
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-5xl'}>
+        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
           {textContent.home.title1}
         </h1>
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-5xl'}>
+        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
           {textContent.home.title2}
         </h1>
-        <h1 className={'text-WHITE text-3xl lg:text-5xl'}>
+        <h1 className={'text-WHITE text-3xl lg:text-6xl'}>
           {textContent.home.title3}
         </h1>
         <Link
-          className={'main-red-button  mt-2 py-2 w-full md:w-1/3 lg:w-1/6'}
+          className={'main-red-button mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
           href={'/contact'}
         >
           SABER MÁS
@@ -324,36 +336,36 @@ function HomeTemplate() {
       </div>
 
       {/* BLOCK 2 */}
-      <div className={'col items-center py-12'}>
-        <h1 className={'text-3xl text-RED_MEDIUM'}>
+      <div className={'col items-center py-6'}>
+        <div className={'w-full row centered'}>
+          <p className={'text-center text-lg w-4/6 lg:w-2/5 font-light'}>
+            {textContent.home.block2text}
+          </p>
+        </div>
+        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
           {textContent.home.block2title}
         </h1>
-        <p className={'text-center w-5/6 lg:w-2/5 mt-4 font-light'}>
-          {textContent.home.block2text}
-        </p>
         <div
           className={
-            'w-full lg:w-2/3 mt-8 row justify-evenly lg:justify-between'
+            isMobile
+              ? 'grid grid-cols-2 gap-4 mt-6'
+              : 'w-full lg:w-2/3 mt-8 row justify-evenly lg:justify-between'
           }
         >
           {carouselItems.map((item, index) => {
             return (
               <button
                 key={item.id}
-                className={'col items-center m-3 md:m-0 md:w-1/6'}
+                className={
+                  isMobile
+                    ? 'col-span-1 m-1 md:m-0 md:w-1/3'
+                    : 'col items-center m-3 md:m-0 md:w-1/6'
+                }
                 onClick={() => handleCarouselSlideSelection(index)}
               >
                 <div
                   className={
                     'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-t-lg rounded-br-lg'
-                  }
-                  style={
-                    currentSlide === index
-                      ? {
-                          background:
-                            'linear-gradient(260.43deg,#ababaa -76.97%, #F6F8FF 113.29%)',
-                        }
-                      : {}
                   }
                 >
                   <Image src={item.icon} alt={'icon'} className={'h-10 w-11'} />
@@ -400,60 +412,33 @@ function HomeTemplate() {
               return (
                 <div
                   key={index}
-                  className={'col centered mx-8 pb-2'}
+                  className={'h-4/5 col centered mx-8 pb-2'}
                   style={{ flex: '0 0 80%' }}
                 >
                   <div
                     className={
-                      'full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
+                      'full h-full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
                     }
                   >
-                    {!item.isGif && (
-                      <Image
-                        src={item.image}
-                        alt={'image'}
-                        className={'rounded-2xl lg:rounded-none w-2/5 lg:w-1/2'}
-                      />
-                    )}
-                    {item.isGif && (
-                      <div
-                        className={
-                          'w-1/2 h-[176px] bg-BLUE_DARK row centered rounded-2xl'
-                        }
-                      >
-                        <div
-                          className={
-                            'w-5/6 row items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
-                          }
-                        >
-                          <Image
-                            src={ArrowUpServices}
-                            alt={'icon'}
-                            className={'w-1/4'}
-                          />
-                          <div className={'col w-full ml-4'}>
-                            <p className={'text-xs'}>RENTA FLUIDA</p>
-                            <Image
-                              src={Counter}
-                              alt={'counter'}
-                              className={'w-full'}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
                     <div className={'w-2/3 col h-full p-1 lg:p-4'}>
-                      <p className={'font-bold text-RED_MEDIUM text-center'}>
+                      <p
+                        className={'font-bold text-RED_MEDIUM text-center my-4'}
+                      >
                         {item.title.toUpperCase()}
                       </p>
                       <h1
                         className={
-                          'text-BLUE_DARK text-2xl font-light text-center'
+                          'text-BLUE_DARK text-2xl font-light text-center my-2'
                         }
                       >
                         {item.subtitle}
                       </h1>
-                      <p className={'font-light text-center'}>{item.text}</p>
+                      <div
+                        className={'overflow-y-scroll'}
+                        style={{ flex: '0 0 60%' }}
+                      >
+                        <p className={'font-light text-center'}>{item.text}</p>
+                      </div>
                       <div className={'full col justify-end'}>
                         {item.text ? (
                           <Link className={'main-red-button '} href={item.link}>
@@ -580,15 +565,11 @@ function HomeTemplate() {
           </div>
         </div>
         <div className={'lg:hidden row overflow-hidden'} ref={articlesRef}>
-          <div className={'flex'}>
+          <div className={'flex col'}>
             {articles.length &&
-              articles.map((article, index) => {
+              articles.map((article) => {
                 return (
-                  <div
-                    key={article.link}
-                    className={'col mt-8'}
-                    style={{ flex: '0 0 55%' }}
-                  >
+                  <div key={article.link} className={'col mt-8'}>
                     <div className={'w-full row centered'}>
                       <Image
                         src={article.image}
@@ -596,7 +577,7 @@ function HomeTemplate() {
                         className={'full'}
                       />
                     </div>
-                    <div className={'full col px-4 justify-between'}>
+                    <div className={'full h-1/2 justify-around col px-4 py-4'}>
                       <p className={'text-BLUE_DARK text-lg font-bold'}>
                         {article.title}
                       </p>
@@ -606,7 +587,7 @@ function HomeTemplate() {
                         </p>
                       )}
                       {article.from && (
-                        <div className={'w-full row justify-between'}>
+                        <div className={'w-full row justify-between pt-2'}>
                           <p className={'text-GREY_DARK text-xs'}>
                             {article.from}
                           </p>
@@ -641,7 +622,7 @@ function HomeTemplate() {
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
       >
         <h1 className={'hidden lg:inline text-3xl text-RED_MEDIUM'}>
-          Opiniones de la gente
+          Quienes nos conocen, opinan:
         </h1>
         <h1 className={'lg:hidden text-3xl text-RED_MEDIUM text-center'}>
           Opiniones de
@@ -652,13 +633,6 @@ function HomeTemplate() {
           className={'w-5/6 row justify-between items-center'}
           ref={reviewsRef}
         >
-          {/* <Image
-            src={ArrowLeftBig}
-            alt={'arrow'}
-            width={36}
-            className={'cursor-pointer'}
-            onClick={() => reviewsApi?.scrollPrev()}
-          /> */}
           <div
             className={
               'hidden md:flex mt-12 pb-2 row w-full justify-between overflow-hidden'

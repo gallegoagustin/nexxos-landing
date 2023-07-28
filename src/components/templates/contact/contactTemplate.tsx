@@ -3,6 +3,7 @@ import iconNexxos from '../../../../public/images/icons/nexxos-classic.png';
 import Image from 'next/image';
 import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
+import contactData from '../../../../public/locales/es/contact.json';
 
 function ContactTemplate() {
   const [name, setName] = useState('');
@@ -132,12 +133,12 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>celular nexxos</p>
+          <p className={'text-BLACK font-bold my-1'}>+54 9 2236020205</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
             className="hover:opacity-90 hover:underline cursor-pointer"
-            href={'mailto: hola@nash21.io'}
+            href={'mailto: Centralnexxos@gmail.com'}
             target="_blank"
             rel="noreferrer"
           >
@@ -147,14 +148,14 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>mail nexxos</p>
+          <p className={'text-BLACK font-bold my-1'}>Centralnexxos@gmail.com</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
             className="hover:opacity-90 hover:underline cursor-pointer"
             href={sendWhatsappLink({
-              phoneNumber: 'contact.whatsapp-phone',
-              message: 'contact.whatsapp-message',
+              phoneNumber: contactData.contact['whatsapp-phone'],
+              message: contactData.contact['whatsapp-message'],
             })}
             target="_blank"
             rel="noreferrer"
@@ -170,7 +171,7 @@ function ContactTemplate() {
         <div className={'row items-center my-1'}>
           <a
             className="hover:opacity-90 hover:underline cursor-pointer"
-            href={'https://goo.gl/maps/J7KfwoUHqFXjzerf9?coh=178572&entry=tt'}
+            href={'https://goo.gl/maps/xuPLKhq9wFPn9jFu8'}
             target="_blank"
             rel="noreferrer"
           >
@@ -180,112 +181,124 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>direccion sede nexxos</p>
+          <p className={'text-BLACK font-bold my-1'}>Matheu 4051</p>
         </div>
       </div>
       <div
         className={
           'col w-3/4 lg:w-1/4 mt-8 lg:mt-0 bg-WHITE bg-opacity-[0.25] p-4 justify-between rounded-xl'
         }
-        style={{ height: '630px', maxHeight: '650px' }}
       >
         {sendError && (
           <h1 className="text-center text-RED_MEDIUM">{sendError}</h1>
         )}
         <form onSubmit={handleSubmit}>
           <div className="flex items-center mb-1">
-            <h1>Nombre</h1>
-            <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
+            <p>
+              Nombre{' '}
+              <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
+            </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-1">
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
               onBlur={() => handleBlur('name')}
-              className={`block w-full p-2 rounded-lg ${
+              className={`block w-full p-2 mt-2 rounded-lg ${
                 formErrors.name ? 'border-red-500' : ''
               }`}
             />
-            {formErrors.name && (
+            {formErrors.name ? (
               <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+            ) : (
+              <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
-            <h1>Apellido</h1>
-            <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
+            <p>
+              Apellido{' '}
+              <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
+            </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-1">
             <input
               type="text"
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
               required
               onBlur={() => handleBlur('lastname')}
-              className={`block w-full p-2 rounded-lg ${
+              className={`block w-full p-2 mt-2 rounded-lg ${
                 formErrors.lastname ? 'border-red-500' : ''
               }`}
             />
-            {formErrors.lastname && (
+            {formErrors.lastname ? (
               <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+            ) : (
+              <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
-            <h1>Email</h1>
-            <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
+            <p>
+              Email <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
+            </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-1">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               onBlur={() => handleBlur('email')}
-              className={`block w-full p-2 rounded-lg ${
+              className={`block w-full p-2 mt-2 rounded-lg ${
                 formErrors.email ? 'border-red-500' : ''
               }`}
             />
-            {formErrors.email && (
+            {formErrors.email ? (
               <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+            ) : (
+              <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
-            <h1>Mensaje</h1>
-            <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
+            <p>
+              Mensaje{' '}
+              <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
+            </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-1">
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
               onBlur={() => handleBlur('message')}
-              className={`block w-full p-2 rounded-lg ${
+              className={`block w-full p-2 mt-2 rounded-lg ${
                 formErrors.message ? 'border-red-500' : ''
               }`}
             />
-            {formErrors.message && (
+            {formErrors.message ? (
               <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+            ) : (
+              <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
-            <h1>Rol</h1>
-            <h1 className="inline-block mr-1 text-RED_MEDIUM">*</h1>
+            <p>Rol</p>
           </div>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full p-2 rounded-lg"
+            className="w-full p-2 mt-2 rounded-lg"
           >
             <option value="estudiante">Estudiante</option>
             <option value="docente">Docente</option>
             <option value="directivo">Directivo</option>
             <option value="other">Otro</option>
-
           </select>
           <button
             type="submit"
-            className="main-red-button text-WHITE py-2 px-4 rounded-lg my-8"
+            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6"
             disabled={isLoading}
           >
             {isLoading ? 'Enviando...' : 'Enviar'}

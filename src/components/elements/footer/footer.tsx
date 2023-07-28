@@ -4,6 +4,7 @@ import Image from 'next/image';
 import IconNexxos from '../../../../public/images/icons/nexxos-footer.png';
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
 import IconTwitter from '../../../../public/images/icons/social-media/twitter.svg';
+import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
 // import IconLinkedIn from '../../../../public/images/icons/social-media/linkedin.svg';
 // import IconDiscord from '../../../../public/images/icons/social-media/discord.svg';
 
@@ -23,7 +24,7 @@ function Footer() {
           <Image
             src={IconNexxos}
             alt={'icon'}
-            className={'mb-8 lg:mb-0 w-1/2 h-1/2'}
+            className={'mb-8 mx-auto lg:mb-0 w-1/2 h-1/2'}
           />
         </Link>
         <div
@@ -65,22 +66,16 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className={'w-4/6 lg:w-1/12 row justify-between mt-12'}>
+      <div className={'w-4/6 lg:w-2/12 row justify-between mt-12'}>
         <Link href={'https://www.instagram.com/nexxosar/'} target={'_blank'}>
           <Image src={IconInstagram} alt={'icon'} />
+        </Link>
+        <Link href={'nexxosong3315'} target={'_blank'}>
+          <Image src={IconYoutube} alt={'icon'} />
         </Link>
         <Link href={'https://twitter.com/NexxosAR'} target={'_blank'}>
           <Image src={IconTwitter} alt={'icon'} />
         </Link>
-        {/* <Link
-          href={''}
-          target={'_blank'}
-        >
-          <Image src={IconLinkedIn} alt={'icon'} />
-        </Link>
-        <Link href={''} target={'_blank'}>
-          <Image src={IconDiscord} alt={'icon'} />
-        </Link> */}
       </div>
       <p className={'font-light mt-8'}>Copyright © 2023 Nexxos</p>
     </div>

@@ -28,7 +28,6 @@ module.exports = {
     },
     colors: {
       APP_BACKGROUND: '#FFFFFF',
-      RED_MEDIUM: '#00FF3C',
       GREY_LIGHT: '#E0FFEC',
       GREEN_MEDIUM: '#0EBE54',
       GREY_LIGHT: '#F6F8FF',
@@ -37,7 +36,16 @@ module.exports = {
       BLUE_LIGHT: '#B0B5D3',
       RED_MEDIUM: '#CF142A',
       BLUE_DARK: '#2F2F4D',
+
       PURPLE_ONU: '#5D2C80',
+      LIGHTBLUE_SENA: '#07b2dd',
+      GREEN_JUICIO: '#488704',
+      TEAL_OEA: '#00977e',
+      PINK_RASTROS: '#f10078',
+      BLUE_ELECTORAL: '#136194',
+      TURQUOISE_HCD: '#5CCABE',
+      RED_G20: '#970019',
+
       WHITE: '#FFFFFF',
       BLACK: '#000000',
     },

@@ -2,22 +2,22 @@ const navBarTabs = [
   {
     value: 'home',
     path: '/',
-    locale: 'home',
+    description: 'Home',
   },
   {
-    value: 'nuestras actividades',
+    value: 'activities',
     path: '/activities',
-    locale: 'actividades',
+    description: 'Actividades',
   },
   {
-    value: 'conocenos',
-    path: '/meetus',
-    locale: 'conocenos',
+    value: 'about',
+    path: '/about',
+    description: 'Conocenos',
   },
   {
-    value: 'contacto',
+    value: 'contact',
     path: '/contact',
-    locale: 'contacto',
+    description: 'Contacto',
   },
 ];
 
