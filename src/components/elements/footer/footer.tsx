@@ -40,13 +40,21 @@ function Footer() {
               }
               target={'_blank'}
             >
-              <p className={'my-1'}>Guía de usuario</p>
+              <p className={'my-1'}>Info para sponsors</p>
+            </Link>
+            <Link
+              href={
+                'https://nash21.gitbook.io/es/guias-de-usuario/guias-para-entender-nash21'
+              }
+              target={'_blank'}
+            >
+              <p className={'my-1'}>Sumate como voluntario</p>
             </Link>
           </div>
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>SITE</p>
             <Link href={'/services'}>
-              <p className={'my-1'}>Nuestros servicios</p>
+              <p className={'my-1'}>Nuestras actividades</p>
             </Link>
             <Link href={'/contact'}>
               <p className={'my-1'}>Contacto</p>
@@ -55,13 +63,10 @@ function Footer() {
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>LEGAL</p>
             <Link href={'/terms'}>
-              <p className={'my-1'}>Términos y Condiciones</p>
+              <p className={'my-1'}>Estatuto</p>
             </Link>
             <Link href={'/privacy'}>
-              <p className={'my-1'}>Política de Privacidad</p>
-            </Link>
-            <Link href={'/cookies'}>
-              <p className={'my-1'}>Política de Cookies</p>
+              <p className={'my-1'}>Reglamento Interno</p>
             </Link>
           </div>
         </div>

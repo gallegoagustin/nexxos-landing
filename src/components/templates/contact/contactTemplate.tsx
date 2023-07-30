@@ -3,7 +3,6 @@ import iconNexxos from '../../../../public/images/icons/nexxos-classic.png';
 import Image from 'next/image';
 import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
-import contactData from '../../../../public/locales/es/contact.json';
 
 function ContactTemplate() {
   const [name, setName] = useState('');
@@ -37,14 +36,6 @@ function ContactTemplate() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      '----- FORM VALUES -----',
-      name,
-      lastname,
-      email,
-      message,
-      type
-    );
     // Antes de enviar, validaciones:
     const hasErrors = !name || !lastname || !email || !message || !type;
 
@@ -93,12 +84,10 @@ function ContactTemplate() {
     phoneNumber,
     message,
   }: {
-    phoneNumber: string,
+    phoneNumber: number,
     message: string,
   }) => {
-    const phoneNumberSanitized = phoneNumber
-      .replace(/ /g, '')
-      .replace(/\+/g, '');
+    const phoneNumberSanitized = phoneNumber;
     const messageSanitized = message;
 
     const url = `https://wa.me/${phoneNumberSanitized}?text=${messageSanitized}`;
@@ -148,14 +137,14 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>Centralnexxos@gmail.com</p>
+          <p className={'text-BLACK font-bold my-1'}>centralnexxos@gmail.com</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
             className="hover:opacity-90 hover:underline cursor-pointer"
             href={sendWhatsappLink({
-              phoneNumber: contactData.contact['whatsapp-phone'],
-              message: contactData.contact['whatsapp-message'],
+              phoneNumber: 542236020205,
+              message: '¡Hola! Quisiera más información sobre la ONG',
             })}
             target="_blank"
             rel="noreferrer"
@@ -181,7 +170,9 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>Matheu 4051</p>
+          <p className={'text-BLACK font-bold my-1'}>
+            Matheu 4051, Mar del Plata, Buenos Aires.
+          </p>
         </div>
       </div>
       <div

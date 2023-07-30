@@ -26,7 +26,6 @@ import ImageCarousel6 from '../../../../public/images/carousel-item-images/simg2
 import ImageCarousel7 from '../../../../public/images/carousel-item-images/simhcd.png';
 import ImageCarousel8 from '../../../../public/images/carousel-item-images/simjuicio.png';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
-import textContent from '../../../../public/locales/es/home.json';
 
 function HomeTemplate() {
   // Agregar un estado para determinar si es pantalla pequeña o no
@@ -167,6 +166,27 @@ function HomeTemplate() {
       link: '/services',
     },
   ];
+
+  // ACA : CUSTOM COLOR ACTIVITY CARD. GENERAR OTRO COMPONENTE PARA RENDERIZAR EN ESE CASO? COMO EN homeCarouselCard?
+  // let colorClass = '';
+
+  // if (title === 'sim.onu') {
+  //   colorClass = 'PURPLE_ONU';
+  // } else if (title === 'sim.rastros') {
+  //   colorClass = 'PINK_RASTROS';
+  // } else if (title === 'sim.sena') {
+  //   colorClass = 'LIGHTBLUE_SENA';
+  // } else if (title === 'sim.electoral') {
+  //   colorClass = 'BLUE_ELECTORAL';
+  // } else if (title === 'sim.g20') {
+  //   colorClass = 'RED_G20';
+  // } else if (title === 'sim.hcd') {
+  //   colorClass = 'TURQUOISE_HCD';
+  // } else if (title === 'sim.oea') {
+  //   colorClass = 'TEAL_OEA';
+  // } else {
+  //   colorClass = 'GREEN_JUICIO';
+  // }
 
   // START OF SLIDER FUNC
   const [tweenValues, setTweenValues] = React.useState<number[] | []>([]);
@@ -318,15 +338,9 @@ function HomeTemplate() {
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
         }}
       >
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
-          {textContent.home.title1}
-        </h1>
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
-          {textContent.home.title2}
-        </h1>
-        <h1 className={'text-WHITE text-3xl lg:text-6xl'}>
-          {textContent.home.title3}
-        </h1>
+        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>El lado</h1>
+        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>correcto de</h1>
+        <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
         <Link
           className={'main-red-button mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
           href={'/contact'}
@@ -339,12 +353,18 @@ function HomeTemplate() {
       <div className={'col items-center py-6'}>
         <div className={'w-full row centered'}>
           <p className={'text-center text-lg w-4/6 lg:w-2/5 font-light'}>
-            {textContent.home.block2text}
+            Somos una ONG que busca la transformación educativa en la Argentina
+            y el mundo. Luchamos por una educación que tenga como eje principal
+            la formación en habilidades, capacidades, inteligencias múltiples,
+            autoconocimiento e interacciones sociales. Creemos en un mundo con
+            menos problemáticas, en el que mejoramos nuestras comunicaciones y
+            vinculaciones. Una de nuestras formas de demostrar que una educación
+            distinta es posible, es organizando simulacros educativos que ponen
+            a nuestros estudiantes a prueba y los empuja a crecer y aprender
+            para la vida.
           </p>
         </div>
-        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
-          {textContent.home.block2title}
-        </h1>
+        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>Actividades 2023</h1>
         <div
           className={
             isMobile
@@ -424,6 +444,7 @@ function HomeTemplate() {
                       <p
                         className={'font-bold text-RED_MEDIUM text-center my-4'}
                       >
+                        {/* ACA */}
                         {item.title.toUpperCase()}
                       </p>
                       <h1
@@ -440,6 +461,7 @@ function HomeTemplate() {
                         <p className={'font-light text-center'}>{item.text}</p>
                       </div>
                       <div className={'full col justify-end'}>
+                        {/* ACA */}
                         {item.text ? (
                           <Link className={'main-red-button '} href={item.link}>
                             {item.buttonText.toUpperCase()}
@@ -570,7 +592,7 @@ function HomeTemplate() {
               articles.map((article) => {
                 return (
                   <div key={article.link} className={'col mt-8'}>
-                    <div className={'w-full row centered'}>
+                    <div className={'w-full row centered px-4'}>
                       <Image
                         src={article.image}
                         alt={'image'}

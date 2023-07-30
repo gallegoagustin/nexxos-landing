@@ -11,10 +11,10 @@
     @apply bg-APP_BACKGROUND font-vietnam;
   }
   h1 {
-    @apply text-xl !font-normal font-avaunt;
+    @apply text-xl !font-normal font-montserrat;
   }
   h2 {
-    @apply text-lg !font-normal font-avaunt;
+    @apply text-lg !font-normal font-montserrat;
   }
   p {
     @apply text-sm;
