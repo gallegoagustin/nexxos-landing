@@ -45,6 +45,7 @@ module.exports = {
       BLUE_ELECTORAL: '#136194',
       TURQUOISE_HCD: '#5CCABE',
       RED_G20: '#970019',
+      GREY_NEXXOS: '#4d4d4d',
 
       WHITE: '#FFFFFF',
       BLACK: '#000000',
@@ -116,6 +117,7 @@ module.exports = {
     'text-BLUE_ELECTORAL',
     'text-TURQUOISE_HCD',
     'text-RED_G20',
+    'text-GREY-NEXXOS',
   ],
   plugins: [],
 };

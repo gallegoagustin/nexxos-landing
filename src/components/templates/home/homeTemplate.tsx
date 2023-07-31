@@ -167,27 +167,6 @@ function HomeTemplate() {
     },
   ];
 
-  // ACA : CUSTOM COLOR ACTIVITY CARD. GENERAR OTRO COMPONENTE PARA RENDERIZAR EN ESE CASO? COMO EN homeCarouselCard?
-  // let colorClass = '';
-
-  // if (title === 'sim.onu') {
-  //   colorClass = 'PURPLE_ONU';
-  // } else if (title === 'sim.rastros') {
-  //   colorClass = 'PINK_RASTROS';
-  // } else if (title === 'sim.sena') {
-  //   colorClass = 'LIGHTBLUE_SENA';
-  // } else if (title === 'sim.electoral') {
-  //   colorClass = 'BLUE_ELECTORAL';
-  // } else if (title === 'sim.g20') {
-  //   colorClass = 'RED_G20';
-  // } else if (title === 'sim.hcd') {
-  //   colorClass = 'TURQUOISE_HCD';
-  // } else if (title === 'sim.oea') {
-  //   colorClass = 'TEAL_OEA';
-  // } else {
-  //   colorClass = 'GREEN_JUICIO';
-  // }
-
   // START OF SLIDER FUNC
   const [tweenValues, setTweenValues] = React.useState<number[] | []>([]);
 
@@ -329,7 +308,7 @@ function HomeTemplate() {
     <main className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
       <div
-        className={`w-full bg-no-repeat py-20 px-10 lg:py-32 lg:px-24`}
+        className={`header-image-container px-10 lg:py-32 lg:px-24`}
         style={{
           background: `url(${Landing1.src})`,
           backgroundSize: 'cover',
@@ -338,15 +317,19 @@ function HomeTemplate() {
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
         }}
       >
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>El lado</h1>
-        <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>correcto de</h1>
-        <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
-        <Link
-          className={'main-red-button mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
-          href={'/contact'}
-        >
-          SABER MÁS
-        </Link>
+        <div className={'full'}>
+          <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>El lado</h1>
+          <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
+            correcto de
+          </h1>
+          <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
+          <Link
+            className={'main-red-button mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
+            href={'/contact'}
+          >
+            SABER MÁS
+          </Link>
+        </div>
       </div>
 
       {/* BLOCK 2 */}
@@ -429,6 +412,25 @@ function HomeTemplate() {
         <div className={'lg:hidden row overflow-hidden mt-12'} ref={emblaRef2}>
           <div className={'flex w-[100vw]'}>
             {carouselCards.map((item, index) => {
+              let colorClass = '';
+
+              if (item.title === 'sim.onu') {
+                colorClass = 'PURPLE_ONU';
+              } else if (item.title === 'sim.rastros') {
+                colorClass = 'PINK_RASTROS';
+              } else if (item.title === 'sim.sena') {
+                colorClass = 'LIGHTBLUE_SENA';
+              } else if (item.title === 'sim.electoral') {
+                colorClass = 'BLUE_ELECTORAL';
+              } else if (item.title === 'sim.g20') {
+                colorClass = 'RED_G20';
+              } else if (item.title === 'sim.hcd') {
+                colorClass = 'TURQUOISE_HCD';
+              } else if (item.title === 'sim.oea') {
+                colorClass = 'TEAL_OEA';
+              } else {
+                colorClass = 'GREEN_JUICIO';
+              }
               return (
                 <div
                   key={index}
@@ -442,7 +444,7 @@ function HomeTemplate() {
                   >
                     <div className={'w-2/3 col h-full p-1 lg:p-4'}>
                       <p
-                        className={'font-bold text-RED_MEDIUM text-center my-4'}
+                        className={`font-bold text-${colorClass} text-center my-4`}
                       >
                         {/* ACA */}
                         {item.title.toUpperCase()}
@@ -463,7 +465,10 @@ function HomeTemplate() {
                       <div className={'full col justify-end'}>
                         {/* ACA */}
                         {item.text ? (
-                          <Link className={'main-red-button '} href={item.link}>
+                          <Link
+                            className={`main-red-button bg-${colorClass}`}
+                            href={item.link}
+                          >
                             {item.buttonText.toUpperCase()}
                           </Link>
                         ) : (

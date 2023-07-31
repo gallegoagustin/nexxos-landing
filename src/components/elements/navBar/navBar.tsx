@@ -114,7 +114,7 @@ function NavBar({ activeTab }: Props) {
                   }
                 >
                   <p className={'text-sm font-bold'}>
-                    {item.locale.toUpperCase()}
+                    {item.description.toUpperCase()}
                   </p>
                 </Link>
               );

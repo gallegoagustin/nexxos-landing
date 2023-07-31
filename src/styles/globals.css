@@ -41,4 +41,8 @@
   .main-red-button {
     @apply bg-RED_MEDIUM text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-md text-sm;
   }
+
+  .header-image-container {
+    @apply h-[31rem] w-full py-20;
+  }
 }
