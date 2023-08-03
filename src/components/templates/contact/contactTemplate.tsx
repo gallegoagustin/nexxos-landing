@@ -122,7 +122,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-BLACK font-bold my-1'}>+54 9 2236020205</p>
+          <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
@@ -155,7 +155,7 @@ function ContactTemplate() {
               className="w-4 mr-2"
             />
           </a>
-          <p className={'text-GBLACK font-bold my-1'}>Envianos un whatsapp</p>
+          <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
         </div>
         <div className={'row items-center my-1'}>
           <a

@@ -1,89 +1,58 @@
 import React from 'react';
+import About1 from '../../../../public/images/about1.jpg';
+import Image1 from '../../../../public/images/autorities/melisaayelen.jpg';
+import Image2 from '../../../../public/images/autorities/mariasol.jpeg';
+import Image3 from '../../../../public/images/autorities/valentina.jpeg';
+import Image4 from '../../../../public/images/autorities/sofia.jpeg';
+import Image5 from '../../../../public/images/autorities/ailen.jpeg';
+import Image6 from '../../../../public/images/autorities/alan.jpeg';
 import Image from 'next/image';
-import Activities1 from '../../../../public/images/activities1.jpg';
-import ImageCard1 from '../../../../public/images/icons/logos/logo-onu.png';
-import ImageCard2 from '../../../../public/images/icons/logos/logo-oea.png';
-import ImageCard3 from '../../../../public/images/icons/logos/logo-rastros.png';
-import ImageCard4 from '../../../../public/images/icons/logos/logo-g20.png';
-import ImageCard5 from '../../../../public/images/icons/logos/logo-electoral.png';
-import ImageCard6 from '../../../../public/images/icons/logos/logo-sena.png';
-import ImageCard7 from '../../../../public/images/icons/logos/logo-hcd.png';
-import ImageCard8 from '../../../../public/images/icons/logos/logo-juicio.png';
+
+import FlipCard from '@/components/elements/flipCard/flipCard';
 
 function AboutTemplate() {
-  const membersProfiles = [
+  const autorities = [
     {
-      title: 'sim.onu',
-      participants: 'Simulacro de la Organización de las Naciones Unidas',
-      text: 'info util',
-      image: ImageCard1,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'Valentina Fardin',
+      age: '22',
+      position: 'Presidente',
+      info: '"Estudiante de Licenciatura y Profesorado en Geografía. Mi pasión por la educación y mi convicción de empoderar a los jóvenes me llevaron a unirme a NEXXOS.  Cómo estudiante comprendo la importancia de una educación que desarrolle habilidades poderosas que nos permitan enfrentar los desafíos del mundo actual. En NEXXOS encontré la plataforma perfecta para fomentar un pensamiento crítico de la realidad y a alzar sus voces para construir un futuro más brillante."',
+      image: Image3,
     },
     {
-      title: 'sim.oea',
-      participants: 'Simulacro de la Organización de los Estados Americanos',
-      text: 'info util',
-      image: ImageCard2,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'Ailen Benítez Zarate',
+      age: '21',
+      position: 'Vicepresidente',
+      info: '"Un 82,5% Licenciada en Comunicación Social y un 100% convencida de que NEXXOS es el lado correcto de la educación. Actualmente trabajo en el área de comunicación digital en la campaña electoral de un candidato a intendente. Soy de las que creen que con pasión y disciplina todo se puede lograr. La curiosidad, el respeto y la valentía siempre por delante. NEXXOS es la herramienta transformadora del presente de los jóvenes."',
+      image: Image5,
     },
     {
-      title: 'sim.rastros',
-      participants: 'Simulacro de una Investigación Forense',
-      text: 'info util',
-      image: ImageCard3,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'Melissa Ayelen Oliva',
+      age: '20',
+      position: 'Secreataria General',
+      info: '"Soy estudiante de Derecho en la UNMDP. Participe en Modelos de Naciones Unidas en representación de la Facultad de Derecho."',
+      image: Image1,
     },
     {
-      title: 'sim.sena',
-      participants:
-        'Simulacro de la honorable Cámara de Senadores de la Argentina',
-      text: 'info util',
-      image: ImageCard4,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'Alan Ezequiel Castillo ',
+      age: '20',
+      position: 'Tesorero',
+      info: '"Estoy en 2do año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
+      image: Image6,
     },
     {
-      title: 'sim.electoral',
-      participants: 'Simulacro de un debate presidencial y ministerial',
-      text: 'info util',
-      image: ImageCard5,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'María Sol Martínez',
+      age: '22',
+      position: 'Vocal',
+      info: '"Egresé del colegio en 2019. En 2022 me uní a Nexxos y empecé a explorar en este mundo de la educación, que definió mis experiencias y estuidos universitarios. En la ONG no sólo encontré un muy lindo grupo de amigos y un objetivo en común, sino también mi vocación. Me siento muy orgullosa de formar parte de este grupo de personas que actúa para mejorar la educación. Sé con seguridad que logramos aportar nuestro granito de arena para que el mundo sea al menos un poquito mejor cada día."',
+      image: Image2,
     },
     {
-      title: 'sim.g20',
-      participants: 'Simulacro del Grupo de los 20',
-      text: 'info util',
-      image: ImageCard6,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
-    },
-    {
-      title: 'sim.hcd',
-      participants: 'Simulacro del Honorable Concejo Deliberante',
-      text: 'info util',
-      image: ImageCard7,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
-    },
-    {
-      title: 'sim.juicio',
-      participants: 'Simulacro de un Juicio por Jurados',
-      text: 'info util',
-      image: ImageCard8,
-      link_utils: '',
-      link_pre: '',
-      link_inscrip: '',
+      name: 'Sofia Ali',
+      age: '19',
+      position: 'Vocal',
+      info: '"Unirme a Nexxos fue el primer paso para contribuir en el cambio de lo que más influyó en quién soy hoy, la educación. Ser voluntaria me permite aprender constantemente de quienes me rodean y el trabajo en equipo me motiva a sacar cada día una mejor versión de mi. Estudio derecho en la UNMDP, represente a mi facultad en modelos de ONU realizados en el país y en el exterior. Me interesa el feminismo y en los fines de semana suelo dar apoyo escolar a jovenes y niños/as de manera voluntaria."',
+      image: Image4,
     },
   ];
 
@@ -93,10 +62,10 @@ function AboutTemplate() {
       <div
         className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
         style={{
-          background: `url(${Activities1.src})`,
+          background: `url(${About1.src})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          backgroundPositionY: 'top',
+          backgroundPositionY: 'center',
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
         }}
       >
@@ -108,31 +77,63 @@ function AboutTemplate() {
       {/* BLOCK 2 */}
       <div
         className={
-          'w-full col lg:row items-center justify-center py-20 bg-GREY_LIGHT'
+          'full col lg:row items-center justify-center flex-wrap py-12 bg-GREY_LIGHT'
         }
       >
-        {/* SIM CARD */}
-        <div
-          className={'full col lg:row'}
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '1.75rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          {membersProfiles.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className={
-                  'w-4/6 lg:w-1/5 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
-                }
-                id="card-container"
-              ></div>
-            );
-          })}
+        {autorities.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className={
+                'p-1 w-4/6 md:w-[32rem] h-[30rem] md:h-[18rem] mb-2 mt-2 lg:mt-0 col lg:mx-6 lg:p-4'
+              }
+            >
+              <FlipCard
+                name={item.name}
+                age={item.age}
+                position={item.position}
+                info={item.info}
+                image={item.image.src}
+              />
+            </div>
+          );
+        })}
+      </div>
+      {/* BLOCK 3 */}
+      <div
+        className={
+          'row items-center justify-evenly py-12 w-full overflow-hidden bg-WHITE'
+        }
+      >
+        <div className={'ml-24'}>
+          <button className={'main-red-button'}>Quiero ser voluntario</button>
+        </div>
+        <div className={'w-1/3'}>
+          <p className={'my-6 font-montserrat text-3xl'}>
+            Sumate como voluntario !
+          </p>
+          <h1 className={'mb-6'}>Subtitle</h1>
+          <p className={'leading-relaxed text-base'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex eros. Mauris finibus mauris eu malesuada congue. Quisque et facilisis nisi, in tempor nibh. Praesent auctor.</p>
+        </div>
+      </div>
+      {/* BLOCK 4 */}
+      <div
+        className={
+          'row items-center justify-evenly py-12 w-full overflow-hidden bg-GREY_LIGHT'
+        }
+      >
+        <div className={'w-1/3'}>
+          <p className={'my-6 font-montserrat text-3xl'}>
+            Donaciones y sponsors
+          </p>
+          <h1 className={'mb-6'}>Subtitle</h1>
+          <p className={'leading-relaxed text-base'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex eros. Mauris finibus mauris eu malesuada congue. Quisque et facilisis nisi, in tempor nibh. Praesent auctor.</p>
+        </div>
+        <div className={'col w-1/3 mr-24'}>
+          <div className={'row justify-evenly'}>
+            <button className={'main-red-button'}>Mas informacion</button>
+            <button className={'main-red-button'}>Quiero ser Sponsor</button>
+          </div>
         </div>
       </div>
     </main>

@@ -9,14 +9,14 @@ import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
 import Landing1 from '../../../../public/images/landing1.jpeg';
-import Icon1 from '../../../../public/images/icons/isotipos/onu.png';
-import Icon2 from '../../../../public/images/icons/isotipos/oea.png';
-import Icon3 from '../../../../public/images/icons/isotipos/rastros.png';
-import Icon4 from '../../../../public/images/icons/isotipos/sena.png';
-import Icon5 from '../../../../public/images/icons/isotipos/electoral.png';
-import Icon6 from '../../../../public/images/icons/isotipos/g20.png';
+import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
+import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
+import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
+import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
+import Icon5 from '../../../../public/images/icons/isotipos/electoral.svg';
+import Icon6 from '../../../../public/images/icons/isotipos/g20.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.png';
-import Icon8 from '../../../../public/images/icons/isotipos/juicio.png';
+import Icon8 from '../../../../public/images/icons/isotipos/juicio.svg';
 import ImageCarousel1 from '../../../../public/images/carousel-item-images/simonu.png';
 import ImageCarousel2 from '../../../../public/images/carousel-item-images/simoea.png';
 import ImageCarousel3 from '../../../../public/images/carousel-item-images/simrastros.png';
@@ -107,7 +107,7 @@ function HomeTemplate() {
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
       buttonText: 'saber más',
       image: ImageCarousel1,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.oea',
@@ -115,7 +115,7 @@ function HomeTemplate() {
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
       buttonText: 'saber más',
       image: ImageCarousel2,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.rastros',
@@ -123,7 +123,7 @@ function HomeTemplate() {
       text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
       buttonText: 'saber más',
       image: ImageCarousel3,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.sena',
@@ -131,7 +131,7 @@ function HomeTemplate() {
       text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes interesados representarán a un senador ficticio, pero de un partido político real con representación en dicha cámara. Con dicha información, y poniéndose en el papel de dicho senador, deberá escribir una ley que presentará para debatir durante el simulacro. El participante tendrá primero una entrevista con los organizadores para que se le asigne un senador. Recibirá la información sobre el funcionario a representar, entre la cual habrá información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
       image: ImageCarousel4,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.electoral',
@@ -139,7 +139,7 @@ function HomeTemplate() {
       text: 'sim.electoral es una edición especial ofrecida sólo en años electivos. El simulacro, focalizado dentro del área de las ciencias sociales, propone a los participantes la posibilidad de ponerse en la piel de los candidatos presidenciales y de su equipo de canciller y ministros, o bien participar del formato prensa, con el objetivo de cubrir el debate desde distintas líneas editoriales a través del relevamiento periodístico y fotográfico. A lo largo de la actividad los participantes que desempeñen el rol de políticos debatirán de distintas maneras sus respectivos proyectos de país.',
       buttonText: 'saber más',
       image: ImageCarousel5,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.g20',
@@ -147,7 +147,7 @@ function HomeTemplate() {
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el poderoso Grupo de los 20, que engloba a una veintena de las principales potencias mundiales. Quienes participen de esta actividad podrán hacerlo como cancilleres, presidentes o primeros ministros, y debatirán problemáticas preseleccionadas teniendo en cuenta la postura del gobierno al que representan con respecto a dicho tópico, así también como el contexto mundial y la geopolítica actual.',
       buttonText: 'saber más',
       image: ImageCarousel6,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.hcd',
@@ -155,7 +155,7 @@ function HomeTemplate() {
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
       buttonText: 'saber más',
       image: ImageCarousel7,
-      link: '/services',
+      link: '/activities',
     },
     {
       title: 'sim.juicio',
@@ -163,7 +163,7 @@ function HomeTemplate() {
       text: 'En esta actividad se recrea el desarrollo de un juicio por jurados, con sus respectivas dinámicas y momentos, a partir del tratamiento de un caso. A su vez se implementará en la actividad una modalidad de prensa, que se ocupará de cubrir el avance del juicio a lo largo de todas las jornadas.',
       buttonText: 'saber más',
       image: ImageCarousel8,
-      link: '/services',
+      link: '/activities',
     },
   ];
 
@@ -302,7 +302,6 @@ function HomeTemplate() {
 
     onScrollIcons();
   }, [articlesApi, onScrollIcons]);
-  // END OF SLIDER FUNC
 
   return (
     <main className={'full col justify-start items-center'}>
@@ -371,7 +370,7 @@ function HomeTemplate() {
                     'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-t-lg rounded-br-lg'
                   }
                 >
-                  <Image src={item.icon} alt={'icon'} className={'h-10 w-11'} />
+                  <Image src={item.icon} alt={'icon'} className={'h-12 w-12'} />
                 </div>
                 <p
                   className={
@@ -661,9 +660,7 @@ function HomeTemplate() {
           ref={reviewsRef}
         >
           <div
-            className={
-              'hidden md:flex mt-12 pb-2 row w-full justify-between overflow-hidden'
-            }
+            className={'hidden md:flex mt-12 pb-2 row w-full justify-between '}
           >
             {reviews.map((item, index) => {
               return (

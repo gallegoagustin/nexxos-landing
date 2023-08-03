@@ -28,7 +28,6 @@ module.exports = {
     },
     colors: {
       APP_BACKGROUND: '#FFFFFF',
-      GREY_LIGHT: '#E0FFEC',
       GREEN_MEDIUM: '#0EBE54',
       GREY_LIGHT: '#F6F8FF',
       GREY_MEDIUM: '#F4F4F4',

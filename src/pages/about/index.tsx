@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/templates/bodyLayout/layout';
+import AboutTemplate from '@/components/templates/about/aboutTemplate';
 
 export default function About() {
   const [hydrated, setHydrated] = React.useState<boolean>(false);
@@ -20,6 +21,7 @@ export default function About() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <AboutTemplate />
       </>
     </Layout>
   );

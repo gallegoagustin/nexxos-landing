@@ -9,6 +9,7 @@ import ImageCard5 from '../../../../public/images/icons/isotipos/electoral.svg';
 import ImageCard6 from '../../../../public/images/icons/isotipos/sena.svg';
 import ImageCard7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import ImageCard8 from '../../../../public/images/icons/isotipos/juicio.svg';
+import Link from 'next/link';
 
 function ActivitiesTemplate() {
   const activitiesCards = [
@@ -17,7 +18,8 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de la Organización de las Naciones Unidas',
       participants: 'Ciclo Superior - Cs. Sociales',
       image: ImageCard1,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1i6XlJmrZ4LwAYxeaAEVcv1t_yFRIT9Jm?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -26,17 +28,19 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de la Organización de Estados Americanos',
       participants: 'Ciclo Básico - Cs. Sociales',
       image: ImageCard2,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1crxRST6eTpo68h0Fux8VHIuqkhRiYxc2?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
     {
       title: 'rastros',
       subtitle: 'Simulacro de la Investigación de un caso Forense',
-      participants:
-        'Ciclo Básico - Cs Naturales y Cs. Exactas / Ciclo Superior - Cs Naturales y Cs. Exactas',
+      participants: 'Nivel 1: Ciclo Básico - Cs Naturales y Cs. Exactas',
+      participants2: 'Nivel 2: Ciclo Superior - Cs Naturales y Cs. Exactas',
       image: ImageCard3,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1fO-pKsjNsHOk_-Jw9MNPzBsKAmu34EBi?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -45,7 +49,8 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de la Honorable Cámara de Senadores de la Nación',
       participants: 'Ciclo Superior - Cs. Humanas',
       image: ImageCard6,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1q9MAinbBOq3I00gV-Go7Hf9lex6z7VN8?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -54,16 +59,18 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de un Debate Electoral',
       participants: 'Ciclo Superior - Cs. Humanas',
       image: ImageCard5,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1DcoGqkA0XmZZhtul-WMiv-m_uIZvJ0FL?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
     {
       title: 'g20',
       subtitle: 'Simulacro del Grupo de los 20',
-      participants: 'info util',
+      participants: 'Ciclo Superior - Cs. Sociales',
       image: ImageCard4,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1YCVeJzKToTeQVuExDOtp_rlidTC7rZIC?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -72,7 +79,8 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro del Honorable Concejo Deliberante',
       participants: 'Ciclo Superior - Cs. Humanas',
       image: ImageCard7,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1oE_XR7_Pt1HOLZYvE1njqxoQCNbN_F7K?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -81,7 +89,8 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de un Juicio por Jurado',
       participants: 'Ciclo Superior - Cs. Humanas',
       image: ImageCard8,
-      link_utils: '',
+      link_utils:
+        'https://drive.google.com/drive/folders/1lRhoUs6st8IiGhpdejLhs2zjfBd6_d4y?usp=drive_link',
       link_pre: '',
       link_inscrip: '',
     },
@@ -139,7 +148,7 @@ function ActivitiesTemplate() {
               <div
                 key={index}
                 className={
-                  'w-4/6 md:w-[28rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
+                  'w-4/6 md:w-[28rem] h-[38rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
                 }
                 id="card-container"
               >
@@ -147,18 +156,7 @@ function ActivitiesTemplate() {
                   className={'self-center mb-3 col items-center justify-center'}
                   id="title-container"
                 >
-                  <Image
-                    src={item.image}
-                    alt={'image'}
-                    className={
-                      'rounded-2xl lg:rounded-none w-2/5 lg:w-1/2 h-auto'
-                    }
-                    style={{
-                      objectFit: 'cover',
-                      width: '100%',
-                      height: '100%',
-                    }}
-                  />
+                  <Image src={item.image} alt={'image'} />
                   <p
                     className={
                       'font-montserrat font-bold text-3xl text-GREY_NEXXOS'
@@ -172,25 +170,36 @@ function ActivitiesTemplate() {
                   className={'w-full justify-center text-center'}
                   id="text-container"
                 >
-                  <p className={'font-bold my-2'}>· {item.subtitle}</p>
-                  <p className={'font-bold my-2'}>· {item.participants}:</p>
+                  <p className={'font-bold my-6 text-lg'}>{item.subtitle}</p>
+                  <h2 className={'font-bold'}>¿Quienes pueden participar?</h2>
+                  <p className={'my-2'}>{item.participants}</p>
+                  {item.participants2 ? (
+                    <p className={'my-2'}>{item.participants2}</p>
+                  ) : null}
                 </div>
                 <div
-                  className={'w-full col justify-center items-center'}
+                  className={
+                    'w-full col justify-center items-center absolute bottom-8'
+                  }
                   id="buttons-container"
                 >
-                  <button className={'w-full lg:w-3/5 mt-4 lg:my-4'}>
-                    Mas informacion
-                  </button>
-                  <div className={'row justify-center'}>
-                    <button
-                      className={'main-red-button w-full lg:w-3/5 mt-4 lg:mx-4'}
-                    >
+                  <Link
+                    href={item.link_utils}
+                    target="_blank"
+                    className={'self-center mt-4 lg:w-1/2 text-center'}
+                  >
+                    <button className={'w-full lg:w-3/5 lg:my-4'}>
+                      Mas informacion
+                    </button>
+                  </Link>
+                  <div
+                    className={'col md:row justify-center'}
+                    id="inscrip-buttons"
+                  >
+                    <button className={`bg-${colorClass} card-common-button`}>
                       Preinscripcion
                     </button>
-                    <button
-                      className={'main-red-button w-full lg:w-3/5 mt-4 lg:mx-4'}
-                    >
+                    <button className={`bg-${colorClass} card-common-button`}>
                       Inscripcion
                     </button>
                   </div>

@@ -53,7 +53,7 @@ function Footer() {
           </div>
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>SITE</p>
-            <Link href={'/services'}>
+            <Link href={'/activities'}>
               <p className={'my-1'}>Nuestras actividades</p>
             </Link>
             <Link href={'/contact'}>
@@ -62,10 +62,20 @@ function Footer() {
           </div>
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>LEGAL</p>
-            <Link href={'/terms'}>
+            <Link
+              href={
+                'https://drive.google.com/file/d/1FK8LytKXklcbZ-XOuMEEEHReW3wvghzc/view?usp=drive_link'
+              }
+              target="_blank"
+            >
               <p className={'my-1'}>Estatuto</p>
             </Link>
-            <Link href={'/privacy'}>
+            <Link
+              href={
+                'https://drive.google.com/file/d/15BKHJxWVVXJBFoLzEwcXLt1b4Xg3Fl20/view?usp=drive_link'
+              }
+              target="_blank"
+            >
               <p className={'my-1'}>Reglamento Interno</p>
             </Link>
           </div>
