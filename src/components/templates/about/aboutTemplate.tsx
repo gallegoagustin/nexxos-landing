@@ -7,6 +7,8 @@ import Image4 from '../../../../public/images/autorities/sofia.jpeg';
 import Image5 from '../../../../public/images/autorities/ailen.jpeg';
 import Image6 from '../../../../public/images/autorities/alan.jpeg';
 import Image from 'next/image';
+import Volunteer from '../../../../public/images/volunteer.png';
+import Sponsor from '../../../../public/images/support.png';
 
 import FlipCard from '@/components/elements/flipCard/flipCard';
 
@@ -106,6 +108,7 @@ function AboutTemplate() {
         }
       >
         <div className={'ml-24'}>
+          <Image src={Volunteer} alt="voluntarios" className={'w-5/6'} />
           <button className={'main-red-button'}>Quiero ser voluntario</button>
         </div>
         <div className={'w-1/3'}>
@@ -113,7 +116,14 @@ function AboutTemplate() {
             Sumate como voluntario !
           </p>
           <h1 className={'mb-6'}>Subtitle</h1>
-          <p className={'leading-relaxed text-base'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex eros. Mauris finibus mauris eu malesuada congue. Quisque et facilisis nisi, in tempor nibh. Praesent auctor.</p>
+          <p className={'leading-relaxed text-base'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
+            efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque
+            hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus
+            pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex
+            eros. Mauris finibus mauris eu malesuada congue. Quisque et
+            facilisis nisi, in tempor nibh. Praesent auctor.
+          </p>
         </div>
       </div>
       {/* BLOCK 4 */}
@@ -127,9 +137,17 @@ function AboutTemplate() {
             Donaciones y sponsors
           </p>
           <h1 className={'mb-6'}>Subtitle</h1>
-          <p className={'leading-relaxed text-base'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex eros. Mauris finibus mauris eu malesuada congue. Quisque et facilisis nisi, in tempor nibh. Praesent auctor.</p>
+          <p className={'leading-relaxed text-base'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
+            efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque
+            hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus
+            pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex
+            eros. Mauris finibus mauris eu malesuada congue. Quisque et
+            facilisis nisi, in tempor nibh. Praesent auctor.
+          </p>
         </div>
         <div className={'col w-1/3 mr-24'}>
+          <Image src={Sponsor} alt="sponsors" className={'w-4/6'} />
           <div className={'row justify-evenly'}>
             <button className={'main-red-button'}>Mas informacion</button>
             <button className={'main-red-button'}>Quiero ser Sponsor</button>
