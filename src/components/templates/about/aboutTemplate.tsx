@@ -9,8 +9,12 @@ import Image6 from '../../../../public/images/autorities/alan.jpeg';
 import Image from 'next/image';
 import Volunteer from '../../../../public/images/volunteer.png';
 import Sponsor from '../../../../public/images/support.png';
+import Link from 'next/link';
 
-import FlipCard from '@/components/elements/flipCard/flipCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 function AboutTemplate() {
   const autorities = [
@@ -78,40 +82,71 @@ function AboutTemplate() {
 
       {/* BLOCK 2 */}
       <div
-        className={
-          'full col lg:row items-center justify-center flex-wrap py-12 bg-GREY_LIGHT'
-        }
+        className={'full col lg:row items-center justify-center py-12 bg-WHITE'}
       >
-        {autorities.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                'p-1 w-4/6 md:w-[32rem] h-[30rem] md:h-[18rem] mb-2 mt-2 lg:mt-0 col lg:mx-6 lg:p-4'
-              }
-            >
-              <FlipCard
-                name={item.name}
-                age={item.age}
-                position={item.position}
-                info={item.info}
-                image={item.image.src}
-              />
-            </div>
-          );
-        })}
+        <Swiper
+          pagination={true}
+          modules={[Pagination]}
+          loop={true}
+          className={'w-[21rem] h-[43rem] md:w-[50rem] md:h-[30rem]'}
+        >
+          {autorities.map((item, index) => {
+            return (
+              <SwiperSlide
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                key={index}
+              >
+                <div
+                  className={
+                    'bg-RED_MEDIUM col items-center w-[18rem] h-[38rem] md:w-[40rem] md:h-[25rem] justify-evenly rounded-lg'
+                  }
+                  style={{
+                    background: 'linear-gradient(to bottom, #CF142A, #5D2C80',
+                  }}
+                >
+                  <div
+                    className={
+                      'w-full md:w-4/5 row items-center justify-evenly md:justify-around'
+                    }
+                  >
+                    <Image
+                      src={item.image}
+                      alt={'image'}
+                      width={150}
+                      height={150}
+                      className={'rounded-full md:w-40 md:h-40 w-28 h-28'}
+                    />
+                    <div className={'w-[8rem] md:w-1/2 text-WHITE'}>
+                      <h1>{item.name}</h1>
+                      <p>{item.position}</p>
+                      <p>Edad: {item.age} años.</p>
+                    </div>
+                  </div>
+                  <p className={'text-WHITE w-5/6 text-justify md:p-4'}>
+                    {item.info}
+                  </p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
+
       {/* BLOCK 3 */}
       <div
         className={
-          'row items-center justify-evenly py-12 w-full overflow-hidden bg-WHITE'
+          'col md:row items-center justify-evenly py-12 w-full overflow-hidden'
         }
+        style={{
+          background:
+            'radial-gradient(50% 50% at 50% 50%, rgba(142, 142, 211, 0.16) 0%, rgba(232, 232, 232, 0.32) 100%)',
+        }}
       >
-        <div className={'ml-24'}>
-          <Image src={Volunteer} alt="voluntarios" className={'w-5/6'} />
-          <button className={'main-red-button'}>Quiero ser voluntario</button>
-        </div>
-        <div className={'w-1/3'}>
+        <div className={'w-5/6 md:w-1/3'}>
           <p className={'my-6 font-montserrat text-3xl'}>
             Sumate como voluntario !
           </p>
@@ -125,14 +160,47 @@ function AboutTemplate() {
             facilisis nisi, in tempor nibh. Praesent auctor.
           </p>
         </div>
+        <div
+          className={'col justify-center items-center mt-6 md:mt-0 md:ml-24'}
+        >
+          <Image
+            src={Volunteer}
+            alt="voluntarios"
+            className={'w-1/2 h-1/2 md:w-5/6 md:h-5/6'}
+          />
+          <Link
+            href={
+              'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
+            }
+            target="_blank"
+          >
+            <button className={'main-red-button mt-8'}>
+              Quiero ser voluntario
+            </button>
+          </Link>
+        </div>
       </div>
+
       {/* BLOCK 4 */}
       <div
         className={
-          'row items-center justify-evenly py-12 w-full overflow-hidden bg-GREY_LIGHT'
+          'col md:row items-center justify-evenly py-12 w-full overflow-hidden bg-WHITE'
         }
       >
-        <div className={'w-1/3'}>
+        <div className={'col w-5/6 md:w-1/3 md:mr-24 order-2 md:order-none'}>
+          <Image
+            src={Sponsor}
+            alt="sponsors"
+            className={'w-3/6 self-center my-10 md:my-0'}
+          />
+          <div className={'col md:row md:justify-evenly mt-8'}>
+            <button className={'main-red-button mb-4 md:mb-0'}>
+              Mas informacion
+            </button>
+            <button className={'main-red-button'}>Quiero ser Sponsor</button>
+          </div>
+        </div>
+        <div className={'w-5/6 md:w-1/3 order-1 md:order-none'}>
           <p className={'my-6 font-montserrat text-3xl'}>
             Donaciones y sponsors
           </p>
@@ -145,13 +213,6 @@ function AboutTemplate() {
             eros. Mauris finibus mauris eu malesuada congue. Quisque et
             facilisis nisi, in tempor nibh. Praesent auctor.
           </p>
-        </div>
-        <div className={'col w-1/3 mr-24'}>
-          <Image src={Sponsor} alt="sponsors" className={'w-4/6'} />
-          <div className={'row justify-evenly'}>
-            <button className={'main-red-button'}>Mas informacion</button>
-            <button className={'main-red-button'}>Quiero ser Sponsor</button>
-          </div>
         </div>
       </div>
     </main>

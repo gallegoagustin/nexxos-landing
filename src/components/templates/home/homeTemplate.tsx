@@ -317,13 +317,15 @@ function HomeTemplate() {
         }}
       >
         <div className={'full'}>
-          <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>El lado</h1>
-          <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
-            correcto de
-          </h1>
-          <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
+          <div className={'mt-44 md:mt-0'}>
+            <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl '}>El lado</h1>
+            <h1 className={'text-RED_MEDIUM text-3xl lg:text-6xl'}>
+              correcto de
+            </h1>
+            <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
+          </div>
           <Link
-            className={'main-red-button mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
+            className={'main-red-button md:mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
             href={'/contact'}
           >
             SABER MÁS

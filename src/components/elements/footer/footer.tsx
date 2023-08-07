@@ -44,7 +44,7 @@ function Footer() {
             </Link>
             <Link
               href={
-                'https://nash21.gitbook.io/es/guias-de-usuario/guias-para-entender-nash21'
+                'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
               }
               target={'_blank'}
             >
