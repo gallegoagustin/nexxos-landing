@@ -12,7 +12,7 @@ import Sponsor from '../../../../public/images/support.png';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -50,7 +50,7 @@ function AboutTemplate() {
       name: 'María Sol Martínez',
       age: '22',
       position: 'Vocal',
-      info: '"Egresé del colegio en 2019. En 2022 me uní a Nexxos y empecé a explorar en este mundo de la educación, que definió mis experiencias y estuidos universitarios. En la ONG no sólo encontré un muy lindo grupo de amigos y un objetivo en común, sino también mi vocación. Me siento muy orgullosa de formar parte de este grupo de personas que actúa para mejorar la educación. Sé con seguridad que logramos aportar nuestro granito de arena para que el mundo sea al menos un poquito mejor cada día."',
+      info: '"Egresé del colegio en 2019. En 2022 me uní a Nexxos y empecé a explorar en este mundo de la educación, que definió mis experiencias y estudios universitarios. En la ONG no sólo encontré un muy lindo grupo de amigos y un objetivo en común, sino también mi vocación. Me siento muy orgullosa de formar parte de este grupo de personas que actúa para mejorar la educación. Sé con seguridad que logramos aportar nuestro granito de arena para que el mundo sea al menos un poquito mejor cada día."',
       image: Image2,
     },
     {
@@ -86,7 +86,12 @@ function AboutTemplate() {
       >
         <Swiper
           pagination={true}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           loop={true}
           className={'w-[21rem] h-[43rem] md:w-[50rem] md:h-[30rem]'}
         >
@@ -161,7 +166,9 @@ function AboutTemplate() {
           </p>
         </div>
         <div
-          className={'col justify-center items-center mt-6 md:mt-0 md:ml-24'}
+          className={
+            'col w-5/6 justify-center items-center mt-6 md:mt-0 md:ml-24 md:w-[24rem]'
+          }
         >
           <Image
             src={Volunteer}
@@ -187,13 +194,15 @@ function AboutTemplate() {
           'col md:row items-center justify-evenly py-12 w-full overflow-hidden bg-WHITE'
         }
       >
-        <div className={'col w-5/6 md:w-1/3 md:mr-24 order-2 md:order-none'}>
+        <div
+          className={'col w-5/6 md:w-[32rem] md:mr-24 order-2 md:order-none'}
+        >
           <Image
             src={Sponsor}
             alt="sponsors"
             className={'w-3/6 self-center my-10 md:my-0'}
           />
-          <div className={'col md:row md:justify-evenly mt-8'}>
+          <div className={'col md:row md:justify-evenly md:mx-8 mt-8'}>
             <button className={'main-red-button mb-4 md:mb-0'}>
               Mas informacion
             </button>

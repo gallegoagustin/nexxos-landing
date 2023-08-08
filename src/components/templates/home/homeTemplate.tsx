@@ -1,7 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+// import useEmblaCarousel from 'embla-carousel-react';
+// import Autoplay from 'embla-carousel-autoplay';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
 import { flushSync } from 'react-dom';
 import Image from 'next/image';
 import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
@@ -45,49 +52,42 @@ function HomeTemplate() {
     };
   }, []);
 
-  const autoplayOptions = {
-    delay: 3500,
-    rootNode: (emblaRoot) => emblaRoot.parentElement,
-    stopOnInteraction: false,
-  };
+  // const autoplayOptions = {
+  //   delay: 3500,
+  //   rootNode: (emblaRoot) => emblaRoot.parentElement,
+  //   stopOnInteraction: false,
+  // };
 
-  const autoplayOptionsIcons = {
-    delay: 1500,
-    rootNode: (emblaRoot) => emblaRoot.parentElement,
-    stopOnInteraction: false,
-  };
+  // const autoplayOptionsIcons = {
+  //   delay: 1500,
+  //   rootNode: (emblaRoot) => emblaRoot.parentElement,
+  //   stopOnInteraction: false,
+  // };
 
-  const autoplay = useRef(Autoplay(autoplayOptions));
+  // const autoplay = useRef(Autoplay(autoplayOptions));
 
-  const autoplay2 = useRef(Autoplay(autoplayOptions));
+  // const autoplay2 = useRef(Autoplay(autoplayOptions));
 
-  const autoplayIcons = useRef(Autoplay(autoplayOptionsIcons));
+  // const autoplayIcons = useRef(Autoplay(autoplayOptionsIcons));
 
-  const [allianceCarousel, setAllianceCarousel] = React.useState([
-    ...alliances,
-    ...alliances,
-    ...alliances,
-    ...alliances,
-  ]);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [
-    autoplay.current,
-  ]);
-  const [emblaRef2, emblaApi2] = useEmblaCarousel(
-    { loop: true, startIndex: 2 },
-    [autoplay2.current]
-  );
-  const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [
-    autoplayIcons.current,
-  ]);
-  const [reviewsRef, reviewsApi] = useEmblaCarousel({
-    loop: true,
-    startIndex: 1,
-  });
-  const [articlesRef, articlesApi] = useEmblaCarousel({
-    loop: true,
-    startIndex: 1,
-  });
+  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex: 2 }, [
+  //   autoplay.current,
+  // ]);
+  // const [emblaRef2, emblaApi2] = useEmblaCarousel(
+  //   { loop: true, startIndex: 2 },
+  //   [autoplay2.current]
+  // );
+  // const [iconsRef, iconsApi] = useEmblaCarousel({ loop: true, startIndex: 5 }, [
+  //   autoplayIcons.current,
+  // ]);
+  // const [reviewsRef, reviewsApi] = useEmblaCarousel({
+  //   loop: true,
+  //   startIndex: 1,
+  // });
+  // const [articlesRef, articlesApi] = useEmblaCarousel({
+  //   loop: true,
+  //   startIndex: 1,
+  // });
 
   const carouselItems = [
     { title: 'sim.onu', icon: Icon1, id: 0 },
@@ -168,140 +168,140 @@ function HomeTemplate() {
   ];
 
   // START OF SLIDER FUNC
-  const [tweenValues, setTweenValues] = React.useState<number[] | []>([]);
+  // const [tweenValues, setTweenValues] = React.useState<number[] | []>([]);
 
-  const numberWithinRange = (number: number, min: number, max: number) =>
-    Math.min(Math.max(number, min), max);
+  // const numberWithinRange = (number: number, min: number, max: number) =>
+  //   Math.min(Math.max(number, min), max);
 
-  const TWEEN_FACTOR = 10;
+  // const TWEEN_FACTOR = 10;
 
-  const onScroll = React.useCallback(() => {
-    if (!emblaApi) return;
+  // const onScroll = React.useCallback(() => {
+  //   if (!emblaApi) return;
 
-    const engine = emblaApi.internalEngine();
-    const scrollProgress = emblaApi.scrollProgress();
+  //   const engine = emblaApi.internalEngine();
+  //   const scrollProgress = emblaApi.scrollProgress();
 
-    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-      if (!emblaApi.slidesInView().includes(index)) return 0;
-      let diffToTarget = scrollSnap - scrollProgress;
+  //   const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
+  //     if (!emblaApi.slidesInView().includes(index)) return 0;
+  //     let diffToTarget = scrollSnap - scrollProgress;
 
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          // const target = loopItem.target().get();
-          const target = loopItem.target();
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target);
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-          }
-        });
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return numberWithinRange(tweenValue, 0, 1);
-    });
-    setTweenValues(styles);
-  }, [emblaApi, setTweenValues]);
+  //     if (engine.options.loop) {
+  //       engine.slideLooper.loopPoints.forEach((loopItem) => {
+  //         // const target = loopItem.target().get();
+  //         const target = loopItem.target();
+  //         if (index === loopItem.index && target !== 0) {
+  //           const sign = Math.sign(target);
+  //           if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
+  //           if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
+  //         }
+  //       });
+  //     }
+  //     const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
+  //     return numberWithinRange(tweenValue, 0, 1);
+  //   });
+  //   setTweenValues(styles);
+  // }, [emblaApi, setTweenValues]);
 
-  const onScrollIcons = React.useCallback(() => {
-    if (!iconsApi) return;
+  // const onScrollIcons = React.useCallback(() => {
+  //   if (!iconsApi) return;
 
-    const engine = iconsApi.internalEngine();
-    const scrollProgress = iconsApi.scrollProgress();
+  //   const engine = iconsApi.internalEngine();
+  //   const scrollProgress = iconsApi.scrollProgress();
 
-    const styles = iconsApi.scrollSnapList().map((scrollSnap, index) => {
-      if (!iconsApi.slidesInView().includes(index)) return 0;
-      let diffToTarget = scrollSnap - scrollProgress;
+  //   const styles = iconsApi.scrollSnapList().map((scrollSnap, index) => {
+  //     if (!iconsApi.slidesInView().includes(index)) return 0;
+  //     let diffToTarget = scrollSnap - scrollProgress;
 
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          // const target = loopItem.target().get();
-          const target = loopItem.target();
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target);
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-          }
-        });
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return numberWithinRange(tweenValue, 0, 1);
-    });
-    setTweenValues(styles);
-  }, [iconsApi, setTweenValues]);
+  //     if (engine.options.loop) {
+  //       engine.slideLooper.loopPoints.forEach((loopItem) => {
+  //         // const target = loopItem.target().get();
+  //         const target = loopItem.target();
+  //         if (index === loopItem.index && target !== 0) {
+  //           const sign = Math.sign(target);
+  //           if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
+  //           if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
+  //         }
+  //       });
+  //     }
+  //     const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
+  //     return numberWithinRange(tweenValue, 0, 1);
+  //   });
+  //   setTweenValues(styles);
+  // }, [iconsApi, setTweenValues]);
 
-  React.useEffect(() => {
-    if (!emblaApi) return;
+  // React.useEffect(() => {
+  //   if (!emblaApi) return;
 
-    emblaApi.on('scroll', () => {
-      flushSync(() => onScroll());
-    });
+  //   emblaApi.on('scroll', () => {
+  //     flushSync(() => onScroll());
+  //   });
 
-    onScroll();
-    emblaApi.on('reInit', onScroll);
-  }, [emblaApi, onScroll]);
+  //   onScroll();
+  //   emblaApi.on('reInit', onScroll);
+  // }, [emblaApi, onScroll]);
 
-  const onScrollEmbla2 = React.useCallback(() => {
-    if (!emblaApi2) return;
+  // const onScrollEmbla2 = React.useCallback(() => {
+  //   if (!emblaApi2) return;
 
-    const engine = emblaApi2.internalEngine();
-    const scrollProgress = emblaApi2.scrollProgress();
+  //   const engine = emblaApi2.internalEngine();
+  //   const scrollProgress = emblaApi2.scrollProgress();
 
-    const styles = emblaApi2.scrollSnapList().map((scrollSnap, index) => {
-      if (!emblaApi2.slidesInView().includes(index)) return 0;
-      let diffToTarget = scrollSnap - scrollProgress;
+  //   const styles = emblaApi2.scrollSnapList().map((scrollSnap, index) => {
+  //     if (!emblaApi2.slidesInView().includes(index)) return 0;
+  //     let diffToTarget = scrollSnap - scrollProgress;
 
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          // const target = loopItem.target().get();
-          const target = loopItem.target();
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target);
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-          }
-        });
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return numberWithinRange(tweenValue, 0, 1);
-    });
-    setTweenValues(styles);
-  }, [emblaApi2, setTweenValues]);
+  //     if (engine.options.loop) {
+  //       engine.slideLooper.loopPoints.forEach((loopItem) => {
+  //         // const target = loopItem.target().get();
+  //         const target = loopItem.target();
+  //         if (index === loopItem.index && target !== 0) {
+  //           const sign = Math.sign(target);
+  //           if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
+  //           if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
+  //         }
+  //       });
+  //     }
+  //     const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
+  //     return numberWithinRange(tweenValue, 0, 1);
+  //   });
+  //   setTweenValues(styles);
+  // }, [emblaApi2, setTweenValues]);
 
-  React.useEffect(() => {
-    if (!emblaApi2) return;
+  // React.useEffect(() => {
+  //   if (!emblaApi2) return;
 
-    emblaApi2.on('scroll', () => {
-      flushSync(() => onScroll());
-    });
+  //   emblaApi2.on('scroll', () => {
+  //     flushSync(() => onScroll());
+  //   });
 
-    onScroll();
-    emblaApi2.on('reInit', onScroll);
-  }, [emblaApi2, onScrollEmbla2]);
+  //   onScroll();
+  //   emblaApi2.on('reInit', onScroll);
+  // }, [emblaApi2, onScrollEmbla2]);
 
-  React.useEffect(() => {
-    if (!iconsApi) return;
+  // React.useEffect(() => {
+  //   if (!iconsApi) return;
 
-    iconsApi.on('scroll', () => {
-      flushSync(() => onScrollIcons());
-    });
+  //   iconsApi.on('scroll', () => {
+  //     flushSync(() => onScrollIcons());
+  //   });
 
-    onScrollIcons();
-  }, [iconsApi, onScrollIcons]);
+  //   onScrollIcons();
+  // }, [iconsApi, onScrollIcons]);
 
-  const handleCarouselSlideSelection = (slide: number) => {
-    autoplay.current.reset();
-    emblaApi?.scrollTo(slide);
-  };
+  // const handleCarouselSlideSelection = (slide: number) => {
+  //   autoplay.current.reset();
+  //   emblaApi?.scrollTo(slide);
+  // };
 
-  React.useEffect(() => {
-    if (!articlesApi) return;
+  // React.useEffect(() => {
+  //   if (!articlesApi) return;
 
-    articlesApi.on('scroll', () => {
-      flushSync(() => onScrollIcons());
-    });
+  //   articlesApi.on('scroll', () => {
+  //     flushSync(() => onScrollIcons());
+  //   });
 
-    onScrollIcons();
-  }, [articlesApi, onScrollIcons]);
+  //   onScrollIcons();
+  // }, [articlesApi, onScrollIcons]);
 
   return (
     <main className={'full col justify-start items-center'}>
@@ -365,7 +365,7 @@ function HomeTemplate() {
                     ? 'col-span-1 m-1 md:m-0 md:w-1/3'
                     : 'col items-center m-3 md:m-0 md:w-1/6'
                 }
-                onClick={() => handleCarouselSlideSelection(index)}
+                // onClick={() => handleCarouselSlideSelection(index)}
               >
                 <div
                   className={
@@ -385,108 +385,132 @@ function HomeTemplate() {
             );
           })}
         </div>
-        <div
-          className={'hidden lg:inline w-1/2 overflow-hidden'}
-          ref={emblaRef}
-        >
-          <div className={'mt-12 flex'}>
-            {carouselCards.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={'full p-1'}
-                  style={{ flex: '0 0 100%' }}
-                >
-                  <HomeCarouselCard
-                    link={item.link}
-                    title={item.title}
-                    subtitle={item.subtitle}
-                    text={item.text}
-                    buttonText={item.buttonText}
-                    image={item.image.src}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className={'lg:hidden row overflow-hidden mt-12'} ref={emblaRef2}>
-          <div className={'flex w-[100vw]'}>
-            {carouselCards.map((item, index) => {
-              let colorClass = '';
-
-              if (item.title === 'sim.onu') {
-                colorClass = 'PURPLE_ONU';
-              } else if (item.title === 'sim.rastros') {
-                colorClass = 'PINK_RASTROS';
-              } else if (item.title === 'sim.sena') {
-                colorClass = 'LIGHTBLUE_SENA';
-              } else if (item.title === 'sim.electoral') {
-                colorClass = 'BLUE_ELECTORAL';
-              } else if (item.title === 'sim.g20') {
-                colorClass = 'RED_G20';
-              } else if (item.title === 'sim.hcd') {
-                colorClass = 'TURQUOISE_HCD';
-              } else if (item.title === 'sim.oea') {
-                colorClass = 'TEAL_OEA';
-              } else {
-                colorClass = 'GREEN_JUICIO';
-              }
-              return (
-                <div
-                  key={index}
-                  className={'h-4/5 col centered mx-8 pb-2'}
-                  style={{ flex: '0 0 80%' }}
-                >
+        {/* <div className={'hidden lg:inline w-1/2 overflow-hidden'} ref={emblaRef}> */}
+        <div className={'hidden w-full lg:inline overflow-hidden'}>
+          <Swiper
+            pagination={true}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            className={'w-[60rem] h-[40rem] mt-12'}
+          >
+            <div className={'flex'}>
+              {carouselCards.map((item, index) => {
+                return (
                   <div
-                    className={
-                      'full h-full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
-                    }
+                    key={index}
+                    className={'full p-1'}
+                    style={{ flex: '0 0 100%' }}
                   >
-                    <div className={'w-2/3 col h-full p-1 lg:p-4'}>
-                      <p
-                        className={`font-bold text-${colorClass} text-center my-4`}
-                      >
-                        {/* ACA */}
-                        {item.title.toUpperCase()}
-                      </p>
-                      <h1
+                    <SwiperSlide className={'w-full h-full pb-12'}>
+                      <HomeCarouselCard
+                        link={item.link}
+                        title={item.title}
+                        subtitle={item.subtitle}
+                        text={item.text}
+                        buttonText={item.buttonText}
+                        image={item.image.src}
+                      />
+                    </SwiperSlide>
+                  </div>
+                );
+              })}
+            </div>
+          </Swiper>
+        </div>
+
+        {/* <div className={'lg:hidden row overflow-hidden mt-12'} ref={emblaRef2}> */}
+        <div className={'lg:hidden row overflow-hidden mt-12'}>
+          <Swiper
+            pagination={true}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            className={'w-[28rem] h-[40rem]'}
+          >
+            <div className={'flex w-[100vw] bg-GREY_DARK'}>
+              {carouselCards.map((item, index) => {
+                let colorClass = '';
+
+                if (item.title === 'sim.onu') {
+                  colorClass = 'PURPLE_ONU';
+                } else if (item.title === 'sim.rastros') {
+                  colorClass = 'PINK_RASTROS';
+                } else if (item.title === 'sim.sena') {
+                  colorClass = 'LIGHTBLUE_SENA';
+                } else if (item.title === 'sim.electoral') {
+                  colorClass = 'BLUE_ELECTORAL';
+                } else if (item.title === 'sim.g20') {
+                  colorClass = 'RED_G20';
+                } else if (item.title === 'sim.hcd') {
+                  colorClass = 'TURQUOISE_HCD';
+                } else if (item.title === 'sim.oea') {
+                  colorClass = 'TEAL_OEA';
+                } else {
+                  colorClass = 'GREEN_JUICIO';
+                }
+                return (
+                  <div key={index} className={'h-full col centered mx-8 pb-2'}>
+                    <SwiperSlide className={'h-full w-full pb-12'}>
+                      <div
                         className={
-                          'text-BLUE_DARK text-2xl font-light text-center my-2'
+                          'full h-full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
                         }
                       >
-                        {item.subtitle}
-                      </h1>
-                      <div
-                        className={'overflow-y-scroll'}
-                        style={{ flex: '0 0 60%' }}
-                      >
-                        <p className={'font-light text-center'}>{item.text}</p>
-                      </div>
-                      <div className={'full col justify-end'}>
-                        {/* ACA */}
-                        {item.text ? (
-                          <Link
-                            className={`main-red-button bg-${colorClass}`}
-                            href={item.link}
+                        <div className={'w-2/3 col h-full p-1 lg:p-4'}>
+                          <p
+                            className={`font-bold text-${colorClass} text-center my-4`}
                           >
-                            {item.buttonText.toUpperCase()}
-                          </Link>
-                        ) : (
-                          <button
-                            className={'main-red-button  bg-GREY_DARK mt-4'}
-                            disabled
+                            {item.title.toUpperCase()}
+                          </p>
+                          <h1
+                            className={
+                              'text-BLUE_DARK text-2xl font-light text-center my-2'
+                            }
                           >
-                            {item.buttonText.toUpperCase()}
-                          </button>
-                        )}
+                            {item.subtitle}
+                          </h1>
+                          <div
+                            className={'overflow-y-scroll'}
+                            style={{ flex: '0 0 60%' }}
+                          >
+                            <p className={'font-light text-center'}>
+                              {item.text}
+                            </p>
+                          </div>
+                          <div className={'full col justify-end'}>
+                            {item.text ? (
+                              <Link
+                                className={`main-red-button bg-${colorClass}`}
+                                href={item.link}
+                              >
+                                {item.buttonText.toUpperCase()}
+                              </Link>
+                            ) : (
+                              <button
+                                className={'main-red-button bg-GREY_DARK mt-4'}
+                                disabled
+                              >
+                                {item.buttonText.toUpperCase()}
+                              </button>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </SwiperSlide>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          </Swiper>
         </div>
       </div>
 
@@ -592,7 +616,8 @@ function HomeTemplate() {
               })}
           </div>
         </div>
-        <div className={'lg:hidden row overflow-hidden'} ref={articlesRef}>
+        {/* <div className={'lg:hidden row overflow-hidden'} ref={articlesRef}> */}
+        <div className={'lg:hidden row overflow-hidden'}>
           <div className={'flex col'}>
             {articles.length &&
               articles.map((article) => {
@@ -653,25 +678,22 @@ function HomeTemplate() {
           Quienes nos conocen, opinan:
         </h1>
         <h1 className={'lg:hidden text-3xl text-RED_MEDIUM text-center'}>
-          Opiniones de
+          Quienes nos conocen,
           <br />
-          la gente
+          opinan:
         </h1>
-        <div
-          className={'w-5/6 row justify-between items-center'}
-          ref={reviewsRef}
-        >
+        {/* <div className={'w-5/6 row justify-between items-center'} ref={reviewsRef}> */}
+        <div className={'w-full row justify-between items-center'}>
           <div
-            className={'hidden md:flex mt-12 pb-2 row w-full justify-between '}
+            className={'hidden md:flex mt-12 pb-2 row w-full justify-between'}
           >
             {reviews.map((item, index) => {
               return (
                 <div
                   key={index}
                   className={
-                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between'
+                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between w-1/4'
                   }
-                  style={{ flex: '0 0 30%' }}
                 >
                   <p className={'text-xs font-light'}>
                     {'"' + item.text + '"'}
@@ -728,16 +750,34 @@ function HomeTemplate() {
       {/* BLOCK 5 */}
       <div className={'w-full col items-center py-12 bg-WHITE'}>
         <h1 className={'text-3xl text-RED_MEDIUM'}>Nuestras alianzas</h1>
-        <div className={'hidden lg:flex w-full overflow-hidden'} ref={iconsRef}>
-          <div className={'mt-12 row w-full justify-between items-center'}>
-            {allianceCarousel.map((item, index) => {
-              return (
-                <div key={index} className={'mx-6'} style={{ flex: '0 0 10%' }}>
-                  <Image src={item.icon} alt={'icon'} height={64} />
-                </div>
-              );
-            })}
-          </div>
+        {/* <div className={'hidden lg:flex w-full overflow-hidden'} ref={iconsRef}> */}
+        <div className={'hidden lg:flex w-full overflow-hidden'}>
+          <Swiper
+            modules={[Autoplay]}
+            className={'w-5/6'}
+            slidesPerView={5}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+          >
+            <div className={'mt-12 row w-full justify-between items-center'}>
+              {alliances.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className={'w-[64px]'}>
+                      <Image
+                        src={item.icon}
+                        alt={'icon'}
+                        className={'h-full'}
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </div>
+          </Swiper>
         </div>
         <div className={'lg:hidden w-full overflow-hidden'}>
           <div

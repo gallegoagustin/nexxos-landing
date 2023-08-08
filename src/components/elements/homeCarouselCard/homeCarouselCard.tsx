@@ -34,7 +34,7 @@ function HomeCarouselCard({
   return (
     <div
       className={
-        'full col items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
+        'full col items-center lg:items-stretch lg:row lg:justify-between shadow-lg rounded-2xl'
       }
     >
       <Image
@@ -60,14 +60,14 @@ function HomeCarouselCard({
         <p className={'font-light text-justify'}>{text}</p>
         {text ? (
           <Link
-            className={`bg-${colorClass} text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-md text-sm self-start`}
+            className={`bg-${colorClass} text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-lg text-sm self-start`}
             href={link}
           >
             {buttonText.toUpperCase()}
           </Link>
         ) : (
           <button
-            className={`bg-${colorClass} text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-md text-sm self-start bg-GREY_DARK mt-4`}
+            className={`bg-${colorClass} text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-lg text-sm self-start bg-GREY_DARK mt-4`}
             disabled
           >
             {buttonText.toUpperCase()}
