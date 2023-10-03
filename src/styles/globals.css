@@ -49,4 +49,14 @@
   .header-image-container {
     @apply h-[31rem] w-full py-20;
   }
+
+  .keep-reading-button {
+    @apply text-xs text-PURPLE_ONU hover:text-RED_MEDIUM font-bold;
+  }
+
+
+  .to-greyscale {
+    filter: grayscale(100%);
+    opacity: 0.7;
+  }
 }

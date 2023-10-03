@@ -1,7 +1,6 @@
 import React from 'react';
 import About1 from '../../../../public/images/about1.jpg';
 import Image1 from '../../../../public/images/autorities/melisaayelen.jpg';
-import Image2 from '../../../../public/images/autorities/mariasol.jpeg';
 import Image3 from '../../../../public/images/autorities/valentina.jpeg';
 import Image4 from '../../../../public/images/autorities/sofia.jpeg';
 import Image5 from '../../../../public/images/autorities/ailen.jpeg';
@@ -45,13 +44,6 @@ function AboutTemplate() {
       position: 'Tesorero',
       info: '"Estoy en 2do año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
       image: Image6,
-    },
-    {
-      name: 'María Sol Martínez',
-      age: '22',
-      position: 'Vocal',
-      info: '"Egresé del colegio en 2019. En 2022 me uní a Nexxos y empecé a explorar en este mundo de la educación, que definió mis experiencias y estudios universitarios. En la ONG no sólo encontré un muy lindo grupo de amigos y un objetivo en común, sino también mi vocación. Me siento muy orgullosa de formar parte de este grupo de personas que actúa para mejorar la educación. Sé con seguridad que logramos aportar nuestro granito de arena para que el mundo sea al menos un poquito mejor cada día."',
-      image: Image2,
     },
     {
       name: 'Sofia Ali',
@@ -155,14 +147,16 @@ function AboutTemplate() {
           <p className={'my-6 font-montserrat text-3xl'}>
             Sumate como voluntario !
           </p>
-          <h1 className={'mb-6'}>Subtitle</h1>
+          <h1 className={'mb-6'}>Sé parte de la transformación educativa.</h1>
           <p className={'leading-relaxed text-base'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-            efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque
-            hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus
-            pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex
-            eros. Mauris finibus mauris eu malesuada congue. Quisque et
-            facilisis nisi, in tempor nibh. Praesent auctor.
+            Si terminaste el colegio secundario.
+            <br /> Si tenés entre 18 y 99 años.
+            <br /> Si te gusta explorar en las nuevas y diferentes maneras de
+            aprender.
+            <br /> Si te interesan las actividades académicas.
+            <br /> Y sobre todo, si tenés ganas de contribuir a innovar en
+            educación…
+            <br /> ¡Sumate a NEXXOS!
           </p>
         </div>
         <div
@@ -181,7 +175,11 @@ function AboutTemplate() {
             }
             target="_blank"
           >
-            <button className={'main-red-button mt-8'}>
+            <button
+              className={
+                'main-red-button mt-8 transition duration-300 hover:bg-RED_G20'
+              }
+            >
               Quiero ser voluntario
             </button>
           </Link>
@@ -203,24 +201,29 @@ function AboutTemplate() {
             className={'w-3/6 self-center my-10 md:my-0'}
           />
           <div className={'col md:row md:justify-evenly md:mx-8 mt-8'}>
-            <button className={'main-red-button mb-4 md:mb-0'}>
+            <button
+              className={
+                'main-red-button mb-4 md:mb-0 transition duration-300 hover:bg-RED_G20'
+              }
+            >
               Mas informacion
             </button>
-            <button className={'main-red-button'}>Quiero ser Sponsor</button>
+            <button className={'main-red-button duration-300 hover:bg-RED_G20'}>
+              Quiero ser Sponsor
+            </button>
           </div>
         </div>
         <div className={'w-5/6 md:w-1/3 order-1 md:order-none'}>
           <p className={'my-6 font-montserrat text-3xl'}>
             Donaciones y sponsors
           </p>
-          <h1 className={'mb-6'}>Subtitle</h1>
+          <h1 className={'mb-6'}>¡Ayúdanos a crecer!</h1>
           <p className={'leading-relaxed text-base'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-            efficitur tortor. Mauris sagittis sollicitudin efficitur. Quisque
-            hendrerit pellentesque imperdiet. Curabitur efficitur orci a lacus
-            pellentesque rutrum. Donec aliquam elementum commodo. Nullam quis ex
-            eros. Mauris finibus mauris eu malesuada congue. Quisque et
-            facilisis nisi, in tempor nibh. Praesent auctor.
+            NEXXOS cuenta con una amplia oferta de actividades académicas. Tu
+            contribución o sponsoreo nos ayuda a hacer más actividades y de
+            mejor calidad.
+            <br />
+            ¡Sumá tu aporte!
           </p>
         </div>
       </div>

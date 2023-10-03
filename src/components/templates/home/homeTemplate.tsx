@@ -15,6 +15,7 @@ import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouse
 import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
+
 import Landing1 from '../../../../public/images/landing1.jpeg';
 import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
 import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
@@ -22,16 +23,17 @@ import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
 import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
 import Icon5 from '../../../../public/images/icons/isotipos/electoral.svg';
 import Icon6 from '../../../../public/images/icons/isotipos/g20.svg';
-import Icon7 from '../../../../public/images/icons/isotipos/hcd.png';
+import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import Icon8 from '../../../../public/images/icons/isotipos/juicio.svg';
-import ImageCarousel1 from '../../../../public/images/carousel-item-images/simonu.png';
-import ImageCarousel2 from '../../../../public/images/carousel-item-images/simoea.png';
-import ImageCarousel3 from '../../../../public/images/carousel-item-images/simrastros.png';
-import ImageCarousel4 from '../../../../public/images/carousel-item-images/simsena.png';
-import ImageCarousel5 from '../../../../public/images/carousel-item-images/simelectoral.png';
-import ImageCarousel6 from '../../../../public/images/carousel-item-images/simg20.png';
-import ImageCarousel7 from '../../../../public/images/carousel-item-images/simhcd.png';
-import ImageCarousel8 from '../../../../public/images/carousel-item-images/simjuicio.png';
+
+import ImageCarousel1 from '../../../../public/images/carousel-item-images/ONU.jpg';
+import ImageCarousel2 from '../../../../public/images/carousel-item-images/OEA.jpg';
+import ImageCarousel3 from '../../../../public/images/carousel-item-images/RASTROS.jpg';
+import ImageCarousel4 from '../../../../public/images/carousel-item-images/SENADO.jpg';
+import ImageCarousel5 from '../../../../public/images/carousel-item-images/ELECTORAL.jpg';
+import ImageCarousel6 from '../../../../public/images/carousel-item-images/G20_2.jpg';
+import ImageCarousel7 from '../../../../public/images/carousel-item-images/HCD.jpg';
+import ImageCarousel8 from '../../../../public/images/carousel-item-images/JUICIO.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
 
 function HomeTemplate() {
@@ -107,6 +109,7 @@ function HomeTemplate() {
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
       buttonText: 'saber más',
       image: ImageCarousel1,
+      logo: Icon1,
       link: '/activities',
     },
     {
@@ -115,6 +118,7 @@ function HomeTemplate() {
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
       buttonText: 'saber más',
       image: ImageCarousel2,
+      logo: Icon2,
       link: '/activities',
     },
     {
@@ -123,6 +127,7 @@ function HomeTemplate() {
       text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
       buttonText: 'saber más',
       image: ImageCarousel3,
+      logo: Icon3,
       link: '/activities',
     },
     {
@@ -131,6 +136,7 @@ function HomeTemplate() {
       text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes interesados representarán a un senador ficticio, pero de un partido político real con representación en dicha cámara. Con dicha información, y poniéndose en el papel de dicho senador, deberá escribir una ley que presentará para debatir durante el simulacro. El participante tendrá primero una entrevista con los organizadores para que se le asigne un senador. Recibirá la información sobre el funcionario a representar, entre la cual habrá información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
       image: ImageCarousel4,
+      logo: Icon4,
       link: '/activities',
     },
     {
@@ -139,6 +145,7 @@ function HomeTemplate() {
       text: 'sim.electoral es una edición especial ofrecida sólo en años electivos. El simulacro, focalizado dentro del área de las ciencias sociales, propone a los participantes la posibilidad de ponerse en la piel de los candidatos presidenciales y de su equipo de canciller y ministros, o bien participar del formato prensa, con el objetivo de cubrir el debate desde distintas líneas editoriales a través del relevamiento periodístico y fotográfico. A lo largo de la actividad los participantes que desempeñen el rol de políticos debatirán de distintas maneras sus respectivos proyectos de país.',
       buttonText: 'saber más',
       image: ImageCarousel5,
+      logo: Icon5,
       link: '/activities',
     },
     {
@@ -147,6 +154,7 @@ function HomeTemplate() {
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el poderoso Grupo de los 20, que engloba a una veintena de las principales potencias mundiales. Quienes participen de esta actividad podrán hacerlo como cancilleres, presidentes o primeros ministros, y debatirán problemáticas preseleccionadas teniendo en cuenta la postura del gobierno al que representan con respecto a dicho tópico, así también como el contexto mundial y la geopolítica actual.',
       buttonText: 'saber más',
       image: ImageCarousel6,
+      logo: Icon6,
       link: '/activities',
     },
     {
@@ -155,6 +163,7 @@ function HomeTemplate() {
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
       buttonText: 'saber más',
       image: ImageCarousel7,
+      logo: Icon7,
       link: '/activities',
     },
     {
@@ -163,6 +172,7 @@ function HomeTemplate() {
       text: 'En esta actividad se recrea el desarrollo de un juicio por jurados, con sus respectivas dinámicas y momentos, a partir del tratamiento de un caso. A su vez se implementará en la actividad una modalidad de prensa, que se ocupará de cubrir el avance del juicio a lo largo de todas las jornadas.',
       buttonText: 'saber más',
       image: ImageCarousel8,
+      logo: Icon8,
       link: '/activities',
     },
   ];
@@ -325,7 +335,9 @@ function HomeTemplate() {
             <h1 className={'text-WHITE text-3xl lg:text-6xl'}>la educacion</h1>
           </div>
           <Link
-            className={'main-red-button md:mt-8 py-2 w-full md:w-1/3 lg:w-1/6'}
+            className={
+              'main-red-button md:mt-8 py-2 w-full md:w-1/3 lg:w-1/6 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM'
+            }
             href={'/contact'}
           >
             SABER MÁS
@@ -414,6 +426,7 @@ function HomeTemplate() {
                         text={item.text}
                         buttonText={item.buttonText}
                         image={item.image.src}
+                        logo={item.logo.src}
                       />
                     </SwiperSlide>
                   </div>
@@ -438,6 +451,8 @@ function HomeTemplate() {
           >
             <div className={'flex w-[100vw] bg-GREY_DARK'}>
               {carouselCards.map((item, index) => {
+                const elementId = `card-${item.title}`;
+
                 let colorClass = '';
 
                 if (item.title === 'sim.onu') {
@@ -490,7 +505,8 @@ function HomeTemplate() {
                             {item.text ? (
                               <Link
                                 className={`main-red-button bg-${colorClass}`}
-                                href={item.link}
+                                // href={item.link}
+                                href={`/activities#${elementId}`}
                               >
                                 {item.buttonText.toUpperCase()}
                               </Link>
@@ -552,7 +568,11 @@ function HomeTemplate() {
                       href={articles[0].link}
                       target={'_blank'}
                     >
-                      <p className={'text-xs text-PURPLE_ONU font-bold'}>
+                      <p
+                        className={
+                          'keep-reading-button transition duration-300'
+                        }
+                      >
                         SEGUIR LEYENDO
                       </p>
                       <Image
@@ -598,7 +618,11 @@ function HomeTemplate() {
                             href={article.link}
                             target={'_blank'}
                           >
-                            <p className={'text-xs text-PURPLE_ONU font-bold'}>
+                            <p
+                              className={
+                                'keep-reading-button transition duration-300'
+                              }
+                            >
                               SEGUIR LEYENDO
                             </p>
                             <Image
@@ -649,7 +673,11 @@ function HomeTemplate() {
                             href={article.link}
                             target={'_blank'}
                           >
-                            <p className={'text-xs text-PURPLE_ONU font-bold'}>
+                            <p
+                              className={
+                                'keep-reading-button transition duration-300'
+                              }
+                            >
                               SEGUIR LEYENDO
                             </p>
                             <Image
@@ -766,7 +794,7 @@ function HomeTemplate() {
               {alliances.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className={'w-[64px]'}>
+                    <div className={'w-[96px]'}>
                       <Image
                         src={item.icon}
                         alt={'icon'}

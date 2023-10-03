@@ -289,7 +289,7 @@ function ContactTemplate() {
           </select>
           <button
             type="submit"
-            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6"
+            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20"
             disabled={isLoading}
           >
             {isLoading ? 'Enviando...' : 'Enviar'}

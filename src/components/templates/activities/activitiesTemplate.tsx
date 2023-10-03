@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import Activities1 from '../../../../public/images/activities1.jpg';
 import ImageCard1 from '../../../../public/images/icons/isotipos/onu.svg';
 import ImageCard2 from '../../../../public/images/icons/isotipos/oea.svg';
@@ -9,7 +12,6 @@ import ImageCard5 from '../../../../public/images/icons/isotipos/electoral.svg';
 import ImageCard6 from '../../../../public/images/icons/isotipos/sena.svg';
 import ImageCard7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import ImageCard8 from '../../../../public/images/icons/isotipos/juicio.svg';
-import Link from 'next/link';
 
 function ActivitiesTemplate() {
   const activitiesCards = [
@@ -96,8 +98,46 @@ function ActivitiesTemplate() {
     },
   ];
 
+  const router = useRouter();
+  const activitiesContainerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScrollToElement = () => {
+      // Obtén el fragmento de la URL
+      const fragment = router.asPath.split('#')[1];
+      console.log('FRAGMENT: ', fragment);
+
+      if (fragment) {
+        // Verifica si el elemento container ya está en el DOM
+        if (activitiesContainerRef.current) {
+          console.log('ENTRO A BUSCAR EL ELEMENTO');
+          // Encuentra el elemento con el ID correspondiente al fragmento
+          const element = document.getElementById(fragment);
+          console.log('ELEMENT: ', element);
+
+          if (element) {
+            // Calcula la posición del elemento en la página
+            const elementPosition = element.getBoundingClientRect().top;
+
+            // Realiza el desplazamiento suave hacia el elemento
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth',
+            });
+          }
+        }
+      }
+    };
+
+    // Llama a la función de manejo al cargar la página
+    handleScrollToElement();
+  }, [router.asPath]);
+
   return (
-    <main className={'full col justify-start items-center'}>
+    <main
+      ref={activitiesContainerRef}
+      className={'full col justify-start items-center'}
+    >
       {/* BLOCK 1 */}
       <div
         className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
@@ -125,6 +165,8 @@ function ActivitiesTemplate() {
           className={'full col lg:row items-center justify-center flex-wrap'}
         >
           {activitiesCards.map((item, index) => {
+            const elementId = `card-sim.${item.title}`;
+            console.log('CARDS IDS EN ACTIVITIES: ', elementId);
             let colorClass = '';
 
             if (item.title === 'onu') {
@@ -144,13 +186,14 @@ function ActivitiesTemplate() {
             } else {
               colorClass = 'GREEN_JUICIO';
             }
+
             return (
               <div
                 key={index}
+                id={elementId}
                 className={
                   'w-4/6 md:w-[28rem] h-[42rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
                 }
-                id="card-container"
               >
                 <div
                   className={'self-center mb-3 col items-center justify-center'}
@@ -196,10 +239,14 @@ function ActivitiesTemplate() {
                     className={'col md:row justify-center'}
                     id="inscrip-buttons"
                   >
-                    <button className={`bg-${colorClass} card-common-button`}>
+                    <button
+                      className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
+                    >
                       Preinscripcion
                     </button>
-                    <button className={`bg-${colorClass} card-common-button`}>
+                    <button
+                      className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
+                    >
                       Inscripcion
                     </button>
                   </div>

@@ -74,7 +74,7 @@ function NavBar({ activeTab }: Props) {
       {isMenuOpened && (
         <div
           className={
-            'w-full h-1/5 bg-GREY_LIGHT shadow-GREY_LIGHT shadow-sm absolute top-0'
+            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT shadow-sm absolute top-0'
           }
         >
           <div className={'lg:hidden col font-vietnam'}>
