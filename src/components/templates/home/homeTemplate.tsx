@@ -417,9 +417,9 @@ function HomeTemplate() {
                       <Image
                         src={ArrowRightSmall}
                         alt={'icon'}
-                        className={'ml-2 mt-[1px]'}
-                        width={13}
-                        height={10}
+                        className={'ml-2 mt-[1px] w-[13px]'}
+                        // width={13}
+                        // height={10}
                       />
                     </Link>
                   </div>
@@ -468,9 +468,9 @@ function HomeTemplate() {
                             <Image
                               src={ArrowRightSmall}
                               alt={'icon'}
-                              className={'ml-2 mt-[1px]'}
-                              width={13}
-                              height={10}
+                              className={'ml-2 mt-[1px] w-[13px]'}
+                              // width={13}
+                              // height={10}
                             />
                           </Link>
                         </div>
@@ -524,9 +524,9 @@ function HomeTemplate() {
                             <Image
                               src={ArrowRightSmall}
                               alt={'icon'}
-                              className={'ml-2 mt-[1px]'}
-                              width={13}
-                              height={10}
+                              className={'ml-2 mt-[1px] w-[13px]'}
+                              // width={13}
+                              // height={10}
                             />
                           </Link>
                         </div>
