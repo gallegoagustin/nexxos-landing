@@ -3,10 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import IconNexxos from '../../../../public/images/icons/nexxos-footer.png';
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
-import IconTwitter from '../../../../public/images/icons/social-media/twitter.svg';
+import IconTwitter from '../../../../public/images/icons/social-media/twitterx.svg';
 import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
-// import IconLinkedIn from '../../../../public/images/icons/social-media/linkedin.svg';
-// import IconDiscord from '../../../../public/images/icons/social-media/discord.svg';
 
 function Footer() {
   return (
@@ -92,7 +90,7 @@ function Footer() {
           <Image src={IconTwitter} alt={'icon'} />
         </Link>
       </div>
-      <p className={'font-light mt-8'}>Copyright © 2023 Nexxos</p>
+      <p className={'font-light mt-8'}>Copyright © 2023 Nexxos ONG</p>
     </div>
   );
 }

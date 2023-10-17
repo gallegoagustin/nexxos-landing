@@ -21,7 +21,7 @@ function NavBar({ activeTab }: Props) {
             'w-full h-16 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-1/5 h-full row justify-start items-center'}>
+          <div className={'w-[150px] h-full row justify-start items-center'}>
             <Link href={'/'}>
               <Image src={IconNexxos} alt={'icon nexxos'} width={160} />
             </Link>
@@ -50,19 +50,19 @@ function NavBar({ activeTab }: Props) {
       <div className={'lg:hidden col font-vietnam'}>
         <div
           className={
-            'w-full h-12 bg-GREY_LIGHT row justify-between items-center px-8'
+            'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-1/5 h-full row justify-start items-center'}>
+          <div className={'w-[150px] h-full row justify-start items-center'}>
             <Link href={'/'}>
               <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
             </Link>
           </div>
-          <button className={'w-1/6 h-full row justify-end items-center'}>
+          <button className={'w-[48px] h-[48px] row justify-end items-center'}>
             <Image
               src={BurgerIcon}
               alt={'icon nexxos'}
-              style={{ transform: 'scale(0.5)' }}
+              // style={{ transform: 'scale(0.5)' }}
               className={'cursor-pointer'}
               onClick={() => {
                 setIsMenuOpened(!isMenuOpened);
@@ -74,25 +74,29 @@ function NavBar({ activeTab }: Props) {
       {isMenuOpened && (
         <div
           className={
-            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT shadow-sm absolute top-0'
+            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT absolute top-0'
           }
         >
           <div className={'lg:hidden col font-vietnam'}>
             <div
               className={
-                'w-full h-12 bg-GREY_LIGHT row justify-between items-center px-8'
+                'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
               }
             >
-              <div className={'w-1/5 h-full row justify-start items-center'}>
+              <div
+                className={'w-[150px] h-full row justify-start items-center'}
+              >
                 <Link href={'/'}>
                   <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
                 </Link>
               </div>
-              <button className={'w-1/6 h-full row justify-end items-center'}>
+              <button
+                className={'w-[48px] h-full row justify-end items-center'}
+              >
                 <Image
                   src={BurgerIcon}
                   alt={'icon nexxos'}
-                  style={{ transform: 'scale(0.5)' }}
+                  // style={{ transform: 'scale(0.5)' }}
                   className={'cursor-pointer'}
                   onClick={() => {
                     setIsMenuOpened(!isMenuOpened);

@@ -35,7 +35,7 @@ function AboutTemplate() {
       name: 'Melissa Ayelen Oliva',
       age: '20',
       position: 'Secreataria General',
-      info: '"Soy estudiante de Derecho en la UNMDP. Participe en Modelos de Naciones Unidas en representación de la Facultad de Derecho."',
+      info: '"Soy estudiante de Derecho en la UNMDP. Participe en Modelos de Naciones Unidas en representación de la Facultad de Derecho. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
       image: Image1,
     },
     {
@@ -67,7 +67,7 @@ function AboutTemplate() {
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
         }}
       >
-        <h1 className={'text-WHITE text-3xl lg:text-5xl text-center'}>
+        <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
           Conocenos
         </h1>
       </div>
@@ -85,7 +85,7 @@ function AboutTemplate() {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          className={'w-[21rem] h-[43rem] md:w-[50rem] md:h-[30rem]'}
+          className={'w-[21rem] h-[43rem] md:w-[50rem] md:h-[32rem]'}
         >
           {autorities.map((item, index) => {
             return (
@@ -99,7 +99,7 @@ function AboutTemplate() {
               >
                 <div
                   className={
-                    'bg-RED_MEDIUM col items-center w-[18rem] h-[38rem] md:w-[40rem] md:h-[25rem] justify-evenly rounded-lg'
+                    'col items-center w-[18rem] h-[38rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
                   }
                   style={{
                     background: 'linear-gradient(to bottom, #CF142A, #5D2C80',
@@ -107,7 +107,7 @@ function AboutTemplate() {
                 >
                   <div
                     className={
-                      'w-full md:w-4/5 row items-center justify-evenly md:justify-around'
+                      'my-6 w-full md:w-4/5 row items-center justify-evenly md:justify-around'
                     }
                   >
                     <Image
@@ -145,12 +145,12 @@ function AboutTemplate() {
       >
         <div className={'w-5/6 md:w-1/3'}>
           <p className={'my-6 font-montserrat text-3xl'}>
-            Sumate como voluntario !
+            ¡Sumate como voluntario!
           </p>
           <h1 className={'mb-6'}>Sé parte de la transformación educativa.</h1>
           <p className={'leading-relaxed text-base'}>
             Si terminaste el colegio secundario.
-            <br /> Si tenés entre 18 y 99 años.
+            <br /> Si sos mayor de edad.
             <br /> Si te gusta explorar en las nuevas y diferentes maneras de
             aprender.
             <br /> Si te interesan las actividades académicas.

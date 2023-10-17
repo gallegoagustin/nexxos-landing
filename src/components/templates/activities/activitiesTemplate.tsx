@@ -22,8 +22,10 @@ function ActivitiesTemplate() {
       image: ImageCard1,
       link_utils:
         'https://drive.google.com/drive/folders/1i6XlJmrZ4LwAYxeaAEVcv1t_yFRIT9Jm?usp=drive_link',
-      link_pre: '',
-      link_inscrip: '',
+      link_pre:
+        'https://docs.google.com/forms/d/e/1FAIpQLScrEx-HFyguKRSF1KQ-Gyb1xbf5raN97M032ySNj-CC9M_5Jw/viewform',
+      link_inscrip:
+        'https://docs.google.com/forms/d/e/1FAIpQLScpAZvWZIqNSfmQBtxR5Gel6T5tRttkm8N_50NG7carfJH-qQ/viewform',
     },
     {
       title: 'oea',
@@ -32,7 +34,9 @@ function ActivitiesTemplate() {
       image: ImageCard2,
       link_utils:
         'https://drive.google.com/drive/folders/1crxRST6eTpo68h0Fux8VHIuqkhRiYxc2?usp=drive_link',
-      link_pre: '',
+      link_pre:
+        'https://docs.google.com/forms/d/e/1FAIpQLSeEaywSjqRUaIkWSJPeoOSCXpC-UjjcHLQ2zxTnBGEtWIZWaA/viewform',
+      // FALTA
       link_inscrip: '',
     },
     {
@@ -53,6 +57,7 @@ function ActivitiesTemplate() {
       image: ImageCard6,
       link_utils:
         'https://drive.google.com/drive/folders/1q9MAinbBOq3I00gV-Go7Hf9lex6z7VN8?usp=drive_link',
+      // FALTA
       link_pre: '',
       link_inscrip: '',
     },
@@ -63,8 +68,10 @@ function ActivitiesTemplate() {
       image: ImageCard5,
       link_utils:
         'https://drive.google.com/drive/folders/1DcoGqkA0XmZZhtul-WMiv-m_uIZvJ0FL?usp=drive_link',
-      link_pre: '',
-      link_inscrip: '',
+      link_pre:
+        'https://docs.google.com/forms/d/e/1FAIpQLScQv_aSGLzdCXL5v8cpxuaMb4Zlhlw2GvBlTSQ_Tmk7QUjGzA/viewform',
+      link_inscrip:
+        'https://docs.google.com/forms/d/e/1FAIpQLSc7Gi_evV5RjwALp7tqYa0Bi88WhOOmiUxyxOsv86fsOZMSWw/viewform',
     },
     {
       title: 'g20',
@@ -73,6 +80,7 @@ function ActivitiesTemplate() {
       image: ImageCard4,
       link_utils:
         'https://drive.google.com/drive/folders/1YCVeJzKToTeQVuExDOtp_rlidTC7rZIC?usp=drive_link',
+      // FALTA
       link_pre: '',
       link_inscrip: '',
     },
@@ -83,8 +91,10 @@ function ActivitiesTemplate() {
       image: ImageCard7,
       link_utils:
         'https://drive.google.com/drive/folders/1oE_XR7_Pt1HOLZYvE1njqxoQCNbN_F7K?usp=drive_link',
-      link_pre: '',
-      link_inscrip: '',
+      link_pre:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe8Ev9a_xoB4jIgfPzq7jud1fWjoT5SM3iVzfoxC2sUpzIXeA/viewform',
+      link_inscrip:
+        'https://docs.google.com/forms/d/e/1FAIpQLSfxVI_aoUGSUUWt9FcIyg_B28UU2ADaNgDr24m5AJTaKdU35g/viewform',
     },
     {
       title: 'juicio',
@@ -93,8 +103,10 @@ function ActivitiesTemplate() {
       image: ImageCard8,
       link_utils:
         'https://drive.google.com/drive/folders/1lRhoUs6st8IiGhpdejLhs2zjfBd6_d4y?usp=drive_link',
-      link_pre: '',
-      link_inscrip: '',
+      link_pre:
+        'https://docs.google.com/forms/d/e/1FAIpQLSeynLengr2hBp-biX0OvtjngCfhqkHwvzOwMDy6UfFnOd0fuw/viewform',
+      link_inscrip:
+        'https://docs.google.com/forms/d/e/1FAIpQLScZPvA5uBGqeV5pqmrjxOrcEpZkYWMQLiQmmZTw4aMjYaY7uA/viewform',
     },
   ];
 
@@ -105,15 +117,12 @@ function ActivitiesTemplate() {
     const handleScrollToElement = () => {
       // Obtén el fragmento de la URL
       const fragment = router.asPath.split('#')[1];
-      console.log('FRAGMENT: ', fragment);
 
       if (fragment) {
         // Verifica si el elemento container ya está en el DOM
         if (activitiesContainerRef.current) {
-          console.log('ENTRO A BUSCAR EL ELEMENTO');
           // Encuentra el elemento con el ID correspondiente al fragmento
           const element = document.getElementById(fragment);
-          console.log('ELEMENT: ', element);
 
           if (element) {
             // Calcula la posición del elemento en la página
@@ -149,7 +158,7 @@ function ActivitiesTemplate() {
           boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
         }}
       >
-        <h1 className={'text-WHITE text-3xl lg:text-5xl text-center'}>
+        <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
           Nuestras Actividades
         </h1>
       </div>
@@ -166,7 +175,7 @@ function ActivitiesTemplate() {
         >
           {activitiesCards.map((item, index) => {
             const elementId = `card-sim.${item.title}`;
-            console.log('CARDS IDS EN ACTIVITIES: ', elementId);
+
             let colorClass = '';
 
             if (item.title === 'onu') {
@@ -192,7 +201,7 @@ function ActivitiesTemplate() {
                 key={index}
                 id={elementId}
                 className={
-                  'w-4/6 md:w-[28rem] h-[42rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
+                  'w-4/6 md:w-[28rem] h-[38rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
                 }
               >
                 <div
@@ -229,7 +238,7 @@ function ActivitiesTemplate() {
                   <Link
                     href={item.link_utils}
                     target="_blank"
-                    className={'self-center mt-4 lg:w-1/2 text-center'}
+                    className={'self-center mt-0 lg:w-1/2 text-center'}
                   >
                     <button className={'w-full lg:w-3/5 lg:my-4'}>
                       Mas informacion
@@ -239,16 +248,20 @@ function ActivitiesTemplate() {
                     className={'col md:row justify-center'}
                     id="inscrip-buttons"
                   >
-                    <button
-                      className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
-                    >
-                      Preinscripcion
-                    </button>
-                    <button
-                      className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
-                    >
-                      Inscripcion
-                    </button>
+                    <Link href={item.link_pre} target="_blank">
+                      <button
+                        className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
+                      >
+                        Preinscripcion
+                      </button>
+                    </Link>
+                    <Link href={item.link_inscrip} target="_blank">
+                      <button
+                        className={`bg-${colorClass} card-common-button transition duration-300 hover:bg-BLACK`}
+                      >
+                        Inscripcion
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
