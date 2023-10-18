@@ -34,7 +34,7 @@ function ContactTemplate() {
     type: false,
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     // Antes de enviar, validaciones:
     const hasErrors = !name || !lastname || !email || !message || !type;
@@ -57,7 +57,7 @@ function ContactTemplate() {
         setLastname('');
         setMessage('');
         // mostrar un mensaje de éxito.
-      } catch (error) {
+      } catch (error: any) {
         setIsLoading(false);
         setSendError(error.message);
       } finally {
@@ -66,7 +66,7 @@ function ContactTemplate() {
     }
   };
 
-  const handleBlur = (field) => {
+  const handleBlur = (field: any) => {
     if (field === 'name') {
       setFormErrors((prevErrors) => ({ ...prevErrors, name: !name }));
     } else if (field === 'lastname') {

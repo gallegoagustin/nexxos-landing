@@ -22,7 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         text: textWithUserData,
       });
       return res.status(200).json({ success: true });
-    } catch (error) {
+    } catch (error: any) {
       return res.status(400).json({ message: error.message });
     }
   }
