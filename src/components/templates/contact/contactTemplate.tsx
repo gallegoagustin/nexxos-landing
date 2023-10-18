@@ -97,13 +97,13 @@ function ContactTemplate() {
 
   return (
     <main
-      className={'full col lg:row centered py-24'}
+      className={'full col lg:row centered py-8 md:py-24'}
       style={{
         background:
           'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
       }}
     >
-      <div className={'columns-2 col w-3/4 lg:w-1/4'}>
+      <div className={'columns-2 col w-3/4 min-w-[260px] lg:w-1/4'}>
         <Image alt="icon nexxos" src={iconNexxos} className="w-1/2 h-1/2" />
         <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
           Contacta con
@@ -177,7 +177,7 @@ function ContactTemplate() {
       </div>
       <div
         className={
-          'col w-3/4 lg:w-1/4 mt-8 lg:mt-0 bg-WHITE bg-opacity-[0.25] p-4 justify-between rounded-xl'
+          'col w-3/4 min-w-[260px] lg:w-1/4 mt-8 lg:mt-0 bg-WHITE bg-opacity-[0.25] p-4 justify-between rounded-xl'
         }
       >
         {sendError && (
