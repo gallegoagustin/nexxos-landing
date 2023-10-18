@@ -18,12 +18,12 @@ function NavBar({ activeTab }: Props) {
       <div className={'hidden lg:flex col font-vietnam'}>
         <div
           className={
-            'w-full h-12 bg-GREY_LIGHT row justify-between items-center px-8'
+            'w-full h-16 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-1/5 h-full row justify-start items-center'}>
+          <div className={'w-[150px] h-full row justify-start items-center'}>
             <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+              <Image src={IconNexxos} alt={'icon nexxos'} width={160} />
             </Link>
           </div>
           <nav className={'w-2/5 h-full row justify-between items-center'}>
@@ -39,49 +39,30 @@ function NavBar({ activeTab }: Props) {
                   }
                 >
                   <p className={'text-sm font-bold text-center'}>
-                    {item.locale.toUpperCase()}
+                    {item.description.toUpperCase()}
                   </p>
                 </Link>
               );
             })}
           </nav>
-          <div className={'w-2/5 h-full row justify-end items-center'}>
-            <Link
-              href={'/contact'}
-              className={
-                'bg-RED_MEDIUM hover:shadow-md px-2 py-1 rounded-full font-bold row centered mx-2 text-BLUE_DARK'
-              }
-            >
-              <p>SECCION 1</p>
-            </Link>
-            <Link
-              href={'https://pro.nash21.io/'}
-              target={'_blank'}
-              className={
-                'bg-BLACK hover:shadow-md px-2 py-1 rounded-full font-bold row centered mx-2 text-RED_MEDIUM'
-              }
-            >
-              <p>SECCION 2</p>
-            </Link>
-          </div>
         </div>
       </div>
       <div className={'lg:hidden col font-vietnam'}>
         <div
           className={
-            'w-full h-12 bg-GREY_LIGHT row justify-between items-center px-8'
+            'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-1/5 h-full row justify-start items-center'}>
+          <div className={'w-[150px] h-full row justify-start items-center'}>
             <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+              <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
             </Link>
           </div>
-          <button className={'w-1/6 h-full row justify-end items-center'}>
+          <button className={'w-[48px] h-[48px] row justify-end items-center'}>
             <Image
               src={BurgerIcon}
-              alt={'icon nash21'}
-              style={{ transform: 'scale(0.5)' }}
+              alt={'icon nexxos'}
+              // style={{ transform: 'scale(0.5)' }}
               className={'cursor-pointer'}
               onClick={() => {
                 setIsMenuOpened(!isMenuOpened);
@@ -93,25 +74,29 @@ function NavBar({ activeTab }: Props) {
       {isMenuOpened && (
         <div
           className={
-            'w-full h-2/5 bg-GREY_LIGHT shadow-GREY_LIGHT shadow-sm absolute top-0'
+            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT absolute top-0'
           }
         >
           <div className={'lg:hidden col font-vietnam'}>
             <div
               className={
-                'w-full h-12 bg-GREY_LIGHT row justify-between items-center px-8'
+                'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
               }
             >
-              <div className={'w-1/5 h-full row justify-start items-center'}>
+              <div
+                className={'w-[150px] h-full row justify-start items-center'}
+              >
                 <Link href={'/'}>
-                  <Image src={IconNexxos} alt={'icon nash21'} width={120} />
+                  <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
                 </Link>
               </div>
-              <button className={'w-1/6 h-full row justify-end items-center'}>
+              <button
+                className={'w-[48px] h-full row justify-end items-center'}
+              >
                 <Image
                   src={BurgerIcon}
-                  alt={'icon nash21'}
-                  style={{ transform: 'scale(0.5)' }}
+                  alt={'icon nexxos'}
+                  // style={{ transform: 'scale(0.5)' }}
                   className={'cursor-pointer'}
                   onClick={() => {
                     setIsMenuOpened(!isMenuOpened);
@@ -132,34 +117,13 @@ function NavBar({ activeTab }: Props) {
                       : inactiveButtonClass
                   }
                 >
-                  <p className={'text-sm font-bold'}>SECCION 3</p>
+                  <p className={'text-sm font-bold'}>
+                    {item.description.toUpperCase()}
+                  </p>
                 </Link>
               );
             })}
           </nav>
-          <div
-            className={
-              'w-full row justify-center items-center absolute bottom-2'
-            }
-          >
-            <Link
-              href={'/contact'}
-              className={
-                'bg-RED_MEDIUM w-2/5 mx-1 px-2 py-1 rounded-full font-bold row centered text-BLUE_DARK'
-              }
-            >
-              <p>SECCION 4</p>
-            </Link>
-            <Link
-              href={'https://pro.nash21.io/'}
-              target={'_blank'}
-              className={
-                'bg-BLACK w-2/5 mx-1 px-2 py-1 rounded-full font-bold row centered text-RED_MEDIUM'
-              }
-            >
-              <p>SECCION 5</p>
-            </Link>
-          </div>
         </div>
       )}
     </>

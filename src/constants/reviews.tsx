@@ -4,21 +4,31 @@ import Review3 from '../../public/images/reviews/review3.svg';
 
 const reviews = [
   {
-    name: 'Jesús',
-    city: 'Madrid',
-    text: 'Descubri esta empresa hace poco porque necesitaba dinero para un gasto inesperado y al tener pisos en alquiler vi que podian adelantarme la renta de un año. Les contacte y me ayudaron con todo super rapido. Un acierto.',
+    id: 1,
+    name: 'MARIANELA ROMERO',
+    type: 'Concejal de la ciudad de Mar del Plata.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review1,
   },
   {
+    id: 2,
     name: 'Pablo',
-    city: 'Málaga',
-    text: 'Propietarios e inquilinos disfrutan de estos productos, altamente recomendable, muy simple hacerse web3 con poca o ninguna experiencia.',
+    type: 'Estudiante',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review2,
   },
   {
-    name: 'Alejandro',
-    city: 'Barcelona',
-    text: 'La categoría de inversor fue una de mis mejores inversiones del año, excelente equipo y excelente atención al cliente.',
+    id: 3,
+    name: 'ALFONSINA GUARDIA',
+    type: 'Subsecretaria de vinculacion y postgrado UNMDP.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
+    image: Review3,
+  },
+  {
+    id: 4,
+    name: 'Paula',
+    type: 'Docente',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
     image: Review3,
   },
 ];

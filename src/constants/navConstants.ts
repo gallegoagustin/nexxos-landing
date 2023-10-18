@@ -2,22 +2,22 @@ const navBarTabs = [
   {
     value: 'home',
     path: '/',
-    locale: 'home',
+    description: 'Home',
   },
   {
-    value: 'nuestras actividades',
-    path: '/actividades',
-    locale: 'actividades',
+    value: 'activities',
+    path: '/activities',
+    description: 'Actividades',
   },
   {
-    value: 'conocenos',
-    path: '/conocenos',
-    locale: 'conocenos',
+    value: 'about',
+    path: '/about',
+    description: 'Conocenos',
   },
   {
-    value: 'contacto',
-    path: '/contacto',
-    locale: 'contacto',
+    value: 'contact',
+    path: '/contact',
+    description: 'Contacto',
   },
 ];
 

@@ -3,9 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import IconNexxos from '../../../../public/images/icons/nexxos-footer.png';
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
-import IconTwitter from '../../../../public/images/icons/social-media/twitter.svg';
-import IconLinkedIn from '../../../../public/images/icons/social-media/linkedin.svg';
-import IconDiscord from '../../../../public/images/icons/social-media/discord.svg';
+import IconTwitter from '../../../../public/images/icons/social-media/twitterx.svg';
+import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
 
 function Footer() {
   return (
@@ -20,7 +19,11 @@ function Footer() {
         }
       >
         <Link href={'/'}>
-          <Image src={IconNexxos} alt={'icon'} className={'mb-8 lg:mb-0'} />
+          <Image
+            src={IconNexxos}
+            alt={'icon'}
+            className={'mb-8 mx-auto lg:mb-0 w-1/2 h-1/2'}
+          />
         </Link>
         <div
           className={
@@ -35,13 +38,21 @@ function Footer() {
               }
               target={'_blank'}
             >
-              <p className={'my-1'}>Guía de usuario</p>
+              <p className={'my-1'}>Info para sponsors</p>
+            </Link>
+            <Link
+              href={
+                'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
+              }
+              target={'_blank'}
+            >
+              <p className={'my-1'}>Sumate como voluntario</p>
             </Link>
           </div>
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>SITE</p>
-            <Link href={'/services'}>
-              <p className={'my-1'}>Nuestros servicios</p>
+            <Link href={'/activities'}>
+              <p className={'my-1'}>Nuestras actividades</p>
             </Link>
             <Link href={'/contact'}>
               <p className={'my-1'}>Contacto</p>
@@ -49,36 +60,37 @@ function Footer() {
           </div>
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>LEGAL</p>
-            <Link href={'/terms'}>
-              <p className={'my-1'}>Términos y Condiciones</p>
+            <Link
+              href={
+                'https://drive.google.com/file/d/1FK8LytKXklcbZ-XOuMEEEHReW3wvghzc/view?usp=drive_link'
+              }
+              target="_blank"
+            >
+              <p className={'my-1'}>Estatuto</p>
             </Link>
-            <Link href={'/privacy'}>
-              <p className={'my-1'}>Política de Privacidad</p>
-            </Link>
-            <Link href={'/cookies'}>
-              <p className={'my-1'}>Política de Cookies</p>
+            <Link
+              href={
+                'https://drive.google.com/file/d/15BKHJxWVVXJBFoLzEwcXLt1b4Xg3Fl20/view?usp=drive_link'
+              }
+              target="_blank"
+            >
+              <p className={'my-1'}>Reglamento Interno</p>
             </Link>
           </div>
         </div>
       </div>
-      <div className={'w-4/6 lg:w-1/5 row justify-between mt-12'}>
-        <Link href={'https://www.instagram.com/nash21_io/'} target={'_blank'}>
+      <div className={'w-4/6 lg:w-2/12 row justify-between mt-12'}>
+        <Link href={'https://www.instagram.com/nexxosar/'} target={'_blank'}>
           <Image src={IconInstagram} alt={'icon'} />
         </Link>
-        <Link href={'https://twitter.com/nash21_io'} target={'_blank'}>
+        <Link href={'https://www.youtube.com/@nexxosong3315'} target={'_blank'}>
+          <Image src={IconYoutube} alt={'icon'} />
+        </Link>
+        <Link href={'https://twitter.com/NexxosAR'} target={'_blank'}>
           <Image src={IconTwitter} alt={'icon'} />
         </Link>
-        <Link
-          href={'https://www.linkedin.com/company/nash21/'}
-          target={'_blank'}
-        >
-          <Image src={IconLinkedIn} alt={'icon'} />
-        </Link>
-        <Link href={'https://bit.ly/DiscordNash21'} target={'_blank'}>
-          <Image src={IconDiscord} alt={'icon'} />
-        </Link>
       </div>
-      <p className={'font-light mt-8'}>Copyright © 2023 Nexxos</p>
+      <p className={'font-light mt-8'}>Copyright © 2023 Nexxos ONG</p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import Image1 from '../../public/images/articles/mdphoy.webp';
-import Image2 from '../../public/images/articles/article2.svg';
-import Image3 from '../../public/images/articles/article3.svg';
-import Image4 from '../../public/images/articles/article4.svg';
+import Image2 from '../../public/images/articles/hcd.jpeg';
+import Image3 from '../../public/images/articles/miramar.jpeg';
+import Image4 from '../../public/images/articles/tandil.jpeg';
 
 const articles = [
   {
@@ -14,26 +14,25 @@ const articles = [
     link: 'https://www.mdphoy.com/mas-de-1300-estudiantes-participan-de-los-simulacros-de-la-onu-y-la-oea-277963/',
   },
   {
-    title:
-      'Convertir tu contrato de alquiler en un NFT, la propuesta de una empresa para tener más poder negociador',
+    title: 'Reconocimiento del HCD a la ONG Nexxos',
     subtitle: null,
-    from: 'Cadena Ser',
+    from: 'Concejo MDP',
     image: Image2,
-    link: 'https://cadenaser.com/2022/05/04/convertir-tu-contrato-de-alquiler-en-un-nft-la-propuesta-de-una-empresa-para-tener-mas-poder-negociador/',
+    link: 'https://www.concejomdp.gov.ar/prensa/gacetillas/gacetilla.php?id=1968',
   },
   {
-    title: 'Cómo generar liquidez con el contrato de alquiler',
+    title: 'Unos 250 jóvenes participan del SIM - ONU 2022 en Miramar',
     subtitle: null,
-    from: 'elconfidencial',
+    from: 'La Capital',
     image: Image3,
-    link: 'https://www.elconfidencial.com/economia/2022-05-11/digitalizacion-blockchain-idv_3422059/',
+    link: 'https://www.lacapitalmdp.com/unos-250-jovenes-participan-del-sim-onu-2022-en-miramar/',
   },
   {
-    title: 'Las proptech, nuevos aires para el sector inmobiliario',
+    title: 'Llegó la OEA a Tandil',
     subtitle: null,
-    from: 'La Razón',
+    from: 'El diario de Tandil',
     image: Image4,
-    link: 'https://www.larazon.es/economia/20220904/7oke6tqs7bc7bl5tjcc4zq2o2i.html',
+    link: 'https://eldiariodetandil.com/2019/07/08/llego-la-oea-a-tandil',
   },
 ];
 

@@ -11,10 +11,10 @@
     @apply bg-APP_BACKGROUND font-vietnam;
   }
   h1 {
-    @apply text-xl !font-normal font-avaunt;
+    @apply text-xl !font-normal font-montserrat;
   }
   h2 {
-    @apply text-lg !font-normal font-avaunt;
+    @apply text-lg !font-normal font-montserrat;
   }
   p {
     @apply text-sm;
@@ -39,6 +39,25 @@
   }
 
   .main-red-button {
-    @apply bg-RED_MEDIUM text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-md text-sm;
+    @apply bg-RED_MEDIUM text-GREY_LIGHT row centered font-bold px-8 pt-1 pb-2 rounded-md text-sm;
+  }
+
+  .card-common-button {
+    @apply w-[8rem] lg:w-[8rem] mt-4 lg:mx-4 text-GREY_LIGHT row centered font-bold px-8 pt-1 pb-2 rounded-md text-sm
+  }
+
+
+  .header-image-container {
+    @apply h-[31rem] w-full py-20;
+  }
+
+  .keep-reading-button {
+    @apply text-xs text-PURPLE_ONU hover:text-RED_MEDIUM font-bold;
+  }
+
+
+  .to-greyscale {
+    filter: grayscale(100%);
+    opacity: 0.7;
   }
 }

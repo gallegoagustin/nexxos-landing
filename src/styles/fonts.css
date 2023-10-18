@@ -127,24 +127,24 @@
     font-style: normal;
 }
 
-/* AVAUNT STENCIL */
+/* MONTSERRAT */
 @font-face {
-    font-family: 'Avaunt Stencil';
-    src: url('../asset/fonts/Avaunt-Stencil-Regular.otf');
+    font-family: 'Montserrat';
+    src: url('../asset/fonts/Montserrat-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../asset/fonts/Montserrat-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
-/* @font-face {
-    font-family: 'Avaunt Stencil';
-    src: url('../asset/fonts/Avaunt-Stencil-Bold.otf');
-    font-weight: bold;
-    font-style: normal;
-} */
-
 @font-face {
-    font-family: 'Avaunt Stencil';
-    src: url('../asset/fonts/Avaunt-Stencil-Light.otf');
+    font-family: 'Montserrat';
+    src: url('../asset/fonts/Montserrat-Light.ttf');
     font-weight: light;
     font-style: normal;
 }
