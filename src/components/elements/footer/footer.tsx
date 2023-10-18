@@ -83,7 +83,7 @@ function Footer() {
         <Link href={'https://www.instagram.com/nexxosar/'} target={'_blank'}>
           <Image src={IconInstagram} alt={'icon'} />
         </Link>
-        <Link href={'nexxosong3315'} target={'_blank'}>
+        <Link href={'https://www.youtube.com/@nexxosong3315'} target={'_blank'}>
           <Image src={IconYoutube} alt={'icon'} />
         </Link>
         <Link href={'https://twitter.com/NexxosAR'} target={'_blank'}>
