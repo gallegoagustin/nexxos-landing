@@ -201,7 +201,7 @@ function ActivitiesTemplate() {
                 key={index}
                 id={elementId}
                 className={
-                  'w-4/6 md:w-[28rem] h-[38rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
+                  'w-4/6 min-w-[260px] md:w-[28rem] h-[38rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE relative'
                 }
               >
                 <div
