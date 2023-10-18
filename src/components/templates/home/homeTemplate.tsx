@@ -23,14 +23,14 @@ import Icon6 from '../../../../public/images/icons/isotipos/g20.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import Icon8 from '../../../../public/images/icons/isotipos/juicio.svg';
 
-import ImageCarousel1 from '../../../../public/images/carousel-item-images/ONU.jpg';
-import ImageCarousel2 from '../../../../public/images/carousel-item-images/OEA.jpg';
-import ImageCarousel3 from '../../../../public/images/carousel-item-images/RASTROS.jpg';
-import ImageCarousel4 from '../../../../public/images/carousel-item-images/SENADO.jpg';
-import ImageCarousel5 from '../../../../public/images/carousel-item-images/ELECTORAL.jpg';
-import ImageCarousel6 from '../../../../public/images/carousel-item-images/G20_2.jpg';
-import ImageCarousel7 from '../../../../public/images/carousel-item-images/HCD.jpg';
-import ImageCarousel8 from '../../../../public/images/carousel-item-images/JUICIO.jpg';
+import ImageCarousel1 from '../../../../public/images/carousel-item-images/onu.jpg';
+import ImageCarousel2 from '../../../../public/images/carousel-item-images/oea.jpg';
+import ImageCarousel3 from '../../../../public/images/carousel-item-images/rastros.jpg';
+import ImageCarousel4 from '../../../../public/images/carousel-item-images/senado.jpg';
+import ImageCarousel5 from '../../../../public/images/carousel-item-images/electoral.jpg';
+import ImageCarousel6 from '../../../../public/images/carousel-item-images/g20_2.jpg';
+import ImageCarousel7 from '../../../../public/images/carousel-item-images/hcd.jpg';
+import ImageCarousel8 from '../../../../public/images/carousel-item-images/juicio.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
 
 function HomeTemplate() {
