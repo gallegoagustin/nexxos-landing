@@ -531,20 +531,21 @@ function HomeTemplate() {
           <br />
           opinan:
         </h1>
-        {/* <div className={'w-5/6 row justify-between items-center'} ref={reviewsRef}> */}
-        <div className={'w-full row justify-between items-center'}>
+        <div className={'w-full row centered'}>
           <div
-            className={'hidden md:flex mt-12 pb-2 row w-full justify-between'}
+            className={
+              'hidden lg:flex mt-12 pb-2 row w-full flex-wrap gap-8 justify-center'
+            }
           >
             {reviews.map((item) => {
               return (
                 <div
                   key={item.id}
                   className={
-                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between w-1/4'
+                    'col bg-WHITE rounded-lg shadow-md p-4 justify-between w-[300px] min-h-[550px]'
                   }
                 >
-                  <p className={'text-xs font-light'}>
+                  <p className={'text-xs font-light text-justify'}>
                     {'"' + item.text + '"'}
                   </p>
                   <div
@@ -552,8 +553,8 @@ function HomeTemplate() {
                       'row rounded-lg bg-GREY_LIGHT mt-8 items-center p-4'
                     }
                   >
-                    <Image src={item.image} alt={'image'} className={'w-1/5'} />
-                    <div className={'col ml-4'}>
+                    {/* <Image src={item.image} alt={'image'} className={'w-1/5'} /> */}
+                    <div className={'col h-12 gap-1'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
                     </div>
@@ -564,7 +565,7 @@ function HomeTemplate() {
           </div>
           <div
             className={
-              'md:hidden mt-12 pb-2 col w-full justify-between overflow-hidden'
+              'lg:hidden mt-12 pb-2 col w-5/6 max-w-[500px] justify-between overflow-hidden'
             }
           >
             {reviews.map((item) => {
@@ -572,22 +573,20 @@ function HomeTemplate() {
                 <div
                   key={item.id}
                   className={
-                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between my-4'
+                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 my-4 min-h-[400px]'
                   }
                   style={{ flex: '0 0 90%' }}
                 >
                   <div
-                    className={
-                      'row rounded-lg bg-GREY_LIGHT mt-2 items-center p-4'
-                    }
+                    className={'row rounded-lg bg-GREY_LIGHT items-center p-4'}
                   >
-                    <Image src={item.image} alt={'image'} className={'w-1/5'} />
-                    <div className={'col ml-4'}>
+                    {/* <Image src={item.image} alt={'image'} className={'w-1/5'} /> */}
+                    <div className={'col'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
                     </div>
                   </div>
-                  <p className={'text-xs font-light mt-2'}>
+                  <p className={'text-xs font-light p-4 text-justify'}>
                     {'"' + item.text + '"'}
                   </p>
                 </div>
