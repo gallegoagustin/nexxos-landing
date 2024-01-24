@@ -32,14 +32,14 @@ function Footer() {
         >
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>NEXXOS</p>
-            <Link
+            {/* <Link
               href={
                 'https://nash21.gitbook.io/es/guias-de-usuario/guias-para-entender-nash21'
               }
               target={'_blank'}
             >
               <p className={'my-1'}>Info para sponsors</p>
-            </Link>
+            </Link> */}
             <Link
               href={
                 'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
@@ -90,7 +90,7 @@ function Footer() {
           <Image src={IconTwitter} alt={'icon'} />
         </Link>
       </div>
-      <p className={'font-light mt-8'}>Copyright © 2023 Nexxos ONG</p>
+      <p className={'font-light mt-8'}>Copyright © 2024 Nexxos ONG</p>
     </div>
   );
 }

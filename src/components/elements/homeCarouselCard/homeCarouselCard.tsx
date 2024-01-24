@@ -65,7 +65,9 @@ function HomeCarouselCard({
           width={385}
           height={100}
           style={{ objectFit: 'cover' }}
-          className={'rounded-2xl lg:rounded-none to-greyscale w-full h-full'}
+          className={
+            '!rounded-l-2xl lg:rounded-none to-greyscale w-full h-full'
+          }
         />
       </div>
       <div

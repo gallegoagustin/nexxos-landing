@@ -192,7 +192,9 @@ function HomeTemplate() {
             para la vida.
           </p>
         </div>
-        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>Actividades 2023</h1>
+
+        {/* BLOCK 3 */}
+        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>Actividades 2024</h1>
         <div
           className={
             isMobile
@@ -228,8 +230,8 @@ function HomeTemplate() {
             );
           })}
         </div>
-        {/* <div className={'hidden lg:inline w-1/2 overflow-hidden'} ref={emblaRef}> */}
-        <div className={'hidden w-full lg:inline overflow-hidden'}>
+
+        <div className={'hidden w-full lg:inline'}>
           <Swiper
             pagination={true}
             modules={[Pagination, Autoplay]}
@@ -241,36 +243,26 @@ function HomeTemplate() {
             loop={true}
             className={'w-[60rem] h-[40rem] mt-12'}
           >
-            <div className={'flex'}>
-              {carouselCards.map((item) => {
-                return (
-                  <div
-                    key={item.id}
-                    className={'full p-1'}
-                    style={{ flex: '0 0 100%' }}
-                  >
-                    <SwiperSlide
-                      key={item.id}
-                      className={'w-full h-full pb-12'}
-                    >
-                      <HomeCarouselCard
-                        link={item.link}
-                        title={item.title}
-                        subtitle={item.subtitle}
-                        text={item.text}
-                        buttonText={item.buttonText}
-                        image={item.image.src}
-                        logo={item.logo.src}
-                      />
-                    </SwiperSlide>
-                  </div>
-                );
-              })}
-            </div>
+            {carouselCards.map((item) => {
+              return (
+                <div key={item.id}>
+                  <SwiperSlide key={item.id} className={'pb-12 px-4'}>
+                    <HomeCarouselCard
+                      link={item.link}
+                      title={item.title}
+                      subtitle={item.subtitle}
+                      text={item.text}
+                      buttonText={item.buttonText}
+                      image={item.image.src}
+                      logo={item.logo.src}
+                    />
+                  </SwiperSlide>
+                </div>
+              );
+            })}
           </Swiper>
         </div>
 
-        {/* <div className={'lg:hidden row overflow-hidden mt-12'} ref={emblaRef2}> */}
         <div className={'lg:hidden row overflow-hidden mt-12'}>
           <Swiper
             pagination={true}
@@ -281,9 +273,9 @@ function HomeTemplate() {
               pauseOnMouseEnter: true,
             }}
             loop={true}
-            className={'w-[18rem] h-[45rem]'}
+            className={'w-[85vw]'}
           >
-            <div className={'flex w-[100vw] bg-GREY_DARK'}>
+            <div className={'flex w-full bg-GREY_DARK'}>
               {carouselCards.map((item) => {
                 const elementId = `card-${item.title}`;
 
@@ -307,58 +299,45 @@ function HomeTemplate() {
                   colorClass = 'GREEN_JUICIO';
                 }
                 return (
-                  <div
-                    key={item.id}
-                    className={'h-full col centered mx-8 pb-2'}
-                  >
-                    <SwiperSlide
-                      key={item.id}
-                      className={'h-full w-full pb-12'}
-                    >
+                  <div key={item.id} className={'h-full col centered pb-2'}>
+                    <SwiperSlide key={item.id} className={'full pb-12 px-2'}>
                       <div
                         className={
-                          'full h-full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
+                          'full col gap-4 p-10 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
                         }
                       >
-                        <div className={'w-2/3 col h-full p-1 lg:p-4'}>
-                          <p
-                            className={`font-bold text-${colorClass} text-center my-4`}
-                          >
-                            {item.title.toUpperCase()}
+                        <p
+                          className={`font-bold text-${colorClass} text-center`}
+                        >
+                          {item.title.toUpperCase()}
+                        </p>
+                        <h1
+                          className={
+                            'text-BLUE_DARK text-2xl font-light text-center'
+                          }
+                        >
+                          {item.subtitle}
+                        </h1>
+                        <div className={'full'}>
+                          <p className={'font-light text-center'}>
+                            {item.text}
                           </p>
-                          <h1
-                            className={
-                              'text-BLUE_DARK text-2xl font-light text-center my-2'
-                            }
-                          >
-                            {item.subtitle}
-                          </h1>
-                          <div
-                            className={'overflow-y-scroll w-[200px]'}
-                            style={{ flex: '0 0 55%' }}
-                          >
-                            <p className={'font-light text-center'}>
-                              {item.text}
-                            </p>
-                          </div>
-                          <div className={'full col justify-end'}>
-                            {item.text ? (
-                              <Link
-                                className={`main-red-button bg-${colorClass}`}
-                                href={`/activities#${elementId}`}
-                              >
-                                {item.buttonText.toUpperCase()}
-                              </Link>
-                            ) : (
-                              <button
-                                className={'main-red-button bg-GREY_DARK mt-4'}
-                                disabled
-                              >
-                                {item.buttonText.toUpperCase()}
-                              </button>
-                            )}
-                          </div>
                         </div>
+                        {item.text ? (
+                          <Link
+                            className={`main-red-button bg-${colorClass} w-[200px]`}
+                            href={`/activities#${elementId}`}
+                          >
+                            {item.buttonText.toUpperCase()}
+                          </Link>
+                        ) : (
+                          <button
+                            className={'main-red-button bg-GREY_DARK w-[200px]'}
+                            disabled
+                          >
+                            {item.buttonText.toUpperCase()}
+                          </button>
+                        )}
                       </div>
                     </SwiperSlide>
                   </div>
@@ -369,7 +348,7 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 3 */}
+      {/* BLOCK 4 */}
       <div
         className={'col items-center py-12 w-full overflow-hidden'}
         style={{
@@ -539,7 +518,7 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 4 */}
+      {/* BLOCK 5 */}
       <div
         className={'w-full col items-center py-12'}
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
@@ -618,42 +597,31 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 5 */}
-      <div className={'w-full col items-center py-12 bg-WHITE'}>
+      {/* BLOCK 6 */}
+      <div className={'w-full col gap-8 items-center py-12 bg-WHITE'}>
         <h1 className={'text-3xl text-RED_MEDIUM'}>Nuestras alianzas</h1>
-        {/* <div className={'hidden lg:flex w-full overflow-hidden'} ref={iconsRef}> */}
         <div className={'hidden lg:flex w-full overflow-hidden'}>
           <Swiper
             modules={[Autoplay]}
-            className={'w-5/6'}
+            className={'w-2/3'}
             slidesPerView={5}
             autoplay={{
-              delay: 2000,
+              // delay: 2000,
               disableOnInteraction: false,
             }}
             loop={true}
           >
-            <div className={'mt-12 row w-full justify-between items-center'}>
-              {alliances.map((item) => {
-                return (
-                  <SwiperSlide key={item.id}>
-                    <div className={'w-[96px]'}>
-                      <Image
-                        src={item.icon}
-                        alt={'icon'}
-                        className={'h-full'}
-                      />
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
+            {alliances.map((item) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <Image src={item.icon} alt={'icon'} width={96} />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
         <div className={'lg:hidden w-full overflow-hidden'}>
-          <div
-            className={'mt-12 row w-full justify-evenly flex-wrap items-center'}
-          >
+          <div className={'row w-full justify-evenly flex-wrap items-center'}>
             {alliances.map((item) => {
               return (
                 <div key={item.id} className={'m-6'}>

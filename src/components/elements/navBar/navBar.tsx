@@ -15,15 +15,15 @@ function NavBar({ activeTab }: Props) {
 
   return (
     <>
-      <div className={'hidden lg:flex col font-vietnam'}>
+      <div className={'hidden lg:flex col'}>
         <div
           className={
             'w-full h-16 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-[150px] h-full row justify-start items-center'}>
+          <div className={'w-[160px] h-full col justify-center'}>
             <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nexxos'} width={160} />
+              <Image src={IconNexxos} alt={'nexxos'} />
             </Link>
           </div>
           <nav className={'w-2/5 h-full row justify-between items-center'}>
@@ -47,7 +47,7 @@ function NavBar({ activeTab }: Props) {
           </nav>
         </div>
       </div>
-      <div className={'lg:hidden col font-vietnam'}>
+      <div className={'lg:hidden col'}>
         <div
           className={
             'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
@@ -62,11 +62,11 @@ function NavBar({ activeTab }: Props) {
             <Image
               src={BurgerIcon}
               alt={'icon nexxos'}
-              // style={{ transform: 'scale(0.5)' }}
               className={'cursor-pointer'}
               onClick={() => {
                 setIsMenuOpened(!isMenuOpened);
               }}
+              width={24}
             />
           </button>
         </div>
@@ -77,7 +77,7 @@ function NavBar({ activeTab }: Props) {
             'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT absolute top-0'
           }
         >
-          <div className={'lg:hidden col font-vietnam'}>
+          <div className={'lg:hidden col'}>
             <div
               className={
                 'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
@@ -96,11 +96,11 @@ function NavBar({ activeTab }: Props) {
                 <Image
                   src={BurgerIcon}
                   alt={'icon nexxos'}
-                  // style={{ transform: 'scale(0.5)' }}
                   className={'cursor-pointer'}
                   onClick={() => {
                     setIsMenuOpened(!isMenuOpened);
                   }}
+                  width={24}
                 />
               </button>
             </div>

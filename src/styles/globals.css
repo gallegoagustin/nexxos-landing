@@ -8,13 +8,13 @@
 
 @layer base {
   body {
-    @apply bg-APP_BACKGROUND font-vietnam;
+    @apply bg-APP_BACKGROUND font-montserrat;
   }
   h1 {
-    @apply text-xl !font-normal font-montserrat;
+    @apply text-xl !font-normal;
   }
   h2 {
-    @apply text-lg !font-normal font-montserrat;
+    @apply text-lg !font-normal;
   }
   p {
     @apply text-sm;
