@@ -169,7 +169,9 @@ function HomeTemplate() {
         </div>
 
         {/* BLOCK 3 */}
-        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>Actividades 2024</h1>
+        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
+          Nuestras actividades
+        </h1>
         <div
           className={
             isMobile

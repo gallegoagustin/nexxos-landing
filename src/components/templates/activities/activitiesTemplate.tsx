@@ -26,6 +26,16 @@ function ActivitiesTemplate() {
       date2: 'Fecha estimada segunda edición: mes de octubre',
     },
     {
+      title: 'un',
+      subtitle:
+        'Simulacro de la Organización de las Naciones Unidas (en inglés)',
+      participants: '4º, 5º y 6º año.',
+      image: ImageCard1,
+      date: 'Fecha estimada: mes de junio',
+      link_utils:
+        'https://drive.google.com/drive/folders/1PoSp8yJhVkY9Iqg-sEN323XJLPdTcT9O',
+    },
+    {
       title: 'oea',
       subtitle: 'Simulacro de la Organización de Estados Americanos',
       participants: '1º, 2º y 3º año.',
@@ -53,14 +63,31 @@ function ActivitiesTemplate() {
         'https://drive.google.com/drive/folders/1oE_XR7_Pt1HOLZYvE1njqxoQCNbN_F7K?usp=drive_link',
     },
     {
-      title: 'un',
-      subtitle:
-        'Simulacro de la Organización de las Naciones Unidas (en inglés)',
+      title: 'sena',
+      subtitle: 'Simulacro del Senado de la Nación',
       participants: '4º, 5º y 6º año.',
-      image: ImageCard1,
-      date: 'Fecha estimada: mes de junio',
+      image: ImageCard6,
+      date: 'Fecha estimada: mes de octubre',
       link_utils:
-        'https://drive.google.com/drive/folders/1PoSp8yJhVkY9Iqg-sEN323XJLPdTcT9O',
+        'https://drive.google.com/drive/folders/1Z9mL5WZiGvH5vG1v1b5dX5L1tX5L5L5L?usp=drive_link',
+    },
+    {
+      title: 'g20',
+      subtitle: 'Simulacro del Grupo de los 20',
+      participants: '4º, 5º y 6º año.',
+      image: ImageCard4,
+      date: 'Próxima edición 2025',
+      link_utils:
+        'https://drive.google.com/drive/folders/1wZ6Iv6q0ZQ4Q5k4a5uZ2bLW2bJdGk8r_?usp=drive_link',
+    },
+    {
+      title: 'electoral',
+      subtitle: 'Simulacro de Elecciones',
+      participants: '4º, 5º y 6º año.',
+      image: ImageCard5,
+      date: 'Próxima edición 2025',
+      link_utils:
+        'https://drive.google.com/drive/folders/1y6U0J9Q7HsQXQ9d6K6bX6k3n9J8b6FtV?usp=drive_link',
     },
   ];
 
@@ -125,7 +152,9 @@ function ActivitiesTemplate() {
       >
         {/* SIM CARD */}
         <div
-          className={'full col lg:row items-center justify-center flex-wrap'}
+          className={
+            'full col lg:row items-center justify-center flex-wrap gap-12'
+          }
         >
           {activitiesCards.map((item, index) => {
             const elementId = `card-sim.${item.title}`;
@@ -155,7 +184,7 @@ function ActivitiesTemplate() {
                 key={index}
                 id={elementId}
                 className={
-                  'w-2/3 min-w-[260px] md:w-[28rem] h-[38rem] md:h-[31rem] mb-6 mt-8 lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center justify-between shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
+                  'w-5/6 min-w-[260px] md:w-[28rem] h-[38rem] md:h-[31rem] lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center justify-between shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
                 }
               >
                 <div>

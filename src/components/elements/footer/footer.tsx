@@ -27,7 +27,7 @@ function Footer() {
         </Link>
         <div
           className={
-            'w-full lg:w-3/5 text-center lg:text-left row justify-between'
+            'w-full lg:w-3/5 text-center lg:text-left col lg:row gap-4 justify-between'
           }
         >
           <div className={'col'}>

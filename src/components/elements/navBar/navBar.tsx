@@ -50,7 +50,7 @@ function NavBar({ activeTab }: Props) {
       <div className={'lg:hidden col'}>
         <div
           className={
-            'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
+            'w-full h-20 bg-GREY_LIGHT row justify-between items-center px-4'
           }
         >
           <div className={'w-[150px] h-full row justify-start items-center'}>
