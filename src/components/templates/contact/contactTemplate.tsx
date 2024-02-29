@@ -285,6 +285,7 @@ function ContactTemplate() {
             <option value="estudiante">Estudiante</option>
             <option value="docente">Docente</option>
             <option value="directivo">Directivo</option>
+            <option value="sponsor">Sponsor</option>
             <option value="other">Otro</option>
           </select>
           <button

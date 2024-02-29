@@ -29,7 +29,7 @@ function HomeCarouselCard({
   } else if (title === 'sim.oea') {
     colorClass = 'TEAL_OEA';
   } else {
-    colorClass = 'GREEN_JUICIO';
+    colorClass = 'VIOLET_UN';
   }
 
   let verticalAlignmentClass =

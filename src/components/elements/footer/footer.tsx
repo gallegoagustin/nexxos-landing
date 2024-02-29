@@ -68,14 +68,14 @@ function Footer() {
             >
               <p className={'my-1'}>Estatuto</p>
             </Link>
-            <Link
+            {/* <Link
               href={
                 'https://drive.google.com/file/d/15BKHJxWVVXJBFoLzEwcXLt1b4Xg3Fl20/view?usp=drive_link'
               }
               target="_blank"
             >
               <p className={'my-1'}>Reglamento Interno</p>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

@@ -18,19 +18,15 @@ import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
 import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
 import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
 import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
-import Icon5 from '../../../../public/images/icons/isotipos/electoral.svg';
-import Icon6 from '../../../../public/images/icons/isotipos/g20.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
-import Icon8 from '../../../../public/images/icons/isotipos/juicio.svg';
+import Icon8 from '../../../../public/images/icons/isotipos/un.svg';
 
 import ImageCarousel1 from '../../../../public/images/home/onu.jpg';
 import ImageCarousel2 from '../../../../public/images/home/oea.jpg';
 import ImageCarousel3 from '../../../../public/images/home/rastros.jpg';
 import ImageCarousel4 from '../../../../public/images/home/senado.jpg';
-import ImageCarousel5 from '../../../../public/images/home/electoral.jpg';
 import ImageCarousel6 from '../../../../public/images/home/g20_2.jpg';
 import ImageCarousel7 from '../../../../public/images/home/hcd.jpg';
-import ImageCarousel8 from '../../../../public/images/home/juicio.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
 
 function HomeTemplate() {
@@ -56,10 +52,8 @@ function HomeTemplate() {
     { title: 'sim.oea', icon: Icon2, id: 1 },
     { title: 'sim.rastros', icon: Icon3, id: 2 },
     { title: 'sim.sena', icon: Icon4, id: 3 },
-    { title: 'sim.electoral', icon: Icon5, id: 4 },
-    { title: 'sim.g20', icon: Icon6, id: 5 },
     { title: 'sim.hcd', icon: Icon7, id: 6 },
-    { title: 'sim.juicio', icon: Icon8, id: 7 },
+    { title: 'sim.un', icon: Icon1, id: 8 },
   ];
 
   const carouselCards = [
@@ -104,26 +98,6 @@ function HomeTemplate() {
       link: '/activities',
     },
     {
-      id: 4,
-      title: 'sim.electoral',
-      subtitle: 'Simulacro de un debate presidencial y ministerial',
-      text: 'sim.electoral es una edición especial ofrecida sólo en años electivos. El simulacro, focalizado dentro del área de las ciencias sociales, propone a los participantes la posibilidad de ponerse en la piel de los candidatos presidenciales y de su equipo de canciller y ministros, o bien participar del formato prensa, con el objetivo de cubrir el debate desde distintas líneas editoriales a través del relevamiento periodístico y fotográfico. A lo largo de la actividad los participantes que desempeñen el rol de políticos debatirán de distintas maneras sus respectivos proyectos de país.',
-      buttonText: 'saber más',
-      image: ImageCarousel5,
-      logo: Icon5,
-      link: '/activities',
-    },
-    {
-      id: 5,
-      title: 'sim.g20',
-      subtitle: 'Simulacro del Grupo de los 20',
-      text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el poderoso Grupo de los 20, que engloba a una veintena de las principales potencias mundiales. Quienes participen de esta actividad podrán hacerlo como cancilleres, presidentes o primeros ministros, y debatirán problemáticas preseleccionadas teniendo en cuenta la postura del gobierno al que representan con respecto a dicho tópico, así también como el contexto mundial y la geopolítica actual.',
-      buttonText: 'saber más',
-      image: ImageCarousel6,
-      logo: Icon6,
-      link: '/activities',
-    },
-    {
       id: 6,
       title: 'sim.hcd',
       subtitle: 'Simulacro del Honorable Concejo Deliberante',
@@ -134,12 +108,13 @@ function HomeTemplate() {
       link: '/activities',
     },
     {
-      id: 7,
-      title: 'sim.juicio',
-      subtitle: 'Simulacro de un Juicio por Jurados',
-      text: 'En esta actividad se recrea el desarrollo de un juicio por jurados, con sus respectivas dinámicas y momentos, a partir del tratamiento de un caso. A su vez se implementará en la actividad una modalidad de prensa, que se ocupará de cubrir el avance del juicio a lo largo de todas las jornadas.',
+      id: 8,
+      title: 'sim.un',
+      subtitle:
+        'Simulacro de la Organización de las Naciones Unidas (en inglés)',
+      text: 'Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad.',
       buttonText: 'saber más',
-      image: ImageCarousel8,
+      image: ImageCarousel6,
       logo: Icon8,
       link: '/activities',
     },
@@ -199,7 +174,7 @@ function HomeTemplate() {
           className={
             isMobile
               ? 'grid grid-cols-2 gap-4 mt-6'
-              : 'w-full lg:w-2/3 mt-8 row justify-evenly lg:justify-between'
+              : 'w-full lg:w-2/3 mt-8 row justify-center'
           }
         >
           {carouselItems.map((item) => {
@@ -296,7 +271,7 @@ function HomeTemplate() {
                 } else if (item.title === 'sim.oea') {
                   colorClass = 'TEAL_OEA';
                 } else {
-                  colorClass = 'GREEN_JUICIO';
+                  colorClass = 'VIOLET_UN';
                 }
                 return (
                   <div key={item.id} className={'h-full col centered pb-2'}>
@@ -550,10 +525,14 @@ function HomeTemplate() {
                   </p>
                   <div
                     className={
-                      'row rounded-lg bg-GREY_LIGHT mt-8 items-center p-4'
+                      'row rounded-lg bg-GREY_LIGHT mt-8  p-4 gap-2 items-center'
                     }
                   >
-                    {/* <Image src={item.image} alt={'image'} className={'w-1/5'} /> */}
+                    {/* <Image
+                      src={item.image}
+                      alt={'image'}
+                      className={'w-[64px] h-[64px] rounded-[50%]'}
+                    /> */}
                     <div className={'col h-12 gap-1'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
