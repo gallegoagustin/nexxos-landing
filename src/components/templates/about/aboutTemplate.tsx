@@ -30,7 +30,7 @@ function AboutTemplate() {
       name: 'Melissa Ayelen Oliva',
       age: '20',
       position: 'Vicepresidente',
-      info: '"Soy estudiante de Derecho en la UNMDP. Participe en Modelos de Naciones Unidas en representación de la Facultad de Derecho. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tortor vel odio rhoncus, a finibus arcu posuere. Nullam vulputate, turpis vel elementum malesuada, arcu nibh facilisis nisi, nec ullamcorper turpis tortor eget nisi. Integer ut mauris sit amet dolor tempor venenatis id in odio.',
+      info: '"Soy estudiante de Derecho en la UNMDP. En mi recorido por la secundaria participe en Modelos de Naciones Unidas realizados por Nexxos y gracias a esas experiencias pude descubrir que a lo que me queria dedicar era a las Relaciones Internacionales. Participe de Simulacros a nivel nacional e internacional junto a la Facultad. En 2022 me uni a la ONG con el objetivo de adentrarme en la organizacion que tiene cada uno de los simulacros y sobre todo para poder cambiar y mejorar constantemente la educacion. Nexxos es un espacio en el que prevalece el respeto, la perseverancia y el aprender a romper con muchas de las estructuras impuestas por la sociedad y uno mismo."',
       image: Image1,
     },
     {
@@ -101,7 +101,7 @@ function AboutTemplate() {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          className={'w-[21rem] h-[43rem] md:w-[50rem] md:h-[32rem]'}
+          className={'w-full h-[43rem] md:w-[50rem] md:h-[32rem]'}
         >
           {autorities.map((item, index) => {
             return (
@@ -115,7 +115,7 @@ function AboutTemplate() {
               >
                 <div
                   className={
-                    'col items-center w-[18rem] h-[38rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
+                    'col items-center w-5/6 h-[38rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
                   }
                   style={{
                     background: 'linear-gradient(to bottom, #CF142A, #5D2C80',
@@ -193,7 +193,7 @@ function AboutTemplate() {
           >
             <button
               className={
-                'main-red-button mt-8 transition duration-300 hover:bg-RED_G20'
+                'main-red-button mt-8 transition duration-300 hover:bg-RED_G20 w-[300px]'
               }
             >
               Quiero ser voluntario
@@ -216,7 +216,9 @@ function AboutTemplate() {
             alt="sponsors"
             className={'w-3/6 self-center my-10 md:my-0'}
           />
-          <div className={'col md:row md:justify-evenly md:mx-8 mt-8'}>
+          <div
+            className={'col md:row md:justify-evenly items-center md:mx-8 mt-8'}
+          >
             {/* <button
               className={
                 'main-red-button mb-4 md:mb-0 transition duration-300 hover:bg-RED_G20'
@@ -226,7 +228,9 @@ function AboutTemplate() {
             </button> */}
             <Link
               href={'/contact'}
-              className={'main-red-button duration-300 hover:bg-RED_G20'}
+              className={
+                'main-red-button transition duration-300 hover:bg-RED_G20 w-[300px]'
+              }
             >
               Quiero ser Sponsor
             </Link>

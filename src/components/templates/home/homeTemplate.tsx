@@ -28,8 +28,11 @@ import ImageCarousel4 from '../../../../public/images/home/senado.jpg';
 import ImageCarousel6 from '../../../../public/images/home/g20_2.jpg';
 import ImageCarousel7 from '../../../../public/images/home/hcd.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
+import { useRouter } from 'next/router';
 
 function HomeTemplate() {
+  const router = useRouter();
+
   // Agregar un estado para determinar si es pantalla pequeña o no
   const [isMobile, setIsMobile] = useState(false);
 
@@ -91,7 +94,7 @@ function HomeTemplate() {
       id: 3,
       title: 'sim.sena',
       subtitle: 'Simulacro de la honorable Cámara de Senadores de la Argentina',
-      text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes interesados representarán a un senador ficticio, pero de un partido político real con representación en dicha cámara. Con dicha información, y poniéndose en el papel de dicho senador, deberá escribir una ley que presentará para debatir durante el simulacro. El participante tendrá primero una entrevista con los organizadores para que se le asigne un senador. Recibirá la información sobre el funcionario a representar, entre la cual habrá información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
+      text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
       image: ImageCarousel4,
       logo: Icon4,
@@ -143,7 +146,7 @@ function HomeTemplate() {
           </div>
           <Link
             className={
-              'main-red-button mt-4 md:mt-8 py-2 w-full md:w-1/3 lg:w-1/6 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM'
+              'main-red-button mt-4 md:mt-8 py-2 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM w-[300px]'
             }
             href={'/contact'}
           >
@@ -155,7 +158,7 @@ function HomeTemplate() {
       {/* BLOCK 2 */}
       <div className={'col items-center py-6'}>
         <div className={'w-full row centered'}>
-          <p className={'text-center text-lg w-4/6 lg:w-2/5 font-light'}>
+          <p className={'text-center text-lg w-5/6 lg:w-2/5 font-light'}>
             Somos una ONG que busca la transformación educativa en la Argentina
             y el mundo. Luchamos por una educación que tenga como eje principal
             la formación en habilidades, capacidades, inteligencias múltiples,
@@ -173,11 +176,12 @@ function HomeTemplate() {
           Nuestras actividades
         </h1>
         <div
-          className={
-            isMobile
-              ? 'grid grid-cols-2 gap-4 mt-6'
-              : 'w-full lg:w-2/3 mt-8 row justify-center'
-          }
+          // className={
+          //   isMobile
+          //     ? 'grid grid-cols-2 gap-4 mt-6'
+          //     : 'w-full lg:w-2/3 mt-8 row justify-center'
+          // }
+          className="hidden md:row w-full lg:w-2/3 mt-8 justify-center"
         >
           {carouselItems.map((item) => {
             return (
@@ -185,9 +189,10 @@ function HomeTemplate() {
                 key={item.id}
                 className={
                   isMobile
-                    ? 'col-span-1 m-1 md:m-0 md:w-1/3 cursor-default'
-                    : 'col items-center m-3 md:m-0 md:w-1/6 cursor-default'
+                    ? 'col-span-1 m-3 md:m-0 md:w-1/3 cursor-pointer'
+                    : 'col items-center m-3 md:m-0 md:w-1/6 cursor-pointer'
                 }
+                onClick={() => router.push('/activities')}
               >
                 <div
                   className={
@@ -250,7 +255,7 @@ function HomeTemplate() {
               pauseOnMouseEnter: true,
             }}
             loop={true}
-            className={'w-[85vw]'}
+            className={'w-[85vw] max-w-[500px]'}
           >
             <div className={'flex w-full bg-GREY_DARK'}>
               {carouselCards.map((item) => {
