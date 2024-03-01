@@ -104,7 +104,12 @@ function ContactTemplate() {
       }}
     >
       <div className={'columns-2 col w-3/4 min-w-[260px] lg:w-1/4'}>
-        <Image alt="icon nexxos" src={iconNexxos} className="w-1/2 h-1/2" />
+        <Image
+          alt="icon nexxos"
+          src={iconNexxos}
+          className="w-1/2 h-1/2"
+          priority
+        />
         <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
           Contacta con
           <br />

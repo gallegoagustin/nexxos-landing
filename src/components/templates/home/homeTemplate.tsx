@@ -347,6 +347,7 @@ function HomeTemplate() {
                   src={articles[0].image}
                   alt={'image'}
                   className={'full'}
+                  priority
                 />
               </div>
               <div className={'w-1/2 col p-4 justify-evenly'}>
@@ -398,6 +399,7 @@ function HomeTemplate() {
                         src={article.image}
                         alt={'image'}
                         className={'full'}
+                        priority
                       />
                     </div>
                     <div className={'full col px-4 justify-between'}>
@@ -454,6 +456,7 @@ function HomeTemplate() {
                         src={article.image}
                         alt={'image'}
                         className={'full'}
+                        priority
                       />
                     </div>
                     <div className={'full h-1/2 justify-around col px-4 py-4'}>

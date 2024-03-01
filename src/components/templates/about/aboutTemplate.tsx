@@ -132,6 +132,7 @@ function AboutTemplate() {
                       width={150}
                       height={150}
                       className={'rounded-full md:w-40 md:h-40 w-28 h-28'}
+                      priority
                     />
                     <div className={'w-[8rem] md:w-1/2 text-WHITE'}>
                       <h1>{item.name}</h1>

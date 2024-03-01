@@ -194,7 +194,7 @@ function ActivitiesTemplate() {
                     }
                     id="title-container"
                   >
-                    <Image src={item.image} alt={'image'} />
+                    <Image src={item.image} alt={'image'} priority />
                     <p
                       className={
                         'font-montserrat font-bold text-3xl text-GREY_NEXXOS'

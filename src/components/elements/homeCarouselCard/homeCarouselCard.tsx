@@ -53,6 +53,7 @@ function HomeCarouselCard({
             width={80}
             height={30}
             className="w-1/4"
+            priority
           />
           <div className="flex flex-col items-start w-2/3 ml-2">
             <p className="text-5xl text-GREY_LIGHT font-bold mb-2">{title}</p>
@@ -68,6 +69,7 @@ function HomeCarouselCard({
           className={
             '!rounded-l-2xl lg:rounded-none to-greyscale w-full h-full'
           }
+          priority
         />
       </div>
       <div
