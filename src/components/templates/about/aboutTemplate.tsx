@@ -23,7 +23,7 @@ function AboutTemplate() {
       name: 'Alan Ezequiel Castillo ',
       age: '21',
       position: 'Presidente',
-      info: '"Estoy en 2do año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
+      info: '"Estoy en tercer año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
       image: Image6,
     },
     {
@@ -220,13 +220,6 @@ function AboutTemplate() {
           <div
             className={'col md:row md:justify-evenly items-center md:mx-8 mt-8'}
           >
-            {/* <button
-              className={
-                'main-red-button mb-4 md:mb-0 transition duration-300 hover:bg-RED_G20'
-              }
-            >
-              Mas informacion
-            </button> */}
             <Link
               href={'/contact'}
               className={

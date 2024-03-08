@@ -85,7 +85,7 @@ function ActivitiesTemplate() {
       subtitle: 'Simulacro de Elecciones',
       participants: '4º, 5º y 6º año.',
       image: ImageCard5,
-      date: 'Próxima edición 2025',
+      date: 'Próxima edición 2027',
       link_utils:
         'https://drive.google.com/drive/folders/1DcoGqkA0XmZZhtul-WMiv-m_uIZvJ0FL',
     },
@@ -223,7 +223,7 @@ function ActivitiesTemplate() {
                     target="_blank"
                     className={'w-fit'}
                   >
-                    <button>Mas información</button>
+                    <button>Más información</button>
                   </Link>
                 </div>
               </div>
