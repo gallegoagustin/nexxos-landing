@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes, { InferProps } from 'prop-types';
@@ -11,7 +11,7 @@ function NavBar({ activeTab }: Props) {
     'w-full py-3 h-full row centered bg-RED_MEDIUM text-WHITE';
   const inactiveButtonClass = 'w-full py-3 h-full row centered hover:shadow-md';
 
-  const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   return (
     <>
@@ -74,38 +74,11 @@ function NavBar({ activeTab }: Props) {
       {isMenuOpened && (
         <div
           className={
-            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT absolute top-0'
+            'w-full h-auto bg-GREY_LIGHT shadow-GREY_LIGHT absolute top-20'
           }
+          style={{ animation: 'scale-in-ver-top .4s ease-in' }}
         >
-          <div className={'lg:hidden col'}>
-            <div
-              className={
-                'w-full h-12 bg-GREY_LIGHT row justify-between items-center'
-              }
-            >
-              <div
-                className={'w-[150px] h-full row justify-start items-center'}
-              >
-                <Link href={'/'}>
-                  <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
-                </Link>
-              </div>
-              <button
-                className={'w-[48px] h-full row justify-end items-center'}
-              >
-                <Image
-                  src={BurgerIcon}
-                  alt={'icon nexxos'}
-                  className={'cursor-pointer'}
-                  onClick={() => {
-                    setIsMenuOpened(!isMenuOpened);
-                  }}
-                  width={24}
-                />
-              </button>
-            </div>
-          </div>
-          <nav className={'w-full col mt-4'}>
+          <nav className={'w-full col'}>
             {navBarTabs.map((item, key) => {
               return (
                 <Link
