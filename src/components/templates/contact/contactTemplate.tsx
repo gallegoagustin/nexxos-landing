@@ -96,8 +96,8 @@ function ContactTemplate() {
   };
 
   return (
-    <main
-      className={'full col lg:row centered py-8 md:py-24'}
+    <section
+      className={'full col lg:row centered py-8 md:py-24 min-h-[1000px]'}
       style={{
         background:
           'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
@@ -305,7 +305,7 @@ function ContactTemplate() {
         </form>
       </div>
       <SuccessModal isOpen={isSuccess} onClose={handleSuccessModalClose} />
-    </main>
+    </section>
   );
 }
 

@@ -124,7 +124,7 @@ function ActivitiesTemplate() {
   }, [router.asPath]);
 
   return (
-    <main
+    <section
       ref={activitiesContainerRef}
       className={'full col justify-start items-center'}
     >
@@ -231,7 +231,7 @@ function ActivitiesTemplate() {
           })}
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 

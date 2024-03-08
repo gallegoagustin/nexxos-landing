@@ -124,7 +124,7 @@ function HomeTemplate() {
   ];
 
   return (
-    <main className={'full col justify-start items-center'}>
+    <section className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
       <div
         className={`header-image-container px-10 lg:py-32 lg:px-24`}
@@ -334,7 +334,7 @@ function HomeTemplate() {
         <h1 className={'text-3xl text-RED_MEDIUM'}>En los medios</h1>
         <div className={'hidden lg:flex w-2/3 col'}>
           {articles.length && (
-            <div className={'row w-full mt-8'}>
+            <article className={'row w-full mt-8'}>
               <div className={'w-1/2 h-full row centered'}>
                 <Image
                   src={articles[0].image}
@@ -380,13 +380,13 @@ function HomeTemplate() {
                   </div>
                 )}
               </div>
-            </div>
+            </article>
           )}
           <div className={'w-full row justify-between'}>
             {articles.length &&
               articles.slice(1, articles.length).map((article, index) => {
                 return (
-                  <div key={index} className={'col w-1/3 mt-8 mr-4'}>
+                  <article key={index} className={'col w-1/3 mt-8 mr-4'}>
                     <div className={'w-full row centered'}>
                       <Image
                         src={article.image}
@@ -432,12 +432,12 @@ function HomeTemplate() {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </article>
                 );
               })}
           </div>
         </div>
-        {/* <div className={'lg:hidden row overflow-hidden'} ref={articlesRef}> */}
+
         <div className={'lg:hidden row overflow-hidden'}>
           <div className={'flex col'}>
             {articles.length &&
@@ -613,7 +613,7 @@ function HomeTemplate() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 

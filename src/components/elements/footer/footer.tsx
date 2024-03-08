@@ -8,7 +8,7 @@ import IconYoutube from '../../../../public/images/icons/social-media/youtube.sv
 
 function Footer() {
   return (
-    <div
+    <footer
       className={
         'w-full py-8 lg:py-20 bg-RED_MEDIUM col centered font-thin text-WHITE text-xs'
       }
@@ -91,7 +91,7 @@ function Footer() {
         </Link>
       </div>
       <p className={'font-light mt-8'}>Copyright © 2024 Nexxos ONG</p>
-    </div>
+    </footer>
   );
 }
 

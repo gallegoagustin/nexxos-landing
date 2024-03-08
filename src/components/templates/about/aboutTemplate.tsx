@@ -71,7 +71,7 @@ function AboutTemplate() {
   ];
 
   return (
-    <main className={'full col justify-start items-center'}>
+    <section className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
       <div
         className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
@@ -244,7 +244,7 @@ function AboutTemplate() {
           </p>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 
