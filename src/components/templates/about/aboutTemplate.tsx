@@ -20,7 +20,7 @@ import 'swiper/css/pagination';
 function AboutTemplate() {
   const autorities = [
     {
-      name: 'Alan Ezequiel Castillo ',
+      name: 'Alan Ezequiel Castillo',
       age: '21',
       position: 'Presidente',
       info: '"Estoy en tercer año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
