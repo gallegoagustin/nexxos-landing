@@ -69,7 +69,7 @@ function ActivitiesTemplate() {
       image: ImageCard6,
       date: 'Fecha estimada: mes de octubre',
       link_utils:
-        'https://drive.google.com/drive/folders/1Z9mL5WZiGvH5vG1v1b5dX5L1tX5L5L5L?usp=drive_link',
+        'https://drive.google.com/drive/folders/1wHK6uI7TSphJT3o8hgtOb73ihU1AFTms',
     },
     {
       title: 'g20',
@@ -78,7 +78,7 @@ function ActivitiesTemplate() {
       image: ImageCard4,
       date: 'Próxima edición 2025',
       link_utils:
-        'https://drive.google.com/drive/folders/1wZ6Iv6q0ZQ4Q5k4a5uZ2bLW2bJdGk8r_?usp=drive_link',
+        'https://drive.google.com/drive/folders/1YCVeJzKToTeQVuExDOtp_rlidTC7rZIC',
     },
     {
       title: 'electoral',
@@ -87,7 +87,7 @@ function ActivitiesTemplate() {
       image: ImageCard5,
       date: 'Próxima edición 2025',
       link_utils:
-        'https://drive.google.com/drive/folders/1y6U0J9Q7HsQXQ9d6K6bX6k3n9J8b6FtV?usp=drive_link',
+        'https://drive.google.com/drive/folders/1DcoGqkA0XmZZhtul-WMiv-m_uIZvJ0FL',
     },
   ];
 
