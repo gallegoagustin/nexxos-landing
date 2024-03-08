@@ -11,14 +11,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       !data.message ||
       !data.type
     ) {
-      return res.status(400).json({ message: 'Bad Request' });
+      return res.status(400).json({ message: 'Bad form type' });
     }
     try {
-      const textWithUserData = `Nombre: ${data.name}\nApellido: ${data.lastname}\nEmail: ${data.email}\nRol: ${data.type}\nMensaje: ${data.message}`;
+      const textWithUserData = `Nombre: ${data.name}\nApellido: ${data.lastname}\n\nEmail: ${data.email}\n\nRol: ${data.type}\n\nMensaje: ${data.message}`;
 
       await transporter.sendMail({
         ...mailOptions,
-        subject: 'CONTACTO WEB',
+        subject: 'Contacto - Formulario web',
         text: textWithUserData,
       });
       return res.status(200).json({ success: true });

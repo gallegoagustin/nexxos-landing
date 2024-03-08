@@ -117,7 +117,7 @@ function ContactTemplate() {
         </h1>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             target="_blank"
             rel="noreferrer"
           >
@@ -126,13 +126,13 @@ function ContactTemplate() {
               alt="Whatsapp"
               className="w-4 mr-2"
             />
+            <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
-            href={'mailto: Centralnexxos@gmail.com'}
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+            href={'mailto: contacto@nexxos.com.ar'}
             target="_blank"
             rel="noreferrer"
           >
@@ -141,12 +141,14 @@ function ContactTemplate() {
               alt="email"
               className="w-4 mr-2"
             />
+            <p className={'text-BLACK font-bold my-1'}>
+              contacto@nexxos.com.ar
+            </p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>centralnexxos@gmail.com</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             href={sendWhatsappLink({
               phoneNumber: 542236020205,
               message: '¡Hola! Quisiera más información sobre la ONG',
@@ -159,12 +161,12 @@ function ContactTemplate() {
               alt="Whatsapp"
               className="w-4 mr-2"
             />
+            <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
           </a>
-          <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             href={'https://goo.gl/maps/xuPLKhq9wFPn9jFu8'}
             target="_blank"
             rel="noreferrer"
@@ -174,10 +176,10 @@ function ContactTemplate() {
               alt="Location"
               className="w-4 mr-2"
             />
+            <p className={'text-BLACK font-bold my-1'}>
+              Matheu 4051, Mar del Plata, Buenos Aires.
+            </p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>
-            Matheu 4051, Mar del Plata, Buenos Aires.
-          </p>
         </div>
       </div>
       <div
@@ -291,11 +293,11 @@ function ContactTemplate() {
             <option value="docente">Docente</option>
             <option value="directivo">Directivo</option>
             <option value="sponsor">Sponsor</option>
-            <option value="other">Otro</option>
+            <option value="otro">Otro</option>
           </select>
           <button
             type="submit"
-            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20"
+            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20 w-full"
             disabled={isLoading}
           >
             {isLoading ? 'Enviando...' : 'Enviar'}

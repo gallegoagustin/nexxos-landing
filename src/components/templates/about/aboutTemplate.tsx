@@ -30,7 +30,7 @@ function AboutTemplate() {
       name: 'Melissa Ayelen Oliva',
       age: '20',
       position: 'Vicepresidente',
-      info: '"Soy estudiante de Derecho en la UNMDP. En mi recorido por la secundaria participe en Modelos de Naciones Unidas realizados por Nexxos y gracias a esas experiencias pude descubrir que a lo que me queria dedicar era a las Relaciones Internacionales. Participe de Simulacros a nivel nacional e internacional junto a la Facultad. En 2022 me uni a la ONG con el objetivo de adentrarme en la organizacion que tiene cada uno de los simulacros y sobre todo para poder cambiar y mejorar constantemente la educacion. Nexxos es un espacio en el que prevalece el respeto, la perseverancia y el aprender a romper con muchas de las estructuras impuestas por la sociedad y uno mismo."',
+      info: '"Soy estudiante de Derecho en la UNMDP. En mi recorido por la secundaria participe en Modelos de Naciones Unidas realizados por Nexxos y gracias a esas experiencias pude descubrir que a lo que me queria dedicar era a las Relaciones Internacionales. Participe de Simulacros a nivel nacional e internacional junto a la Facultad. En 2022 me uni a la ONG con el objetivo de adentrarme en la organización que tiene cada uno de los simulacros y sobre todo para poder cambiar y mejorar constantemente la educación. Nexxos es un espacio en el que prevalece el respeto, la perseverancia y el aprender a romper con muchas de las estructuras impuestas por la sociedad y uno mismo."',
       image: Image1,
     },
     {

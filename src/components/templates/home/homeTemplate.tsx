@@ -142,7 +142,7 @@ function HomeTemplate() {
             <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
               correcto de
             </h1>
-            <h1 className={'text-WHITE text-4xl lg:text-6xl'}>la educacion</h1>
+            <h1 className={'text-WHITE text-4xl lg:text-6xl'}>la educación</h1>
           </div>
           <Link
             className={
@@ -175,14 +175,7 @@ function HomeTemplate() {
         <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
           Nuestras actividades
         </h1>
-        <div
-          // className={
-          //   isMobile
-          //     ? 'grid grid-cols-2 gap-4 mt-6'
-          //     : 'w-full lg:w-2/3 mt-8 row justify-center'
-          // }
-          className="hidden md:row w-full lg:w-2/3 mt-8 justify-center"
-        >
+        <div className="hidden md:row w-full lg:w-2/3 mt-8 justify-center">
           {carouselItems.map((item) => {
             return (
               <button
@@ -196,7 +189,7 @@ function HomeTemplate() {
               >
                 <div
                   className={
-                    'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-t-lg rounded-br-lg'
+                    'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-lg'
                   }
                 >
                   <Image src={item.icon} alt={'icon'} className={'h-12 w-12'} />

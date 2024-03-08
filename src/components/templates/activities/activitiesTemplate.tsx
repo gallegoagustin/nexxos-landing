@@ -223,7 +223,7 @@ function ActivitiesTemplate() {
                     target="_blank"
                     className={'w-fit'}
                   >
-                    <button>Mas informacion</button>
+                    <button>Mas información</button>
                   </Link>
                 </div>
               </div>

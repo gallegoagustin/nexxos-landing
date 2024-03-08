@@ -20,7 +20,7 @@ const reviews = [
   {
     id: 3,
     name: 'Alfonsina Guardia',
-    type: 'Subsecretaria de vinculacion y postgrado UNMDP.',
+    type: 'Subsecretaria de vinculación y postgrado UNMDP.',
     text: 'Nexxos nació para brindar oportunidades de conocer nuevos caminos posibles de aprender y experimentar.A través de simulacros novedosos se vinculan instituciones, docentes y estudiantes. La ha visto crecer e ir por más, cada año. Me siento orgullosa de acompañar su camino ya que Nexxos es una esperanza posible de una sociedad mejor con excelencia académica, valorando la inclusión y respetando las diferencias',
     image: Review3,
   },
