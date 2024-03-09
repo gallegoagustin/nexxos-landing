@@ -19,12 +19,6 @@ import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
 import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import Icon8 from '../../../../public/images/icons/isotipos/un.svg';
-import ImageCarousel1 from '../../../../public/images/home/onu.jpg';
-import ImageCarousel2 from '../../../../public/images/home/oea.jpg';
-import ImageCarousel3 from '../../../../public/images/home/rastros.jpg';
-import ImageCarousel4 from '../../../../public/images/home/senado.jpg';
-import ImageCarousel6 from '../../../../public/images/home/g20_2.jpg';
-import ImageCarousel7 from '../../../../public/images/home/hcd.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
 
 function HomeTemplate() {
@@ -63,7 +57,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de la Organización de las Naciones Unidas',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
       buttonText: 'saber más',
-      image: ImageCarousel1,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016488/nexxos/onu_dmh4oj.jpg?_s=public-apps',
       logo: Icon1,
       link: '/activities',
     },
@@ -73,7 +68,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de la Organización de los Estados Americanos',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
       buttonText: 'saber más',
-      image: ImageCarousel2,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016490/nexxos/oea_efjlpi.jpg?_s=public-apps',
       logo: Icon2,
       link: '/activities',
     },
@@ -83,7 +79,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de una Investigación Forense',
       text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
       buttonText: 'saber más',
-      image: ImageCarousel3,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016622/nexxos/rastros_mlxigs.jpg?_s=public-apps',
       logo: Icon3,
       link: '/activities',
     },
@@ -93,7 +90,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de la honorable Cámara de Senadores de la Argentina',
       text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
-      image: ImageCarousel4,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016486/nexxos/senado_h3m0um.jpg?_s=public-apps',
       logo: Icon4,
       link: '/activities',
     },
@@ -103,7 +101,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro del Honorable Concejo Deliberante',
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
       buttonText: 'saber más',
-      image: ImageCarousel7,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/hcd_owgp5v.jpg?_s=public-apps',
       logo: Icon7,
       link: '/activities',
     },
@@ -114,7 +113,8 @@ function HomeTemplate() {
         'Simulacro de la Organización de las Naciones Unidas (en inglés)',
       text: 'Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad.',
       buttonText: 'saber más',
-      image: ImageCarousel6,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/g20_2_hen8kl.jpg?_s=public-apps',
       logo: Icon8,
       link: '/activities',
     },
@@ -196,7 +196,13 @@ function HomeTemplate() {
                     'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-lg'
                   }
                 >
-                  <Image src={item.icon} alt={'icon'} className={'h-12 w-12'} />
+                  <LazyLoad once>
+                    <Image
+                      src={item.icon}
+                      alt={'icon'}
+                      className={'h-12 w-12'}
+                    />
+                  </LazyLoad>
                 </div>
                 <p
                   className={
@@ -232,7 +238,7 @@ function HomeTemplate() {
                       subtitle={item.subtitle}
                       text={item.text}
                       buttonText={item.buttonText}
-                      image={item.image.src}
+                      image={item.image}
                       logo={item.logo.src}
                     />
                   </SwiperSlide>
@@ -340,12 +346,14 @@ function HomeTemplate() {
           {articles.length && (
             <article className={'row w-full mt-8'}>
               <div className={'w-1/2 h-full row centered'}>
-                <Image
-                  src={articles[0].image}
-                  alt={'image'}
-                  className={'full'}
-                  priority
-                />
+                <LazyLoad once>
+                  <Image
+                    src={articles[0].image}
+                    alt={'image'}
+                    className={'full'}
+                    priority
+                  />
+                </LazyLoad>
               </div>
               <div className={'w-1/2 col p-4 justify-evenly'}>
                 <p className={'text-BLUE_DARK text-3xl font-bold'}>
@@ -373,13 +381,13 @@ function HomeTemplate() {
                       >
                         SEGUIR LEYENDO
                       </p>
-                      <Image
-                        src={ArrowRightSmall}
-                        alt={'icon'}
-                        className={'ml-2 mt-[1px] w-[13px]'}
-                        // width={13}
-                        // height={10}
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={ArrowRightSmall}
+                          alt={'icon'}
+                          className={'ml-2 mt-[1px] w-[13px]'}
+                        />
+                      </LazyLoad>
                     </Link>
                   </div>
                 )}
@@ -392,12 +400,14 @@ function HomeTemplate() {
                 return (
                   <article key={index} className={'col w-1/3 mt-8 mr-4'}>
                     <div className={'w-full row centered'}>
-                      <Image
-                        src={article.image}
-                        alt={'image'}
-                        className={'full'}
-                        priority
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={article.image}
+                          alt={'image'}
+                          className={'full'}
+                          priority
+                        />
+                      </LazyLoad>
                     </div>
                     <div className={'full col px-4 justify-between'}>
                       <p className={'text-BLUE_DARK text-lg font-bold'}>
@@ -449,12 +459,14 @@ function HomeTemplate() {
                 return (
                   <div key={article.link} className={'col mt-8'}>
                     <div className={'w-full row centered px-4'}>
-                      <Image
-                        src={article.image}
-                        alt={'image'}
-                        className={'full'}
-                        priority
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={article.image}
+                          alt={'image'}
+                          className={'full'}
+                          priority
+                        />
+                      </LazyLoad>
                     </div>
                     <div className={'full h-1/2 justify-around col px-4 py-4'}>
                       <p className={'text-BLUE_DARK text-lg font-bold'}>
@@ -535,11 +547,6 @@ function HomeTemplate() {
                       'row rounded-lg bg-GREY_LIGHT mt-8  p-4 gap-2 items-center'
                     }
                   >
-                    {/* <Image
-                      src={item.image}
-                      alt={'image'}
-                      className={'w-[64px] h-[64px] rounded-[50%]'}
-                    /> */}
                     <div className={'col h-12 gap-1'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
@@ -566,7 +573,6 @@ function HomeTemplate() {
                   <div
                     className={'row rounded-lg bg-GREY_LIGHT items-center p-4'}
                   >
-                    {/* <Image src={item.image} alt={'image'} className={'w-1/5'} /> */}
                     <div className={'col'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
@@ -591,7 +597,6 @@ function HomeTemplate() {
             className={'w-2/3'}
             slidesPerView={5}
             autoplay={{
-              // delay: 2000,
               disableOnInteraction: false,
             }}
             loop={true}
@@ -599,7 +604,9 @@ function HomeTemplate() {
             {alliances.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <Image src={item.icon} alt={'icon'} width={96} />
+                  <LazyLoad once>
+                    <Image src={item.icon} alt={'icon'} width={96} />
+                  </LazyLoad>
                 </SwiperSlide>
               );
             })}
@@ -610,7 +617,9 @@ function HomeTemplate() {
             {alliances.map((item) => {
               return (
                 <div key={item.id} className={'m-6'}>
-                  <Image src={item.icon} alt={'icon'} height={64} />
+                  <LazyLoad once>
+                    <Image src={item.icon} alt={'icon'} height={64} />
+                  </LazyLoad>
                 </div>
               );
             })}

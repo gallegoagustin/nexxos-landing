@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes, { InferProps } from 'prop-types';
 import navBarTabs from '@/constants/navConstants';
-import IconNexxos from '../../../../public/images/icons/nexxos-nav.png';
 import BurgerIcon from '../../../../public/images/icons/burger-menu.svg';
+import LazyLoad from 'react-lazyload';
 
 function NavBar({ activeTab }: Props) {
   const activeButtonClass =
@@ -21,11 +21,16 @@ function NavBar({ activeTab }: Props) {
             'w-full h-16 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <div className={'w-[160px] h-full col justify-center'}>
-            <Link href={'/'}>
-              <Image src={IconNexxos} alt={'nexxos'} />
-            </Link>
-          </div>
+          <Link href={'/'}>
+            <LazyLoad once>
+              <Image
+                src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710015441/nexxos/nexxos-nav_jfnvie.jpg?_s=public-apps"
+                alt={'nexxos'}
+                width={160}
+                height={80}
+              />
+            </LazyLoad>
+          </Link>
           <nav className={'w-2/5 h-full row justify-between items-center'}>
             {navBarTabs.map((item, key) => {
               return (
@@ -53,11 +58,16 @@ function NavBar({ activeTab }: Props) {
             'w-full h-20 bg-GREY_LIGHT row justify-between items-center px-4'
           }
         >
-          <div className={'w-[150px] h-full row justify-start items-center'}>
-            <Link href={'/'}>
-              <Image src={IconNexxos} alt={'icon nexxos'} width={120} />
-            </Link>
-          </div>
+          <Link href={'/'}>
+            <LazyLoad once>
+              <Image
+                src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710015441/nexxos/nexxos-nav_jfnvie.jpg?_s=public-apps"
+                alt={'nexxos'}
+                width={120}
+                height={60}
+              />
+            </LazyLoad>
+          </Link>
           <button className={'w-[48px] h-[48px] row justify-end items-center'}>
             <Image
               src={BurgerIcon}

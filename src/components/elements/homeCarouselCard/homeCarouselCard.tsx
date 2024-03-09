@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
 
 function HomeCarouselCard({
   title,
@@ -32,11 +33,6 @@ function HomeCarouselCard({
     colorClass = 'VIOLET_UN';
   }
 
-  let verticalAlignmentClass =
-    title === 'sim.rastros' || title === 'sim.juicio' ? '' : 'mt-[416px]';
-
-  const elementId = `card-${title}`;
-
   return (
     <div
       className={
@@ -44,33 +40,36 @@ function HomeCarouselCard({
       }
     >
       <div className="w-1/2 h-full bg-transparent relative">
-        <div
-          className={`w-full h-1/4 z-10 flex justify-center items-center absolute ${verticalAlignmentClass}`}
-        >
-          <Image
-            src={logo}
-            alt={'logo'}
-            width={80}
-            height={30}
-            className="w-1/4"
-            priority
-          />
-          <div className="flex flex-col items-start w-2/3 ml-2">
-            <p className="text-5xl text-GREY_LIGHT font-bold mb-2">{title}</p>
-            <p className="text-base text-WHITE w-2/3">{subtitle}</p>
+        <div className="full z-10 row justify-center items-end absolute">
+          <div className="row items-center justify-center gap-4 p-4">
+            <LazyLoad once>
+              <Image
+                src={logo}
+                alt={'nexxos'}
+                width={80}
+                height={30}
+                priority
+              />
+            </LazyLoad>
+            <div className="col">
+              <p className="text-5xl text-GREY_LIGHT font-bold">{title}</p>
+              <p className="text-base text-WHITE">{subtitle}</p>
+            </div>
           </div>
         </div>
-        <Image
-          src={image}
-          alt={'image'}
-          width={385}
-          height={100}
-          style={{ objectFit: 'cover' }}
-          className={
-            '!rounded-l-2xl lg:rounded-none to-greyscale w-full h-full'
-          }
-          priority
-        />
+        <LazyLoad once className="full">
+          <Image
+            src={image}
+            alt={'image'}
+            width={385}
+            height={100}
+            style={{ objectFit: 'cover' }}
+            className={
+              '!rounded-l-2xl lg:rounded-none to-greyscale w-full h-full'
+            }
+            priority
+          />
+        </LazyLoad>
       </div>
       <div
         className={`w-1/2 col ${
@@ -89,7 +88,7 @@ function HomeCarouselCard({
         {text ? (
           <Link
             className={`hover:bg-BLACK hover: bg-${colorClass} text-GREY_LIGHT row centered font-bold px-8 py-1 rounded-lg text-sm self-start transition duration-300 shadow-md`}
-            href={`/activities#${elementId}`}
+            href="/activities"
           >
             {buttonText.toUpperCase()}
           </Link>

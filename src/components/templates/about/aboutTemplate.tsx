@@ -186,11 +186,13 @@ function AboutTemplate() {
             'col w-5/6 justify-center items-center mt-6 md:mt-0 md:ml-24 md:w-[24rem]'
           }
         >
-          <Image
-            src={Volunteer}
-            alt="voluntarios"
-            className={'w-1/2 h-1/2 md:w-5/6 md:h-5/6'}
-          />
+          <LazyLoad once>
+            <Image
+              src={Volunteer}
+              alt="voluntarios"
+              className={'w-1/2 h-1/2 md:w-5/6 md:h-5/6'}
+            />
+          </LazyLoad>
           <Link
             href={
               'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
@@ -217,11 +219,13 @@ function AboutTemplate() {
         <div
           className={'col w-5/6 md:w-[32rem] md:mr-24 order-2 md:order-none'}
         >
-          <Image
-            src={Sponsor}
-            alt="sponsors"
-            className={'w-3/6 self-center my-10 md:my-0'}
-          />
+          <LazyLoad once>
+            <Image
+              src={Sponsor}
+              alt="sponsors"
+              className={'w-3/6 self-center my-10 md:my-0'}
+            />
+          </LazyLoad>
           <div
             className={'col md:row md:justify-evenly items-center md:mx-8 mt-8'}
           >

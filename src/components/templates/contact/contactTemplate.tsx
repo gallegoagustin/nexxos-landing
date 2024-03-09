@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import iconNexxos from '../../../../public/images/icons/nexxos-classic.png';
 import Image from 'next/image';
 import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
+import LazyLoad from 'react-lazyload';
 
 function ContactTemplate() {
   const [name, setName] = useState('');
@@ -104,12 +104,15 @@ function ContactTemplate() {
       }}
     >
       <div className={'columns-2 col w-3/4 min-w-[260px] lg:w-1/4'}>
-        <Image
-          alt="icon nexxos"
-          src={iconNexxos}
-          className="w-1/2 h-1/2"
-          priority
-        />
+        <LazyLoad once>
+          <Image
+            alt="icon nexxos"
+            src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709937140/nexxos/xx_pauawm.jpg?_s=public-apps"
+            priority
+            width={282}
+            height={241}
+          />
+        </LazyLoad>
         <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
           Contacta con
           <br />
@@ -121,11 +124,13 @@ function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/phone-icon.svg"
-              alt="Whatsapp"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/phone-icon.svg"
+                alt="Whatsapp"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
             <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
           </a>
         </div>
@@ -136,11 +141,13 @@ function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/email-icon.svg"
-              alt="email"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/email-icon.svg"
+                alt="email"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
             <p className={'text-BLACK font-bold my-1'}>
               contacto@nexxos.com.ar
             </p>
@@ -156,11 +163,13 @@ function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/header-icon-whatsapp.svg"
-              alt="Whatsapp"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/header-icon-whatsapp.svg"
+                alt="Whatsapp"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
             <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
           </a>
         </div>
@@ -171,11 +180,13 @@ function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/place-icon.svg"
-              alt="Location"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/place-icon.svg"
+                alt="Location"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
             <p className={'text-BLACK font-bold my-1'}>
               Matheu 4051, Mar del Plata, Buenos Aires.
             </p>

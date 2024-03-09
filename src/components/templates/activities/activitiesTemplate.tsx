@@ -196,7 +196,9 @@ function ActivitiesTemplate() {
                     }
                     id="title-container"
                   >
-                    <Image src={item.image} alt={'image'} priority />
+                    <LazyLoad once>
+                      <Image src={item.image} alt={'image'} priority />
+                    </LazyLoad>
                     <p
                       className={
                         'font-montserrat font-bold text-3xl text-GREY_NEXXOS'
