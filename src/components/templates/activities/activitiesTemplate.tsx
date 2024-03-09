@@ -10,6 +10,7 @@ import ImageCard4 from '../../../../public/images/icons/isotipos/g20.svg';
 import ImageCard5 from '../../../../public/images/icons/isotipos/electoral.svg';
 import ImageCard6 from '../../../../public/images/icons/isotipos/sena.svg';
 import ImageCard7 from '../../../../public/images/icons/isotipos/hcd.svg';
+import LazyLoad from 'react-lazyload';
 
 function ActivitiesTemplate() {
   const activitiesCards = [
@@ -127,21 +128,23 @@ function ActivitiesTemplate() {
       className={'full col justify-start items-center'}
     >
       {/* BLOCK 1 */}
-      <div
-        className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
-        style={{
-          background:
-            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/gzl34l6s7csjsrvlauxr.jpg?_s=public-apps)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionY: 'top',
-          boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
-        }}
-      >
-        <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
-          Nuestras Actividades
-        </h1>
-      </div>
+      <LazyLoad once className="w-full">
+        <div
+          className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
+          style={{
+            background:
+              'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/gzl34l6s7csjsrvlauxr.jpg?_s=public-apps)',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionY: 'top',
+            boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
+          }}
+        >
+          <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
+            Nuestras Actividades
+          </h1>
+        </div>
+      </LazyLoad>
 
       {/* BLOCK 2 */}
       <div

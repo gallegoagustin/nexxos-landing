@@ -10,6 +10,7 @@ import 'swiper/css/free-mode';
 import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
+import LazyLoad from 'react-lazyload';
 
 import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
@@ -120,37 +121,43 @@ function HomeTemplate() {
   ];
 
   return (
-    <section className={'full col justify-start items-center'}>
+    <section className={'full col justify-start items-center max-w-[1920px]'}>
       {/* BLOCK 1 */}
-      <div
-        className="header-image-container px-10 lg:py-32 lg:px-24"
-        style={{
-          background:
-            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/atyb5cmr8y2v1j4idkpp.jpg?_s=public-apps)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionY: 'center',
-          boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
-        }}
-      >
-        <div className={'full'}>
-          <div className={'mt-44 md:mt-0'}>
-            <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>El lado</h1>
-            <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
-              correcto de
-            </h1>
-            <h1 className={'text-WHITE text-4xl lg:text-6xl'}>la educación</h1>
+      <LazyLoad once className="w-full">
+        <div
+          className="header-image-container px-10 lg:py-32 lg:px-24"
+          style={{
+            background:
+              'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/atyb5cmr8y2v1j4idkpp.jpg?_s=public-apps)',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionY: 'center',
+            boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
+          }}
+        >
+          <div className={'full'}>
+            <div className={'mt-44 md:mt-0'}>
+              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
+                El lado
+              </h1>
+              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
+                correcto de
+              </h1>
+              <h1 className={'text-WHITE text-4xl lg:text-6xl'}>
+                la educación
+              </h1>
+            </div>
+            <Link
+              className={
+                'main-red-button mt-4 md:mt-8 py-2 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM w-[300px]'
+              }
+              href={'/contact'}
+            >
+              SABER MÁS
+            </Link>
           </div>
-          <Link
-            className={
-              'main-red-button mt-4 md:mt-8 py-2 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM w-[300px]'
-            }
-            href={'/contact'}
-          >
-            SABER MÁS
-          </Link>
         </div>
-      </div>
+      </LazyLoad>
 
       {/* BLOCK 2 */}
       <div className={'col items-center py-6'}>

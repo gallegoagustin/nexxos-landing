@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import LazyLoad from 'react-lazyload';
 
 function AboutTemplate() {
   const autorities = [
@@ -72,21 +73,23 @@ function AboutTemplate() {
   return (
     <section className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
-      <div
-        className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
-        style={{
-          background:
-            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/ce42346hdqzywd7bkxen.jpg?_s=public-apps)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionY: 'center',
-          boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
-        }}
-      >
-        <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
-          Conocenos
-        </h1>
-      </div>
+      <LazyLoad once className="w-full">
+        <div
+          className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
+          style={{
+            background:
+              'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/ce42346hdqzywd7bkxen.jpg?_s=public-apps)',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionY: 'center',
+            boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.3)',
+          }}
+        >
+          <h1 className={'text-WHITE text-4xl lg:text-5xl text-center'}>
+            Conocenos
+          </h1>
+        </div>
+      </LazyLoad>
 
       {/* BLOCK 2 */}
       <div
@@ -126,14 +129,16 @@ function AboutTemplate() {
                       'my-6 w-full md:w-4/5 row items-center justify-evenly md:justify-around'
                     }
                   >
-                    <Image
-                      src={item.image}
-                      alt={'image'}
-                      width={150}
-                      height={150}
-                      className={'rounded-full md:w-40 md:h-40 w-28 h-28'}
-                      priority
-                    />
+                    <LazyLoad once>
+                      <Image
+                        src={item.image}
+                        alt={'image'}
+                        width={150}
+                        height={150}
+                        className={'rounded-full md:w-40 md:h-40 w-28 h-28'}
+                        priority
+                      />
+                    </LazyLoad>
                     <div className={'w-[8rem] md:w-1/2 text-WHITE'}>
                       <h1>{item.name}</h1>
                       <p>{item.position}</p>
