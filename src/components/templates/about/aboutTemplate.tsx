@@ -1,12 +1,4 @@
 import React from 'react';
-import About1 from '../../../../public/images/about1.jpg';
-import Image1 from '../../../../public/images/autorities/melisaayelen.jpg';
-import Image3 from '../../../../public/images/autorities/valentina.jpeg';
-import Image4 from '../../../../public/images/autorities/sofia.jpeg';
-import Image6 from '../../../../public/images/autorities/alan.jpeg';
-import Image7 from '../../../../public/images/autorities/zoe.jpeg';
-import Image8 from '../../../../public/images/autorities/maitena.jpeg';
-import Image9 from '../../../../public/images/autorities/emiliano.jpeg';
 import Image from 'next/image';
 import Volunteer from '../../../../public/images/volunteer.png';
 import Sponsor from '../../../../public/images/support.png';
@@ -24,49 +16,56 @@ function AboutTemplate() {
       age: '21',
       position: 'Presidente',
       info: '"Estoy en tercer año del profesorado en Matemática y con el tiempo que llevo siendo voluntario en la ONG, descubrí muchísimas herramientas que, actualmente, hacen que siga formándome como docente. Sin embargo, estoy convencido que la educación secundaria necesita un cambio. Ese cambio lo encontré en NEXXOS y es donde quiero seguir apostando para lograr que los jóvenes se desafíen y desarrollen habilidades ¿Como se logra eso? Construyendo una educación integral y de calidad que permita a los y las estudiantes a potenciarse en cada aspecto de su vida. Seamos parte de la transformación del presente garantizando los frutos para el futuro."',
-      image: Image6,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013141/nexxos/alan_ar2npf.jpg?_s=public-apps',
     },
     {
       name: 'Melissa Ayelen Oliva',
       age: '20',
       position: 'Vicepresidente',
       info: '"Soy estudiante de Derecho en la UNMDP. En mi recorido por la secundaria participe en Modelos de Naciones Unidas realizados por Nexxos y gracias a esas experiencias pude descubrir que a lo que me queria dedicar era a las Relaciones Internacionales. Participe de Simulacros a nivel nacional e internacional junto a la Facultad. En 2022 me uni a la ONG con el objetivo de adentrarme en la organización que tiene cada uno de los simulacros y sobre todo para poder cambiar y mejorar constantemente la educación. Nexxos es un espacio en el que prevalece el respeto, la perseverancia y el aprender a romper con muchas de las estructuras impuestas por la sociedad y uno mismo."',
-      image: Image1,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013140/nexxos/melisaayelen_fvtvp4.jpg?_s=public-apps',
     },
     {
       name: 'Zoe Holgado',
       age: '21',
       position: 'Secretaria General',
       info: '"Estudiante de la Licenciatura en Administración de Empresas. Conocí NEXXOS cuando estaba en el secundario, y me uní para devolver al menos un poco de lo que la organización hizo por mí cuando era participante. Desde entonces, he tenido la oportunidad de integrar diferentes proyectos y actividades en lo que respecta a la educación, ello me ha permitido adquirir experiencia en gestión de proyectos, liderazgo y sobre todas las cosas trabajo en equipo. Además, he podido conocer acerca de las realidades y problemáticas que aquejan en la educación actual, y estoy totalmente convencida que hay que hacer un cambio, y es por eso hacemos lo que hacemos."',
-      image: Image7,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013140/nexxos/zoe_ut1md5.jpg?_s=public-apps',
     },
     {
       name: 'Valentina Fardin',
       age: '23',
       position: 'Tesorera',
       info: '"Estudiante de Licenciatura y Profesorado en Geografía. Mi pasión por la educación y mi convicción de empoderar a los jóvenes me llevaron a unirme a NEXXOS.  Cómo estudiante comprendo la importancia de una educación que desarrolle habilidades poderosas que nos permitan enfrentar los desafíos del mundo actual. En NEXXOS encontré la plataforma perfecta para fomentar un pensamiento crítico de la realidad y a alzar sus voces para construir un futuro más brillante."',
-      image: Image3,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013142/nexxos/valentina_hnewix.jpg?_s=public-apps',
     },
     {
       name: 'Sofía Ali',
       age: '20',
       position: 'Vocal',
       info: '"Unirme a Nexxos fue el primer paso para contribuir en el cambio de lo que más influyó en quién soy hoy, la educación. Ser voluntaria me permite aprender constantemente de quienes me rodean y el trabajo en equipo me motiva a sacar cada día una mejor versión de mi. Estudio derecho en la UNMDP, represente a mi facultad en modelos de ONU realizados en el país y en el exterior. Me interesa el feminismo y en los fines de semana suelo dar apoyo escolar a jovenes y niños/as de manera voluntaria."',
-      image: Image4,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013140/nexxos/sofia_jai2fi.jpg?_s=public-apps',
     },
     {
       name: 'Maitena Granda',
       age: '19',
       position: 'Vocal',
       info: '"Son pocas las cosas que tengo en claro y que no necesito reafirmar continuamente, una de ellas es mi pertenencia en NEXXOS, la disconformidad que en un principio me condujo hasta el voluntariado se transformó en interés por la educación y ayudar a jóvenes a desarrollar pensamiento crítico. Además de ayudar a formar ciudadanos íntegros en esta ong, estoy cursando el segundo año de la carrera de Comunicación Audiovisual en la UNMDP."',
-      image: Image8,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013142/nexxos/maitena_q4dnbz.jpg?_s=public-apps',
     },
     {
       name: 'Emiliano Iché',
       age: '20',
       position: 'Vocal',
       info: '"Soy estudiante de historia, y es por ello que encontré en NEXXOS la posibilidad de trabajar con jóvenes, con quiénes son el futuro, sin estar graduado. Sin embargo, entiendo la educación secundaria necesita un cambio estructural muy profundo, y veo en la ONG los pilares de esa modificación, los valores y las herramientas que se brindan desde otra forma de enseñar son la base de una mejor educación secundaria."',
-      image: Image9,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710013141/nexxos/emiliano_nrwys5.jpg?_s=public-apps',
     },
   ];
 
@@ -76,7 +75,8 @@ function AboutTemplate() {
       <div
         className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
         style={{
-          background: `url(${About1.src})`,
+          background:
+            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/ce42346hdqzywd7bkxen.jpg?_s=public-apps)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: 'center',

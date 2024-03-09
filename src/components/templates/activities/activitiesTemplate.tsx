@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import Activities1 from '../../../../public/images/activities1.jpg';
 import ImageCard1 from '../../../../public/images/icons/isotipos/onu.svg';
 import ImageCard2 from '../../../../public/images/icons/isotipos/oea.svg';
 import ImageCard3 from '../../../../public/images/icons/isotipos/rastros.svg';
@@ -11,7 +10,6 @@ import ImageCard4 from '../../../../public/images/icons/isotipos/g20.svg';
 import ImageCard5 from '../../../../public/images/icons/isotipos/electoral.svg';
 import ImageCard6 from '../../../../public/images/icons/isotipos/sena.svg';
 import ImageCard7 from '../../../../public/images/icons/isotipos/hcd.svg';
-import ImageCard8 from '../../../../public/images/icons/isotipos/juicio.svg';
 
 function ActivitiesTemplate() {
   const activitiesCards = [
@@ -132,7 +130,8 @@ function ActivitiesTemplate() {
       <div
         className={`header-image-container px-12 lg:py-56 lg:px-24 row centered`}
         style={{
-          background: `url(${Activities1.src})`,
+          background:
+            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/gzl34l6s7csjsrvlauxr.jpg?_s=public-apps)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: 'top',

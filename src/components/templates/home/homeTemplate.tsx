@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
-
-import Image from 'next/image';
-import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
 
-import Landing1 from '../../../../public/images/landing1.jpeg';
+import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
 import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
 import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
 import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import Icon8 from '../../../../public/images/icons/isotipos/un.svg';
-
 import ImageCarousel1 from '../../../../public/images/home/onu.jpg';
 import ImageCarousel2 from '../../../../public/images/home/oea.jpg';
 import ImageCarousel3 from '../../../../public/images/home/rastros.jpg';
@@ -28,7 +25,6 @@ import ImageCarousel4 from '../../../../public/images/home/senado.jpg';
 import ImageCarousel6 from '../../../../public/images/home/g20_2.jpg';
 import ImageCarousel7 from '../../../../public/images/home/hcd.jpg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
-import { useRouter } from 'next/router';
 
 function HomeTemplate() {
   const router = useRouter();
@@ -127,9 +123,10 @@ function HomeTemplate() {
     <section className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
       <div
-        className={`header-image-container px-10 lg:py-32 lg:px-24`}
+        className="header-image-container px-10 lg:py-32 lg:px-24"
         style={{
-          background: `url(${Landing1.src})`,
+          background:
+            'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/atyb5cmr8y2v1j4idkpp.jpg?_s=public-apps)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: 'center',
