@@ -59,7 +59,7 @@ export default function Home({
   const { i18nHome } = useDynamicTranslation();
 
   return (
-    <section className={'full col justify-start items-center max-w-[1920px]'}>
+    <section className={'full col justify-start items-center'}>
       {/* BLOCK 1 */}
       <LazyLoad once className="w-full">
         <div

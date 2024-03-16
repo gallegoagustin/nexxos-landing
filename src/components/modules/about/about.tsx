@@ -24,7 +24,7 @@ export default function About({ autorities }: Props) {
   const { i18nAbout } = useDynamicTranslation();
 
   return (
-    <section className={'full col justify-start items-center'}>
+    <section className={'full col justify-start'}>
       {/* BLOCK 1 */}
       <LazyLoad once className="w-full">
         <div
@@ -45,9 +45,7 @@ export default function About({ autorities }: Props) {
       </LazyLoad>
 
       {/* BLOCK 2 */}
-      <div
-        className={'full col lg:row items-center justify-center py-12 bg-WHITE'}
-      >
+      <div className={'full col lg:row items-center justify-center bg-WHITE'}>
         <Swiper
           pagination={true}
           modules={[Pagination, Autoplay]}

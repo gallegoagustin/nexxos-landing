@@ -21,7 +21,7 @@ interface Props {
 function PageLayout({ children, activeTab, className }: Props): JSX.Element {
   return (
     <div
-      className={`col w-full h-full min-h-screen col  max-w-[1920px] ${
+      className={`col w-full h-full min-h-screen col max-w-[1920px] ${
         className || ''
       }`}
     >
