@@ -1,3 +1,4 @@
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import React, { useEffect } from 'react';
 import Modal, { Styles } from 'react-modal';
 
@@ -26,6 +27,8 @@ interface SuccessModalProps {
 }
 
 function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
+  const { i18nContact } = useDynamicTranslation();
+
   useEffect(() => {
     if (isOpen) {
       // Iniciar el temporizador para cerrar el modal después de 3 segundos
@@ -37,6 +40,7 @@ function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -44,13 +48,13 @@ function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
       style={customStyles}
       contentLabel="Success Modal"
     >
-      <p>¡Formulario enviado con éxito!</p>
-      <p>Alguien del equipo de Nexxos se pondrá en contacto a la brevedad.</p>
+      <p>{i18nContact('sentTitle')}</p>
+      <p>{i18nContact('sentMessage')}</p>
       <button
         className="main-red-button text-WHITE py-2 px-4 rounded-lg transition duration-300 hover:bg-RED_G20 w-[200px]"
         onClick={onClose}
       >
-        Cerrar
+        {i18nContact('close')}
       </button>
     </Modal>
   );

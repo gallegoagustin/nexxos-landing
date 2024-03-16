@@ -1,8 +1,12 @@
 import React from 'react';
-import ContactTemplate from '@/components/templates/contact/contactTemplate';
-import Layout from '@/components/templates/bodyLayout/layout';
+import PageLayout from '@/components/layouts/page-layout';
+import Contact from '@/components/modules/contact';
+import { LayoutType } from '@/components/layouts/global/Layout';
+import { NextPageContext } from 'next';
+import { locales } from '@/config/i18n';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function Contact() {
+export default function ContactPage() {
   const [hydrated, setHydrated] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -12,8 +16,20 @@ export default function Contact() {
   if (!hydrated) return null;
 
   return (
-    <Layout activeTab={'contact'}>
-      <ContactTemplate />
-    </Layout>
+    <PageLayout activeTab={'contact'}>
+      <Contact />
+    </PageLayout>
   );
 }
+
+ContactPage.layout = LayoutType.CONTACT;
+
+export const getServerSideProps = async (context: NextPageContext) => {
+  const { req, query, locale = 'es' } = context;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, locales)),
+    },
+  };
+};

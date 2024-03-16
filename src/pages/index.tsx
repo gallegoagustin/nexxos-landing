@@ -1,8 +1,12 @@
 import React from 'react';
-import Layout from '@/components/templates/bodyLayout/layout';
-import HomeTemplate from '@/components/templates/home/homeTemplate';
+import { LayoutType } from '@/components/layouts/global/Layout';
+import { NextPageContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { locales } from '@/config/i18n';
+import PageLayout from '@/components/layouts/page-layout';
+import Home from '@/components/modules/home';
 
-export default function Home() {
+export default function HomePage() {
   const [hydrated, setHydrated] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -12,8 +16,20 @@ export default function Home() {
   if (!hydrated) return null;
 
   return (
-    <Layout activeTab={'home'}>
-      <HomeTemplate />
-    </Layout>
+    <PageLayout activeTab={'home'}>
+      <Home />
+    </PageLayout>
   );
 }
+
+HomePage.layout = LayoutType.HOME;
+
+export const getServerSideProps = async (context: NextPageContext) => {
+  const { req, query, locale = 'es' } = context;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, locales)),
+    },
+  };
+};

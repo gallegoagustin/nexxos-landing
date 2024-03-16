@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
+import LazyLoad from 'react-lazyload';
+
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
 import IconTwitter from '../../../../public/images/icons/social-media/twitterx.svg';
 import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
-import LazyLoad from 'react-lazyload';
 
 function Footer() {
+  const { i18nCommon } = useDynamicTranslation();
+
   return (
     <footer
       className={
@@ -35,43 +39,47 @@ function Footer() {
           }
         >
           <div className={'col'}>
-            <p className={'font-bold text-GREY_LIGHT mb-2'}>NEXXOS</p>
+            <p className={'font-bold text-GREY_LIGHT mb-2'}>
+              {i18nCommon('footer.nexxos')}
+            </p>
             <Link
               href={
                 'https://docs.google.com/forms/d/e/1FAIpQLSe1BmhKQI2NCoyoFwtOo_Ie1P9Sps_o-u8JCbJSftEmWyVd5A/viewform?usp=sf_link'
               }
               target={'_blank'}
             >
-              <p className={'my-1'}>Sumate como voluntario</p>
+              <p className={'my-1'}>{i18nCommon('footer.volunteer')}</p>
             </Link>
           </div>
           <div className={'col'}>
-            <p className={'font-bold text-GREY_LIGHT mb-2'}>SITE</p>
+            <p className={'font-bold text-GREY_LIGHT mb-2'}>
+              {i18nCommon('footer.site')}
+            </p>
+            <Link href={'/home'}>
+              <p className={'my-1'}>{i18nCommon('footer.home')}</p>
+            </Link>
             <Link href={'/activities'}>
-              <p className={'my-1'}>Nuestras actividades</p>
+              <p className={'my-1'}>{i18nCommon('footer.activities')}</p>
+            </Link>
+            <Link href={'/about'}>
+              <p className={'my-1'}>{i18nCommon('footer.about')}</p>
             </Link>
             <Link href={'/contact'}>
-              <p className={'my-1'}>Contacto</p>
+              <p className={'my-1'}>{i18nCommon('footer.contact')}</p>
             </Link>
           </div>
           <div className={'col'}>
-            <p className={'font-bold text-GREY_LIGHT mb-2'}>LEGAL</p>
+            <p className={'font-bold text-GREY_LIGHT mb-2'}>
+              {i18nCommon('footer.legal')}
+            </p>
             <Link
               href={
                 'https://drive.google.com/file/d/1FK8LytKXklcbZ-XOuMEEEHReW3wvghzc/view?usp=drive_link'
               }
               target="_blank"
             >
-              <p className={'my-1'}>Estatuto</p>
+              <p className={'my-1'}>{i18nCommon('footer.paper')}</p>
             </Link>
-            {/* <Link
-              href={
-                'https://drive.google.com/file/d/15BKHJxWVVXJBFoLzEwcXLt1b4Xg3Fl20/view?usp=drive_link'
-              }
-              target="_blank"
-            >
-              <p className={'my-1'}>Reglamento Interno</p>
-            </Link> */}
           </div>
         </div>
       </div>
@@ -92,7 +100,7 @@ function Footer() {
           </LazyLoad>
         </Link>
       </div>
-      <p className={'font-light mt-8'}>Copyright © 2024 Nexxos ONG</p>
+      <p className={'font-light mt-8'}>{i18nCommon('footer.copyright')}</p>
     </footer>
   );
 }
