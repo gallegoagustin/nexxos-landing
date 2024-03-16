@@ -1,22 +1,22 @@
 {
-    "contact": {
-        "header": "Contacta con\nnosotros",
-        "wpp": "Envianos un Whatsapp",
-        "name": "Nombre",
-        "surname": "Apellido",
-        "email": "Correo electrónico",
-        "message": "Mensaje",
-        "role": "Rol",
-        "mandatory": "Campo obligatorio",
-        "student": "Estudiante",
-        "teacher": "Docente",
-        "manager": "Directivo",
-        "sponsor": "Sponsor",
-        "other": "Otro",
-        "send": "Enviar",
-        "sending": "Enviando...",
-        "sentTitle": "¡Formulario enviado con éxito!",
-        "sentMessage": "Alguien del equipo de Nexxos se pondrá en contacto a la brevedad.",
-        "close": "Cerrar"
-    }
+  "contact": {
+    "header": "Contacta con\nnosotros",
+    "wpp": "Envianos un Whatsapp",
+    "name": "Nombre",
+    "surname": "Apellido",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "role": "Rol",
+    "mandatory": "Campo obligatorio",
+    "student": "Estudiante",
+    "teacher": "Docente",
+    "manager": "Directivo",
+    "sponsor": "Sponsor",
+    "other": "Otro",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "sentTitle": "¡Formulario enviado con éxito!",
+    "sentMessage": "Alguien del equipo de Nexxos se pondrá en contacto a la brevedad.",
+    "close": "Cerrar"
+  }
 }

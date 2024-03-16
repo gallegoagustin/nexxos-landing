@@ -1,85 +1,85 @@
 {
-    "home": {
-        "headerTitle": "<redText>El lado\ncorrecto de</redText>\nla educación",
-        "more": "Saber más",
-        "description": "Somos una ONG que busca la transformación educativa en la Argentina y el mundo. Luchamos por una educación que tenga como eje principal la formación en habilidades, capacidades, inteligencias múltiples, autoconocimiento e interacciones sociales. Creemos en un mundo con menos problemáticas, en el que mejoramos nuestras comunicaciones y vinculaciones. Una de nuestras formas de demostrar que una educación distinta es posible, es organizando simulacros educativos que ponen a nuestros estudiantes a prueba y los empuja a crecer y aprender para la vida.",
-        "activities": "Nuestras actividades",
-        "activitiesList": {
-            "onu": {
-                "title": "sim.onu",
-                "header": "Simulacro de la Organización de las Naciones Unidas",
-                "description": "Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas."
-            },
-            "oea": {
-                "title": "sim.oea",
-                "header": "Simulacro de la Organización de los Estados Americanos",
-                "description": "Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas."
-            },
-            "rastros": {
-                "title": "sim.rastros",
-                "header": "Simulacro de una Investigación Forense",
-                "description": "El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable."
-            },
-            "sena": {
-                "title": "sim.sena",
-                "header": "Simulacro de la honorable Cámara de Senadores de la Argentina",
-                "description": "Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros."
-            },
-            "hcd": {
-                "title": "sim.hcd",
-                "header": "Simulacro del Honorable Concejo Deliberante",
-                "description": "Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes."
-            },
-            "un": {
-                "title": "sim.un",
-                "header": "Simulacro de la Organización de las Naciones Unidas (en inglés)",
-                "description": "Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad."
-            }
-        },
-        "inMedia": "En los medios",
-        "keepReading": "Seguir leyendo",
-        "articles": {
-            "one": {
-                "title": "Más de 1300 estudiantes participan de los simulacros de la ONU y la OEA",
-                "subtitle": "Desde hoy y hasta el jueves la ONG Nexxos, en conjunto con la Universidad Nacional de Mar del Plata, llevará a cabo una nueva edición del simulacro de la Organización de las Naciones Unidas y del simulacro de la Organización de los Estados Americanos “Prof. María Celia Beneitez”...",
-                "from": "MDP Hoy"
-            },
-            "two": {
-                "title": "Reconocimiento del HCD a la ONG Nexxos",
-                "from": "Concejo MDP"
-            },
-            "three": {
-                "title": "Unos 250 jóvenes participan del SIM - ONU 2022 en Miramar",
-                "from": "La Capital"
-            },
-            "four": {
-                "title": "Llegó la OEA a Tandil",
-                "from": "El diario de Tandil"
-            }
-        },
-        "review": "Quienes nos conocen, opinan",
-        "reviews": {
-            "one": {
-                "author": "Lucila Acuña",
-                "position": "Estudiante",
-                "text": "Mi primera vez siendo parte de NEXXOS fue en 2022. Participé del sim.onu en Mar del Plata y fuimos Chile. Quería ir solo para ver cómo era la experiencia. Estaba negada a hablar, era muy tímida y estaba decidida a estudiar algo relacionado a las ciencias naturales. Un año después, decidí volver a intentarlo. Tenía que animarme a hablar, me iba a servir para un futuro. Fui a ambos sim.onu (Miramar y Mar del Plata) siendo China y Japón respectivamente. Me animé a hablar, pude socializar e hice amigos. Estaba más segura de mí misma al terminarlos. Sentía que ya era capaz de hablar y abrirme más con desconocidos. Incluso de discutir distintas posturas con gente que tiene una idea totalmente distinta a la de mi país. Ahora, considero estudiar algo más relacionado a lo humano o las ciencias sociales. No me arrepiento para nada de ser parte de estas experiencias y espero repetirlas el año que viene ❤️"
-            },
-            "two": {
-                "author": "Matias Milia",
-                "position": "Docente",
-                "text": "¡Hola! Soy Matías Milia, profesor de Prácticas del lenguaje y Literatura en escuelas secundarias, apasionado por el desarrollo de habilidades relacionadas con la comunicación.Aliento activamente a mis estudiantes a participar en los simulacros educativos. Estos ofrecen mucho más que simples actividades; son catalizadores para el desarrollo de habilidades fundamentales. Desde la investigación profunda hasta la escritura precisa y la habilidad para expresarse oralmente, estos eventos proporcionan un espacio ideal para emplear estas destrezas esenciales. Los simulacros de Nexxos han dejado una huella significativa en mis alumnos. No solo desean regresar, sino que también han demostrado un crecimiento notable en habilidades de resolución de problemas, confianza en sí mismos y una capacidad mejorada para expresar sus ideas de manera clara y efectiva. La demanda y el entusiasmo por participar, hablan por sí solos sobre la calidad y el impacto positivo de estos simulacros educativos. Invito a todos los interesados en potenciar sus habilidades a unirse a esta experiencia transformadora"
-            },
-            "three": {
-                "author": "Alfonsina Guardia",
-                "position": "Subsecretaria de vinculación y postgrado UNMDP",
-                "text": "Nexxos nació para brindar oportunidades de conocer nuevos caminos posibles de aprender y experimentar.A través de simulacros novedosos se vinculan instituciones, docentes y estudiantes. La ha visto crecer e ir por más, cada año. Me siento orgullosa de acompañar su camino ya que Nexxos es una esperanza posible de una sociedad mejor con excelencia académica, valorando la inclusión y respetando las diferencias"
-            },
-            "four": {
-                "author": "Marianela Romero",
-                "position": "Concejal - Honorable Concejo Deliberante de General Pueyrredón",
-                "text": "Soy Marianela Romero, tengo 37 años, soy abogada, concejal y presido el Bloque de la Unión Cívica Radical en el Honorable Concejo Deliberante de General Pueyrredon. Compromisos como los que tiene Nexxos hace que muchos jóvenes encuentren el interés en la educación, por medio de actividades alternativas, donde desarrollan intereses personales que los llevan a encontrarse consigo mismos, a desarrollar habilidades que muchas veces ni siquiera sabían que tenían, vincularse con sus pares desde otro lugar y crecer y aprender en un contexto amigable. Es la razón por la que alegra haberlos conocido, acompañar el crecimiento de la ONG y poder trabajar en conjunto en más de un proyecto."
-            }
-        },
-        "alliances": "Nuestras alianzas"
-    }
+  "home": {
+    "headerTitle": "<redText>El lado\ncorrecto de</redText>\nla educación",
+    "more": "Saber más",
+    "description": "Somos una ONG que busca la transformación educativa en la Argentina y el mundo. Luchamos por una educación que tenga como eje principal la formación en habilidades, capacidades, inteligencias múltiples, autoconocimiento e interacciones sociales. Creemos en un mundo con menos problemáticas, en el que mejoramos nuestras comunicaciones y vinculaciones. Una de nuestras formas de demostrar que una educación distinta es posible, es organizando simulacros educativos que ponen a nuestros estudiantes a prueba y los empuja a crecer y aprender para la vida.",
+    "activities": "Nuestras actividades",
+    "activitiesList": {
+      "onu": {
+        "title": "sim.onu",
+        "header": "Simulacro de la Organización de las Naciones Unidas",
+        "description": "Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas."
+      },
+      "oea": {
+        "title": "sim.oea",
+        "header": "Simulacro de la Organización de los Estados Americanos",
+        "description": "Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas."
+      },
+      "rastros": {
+        "title": "sim.rastros",
+        "header": "Simulacro de una Investigación Forense",
+        "description": "El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable."
+      },
+      "sena": {
+        "title": "sim.sena",
+        "header": "Simulacro de la honorable Cámara de Senadores de la Argentina",
+        "description": "Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros."
+      },
+      "hcd": {
+        "title": "sim.hcd",
+        "header": "Simulacro del Honorable Concejo Deliberante",
+        "description": "Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes."
+      },
+      "un": {
+        "title": "sim.un",
+        "header": "Simulacro de la Organización de las Naciones Unidas (en inglés)",
+        "description": "Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad."
+      }
+    },
+    "inMedia": "En los medios",
+    "keepReading": "Seguir leyendo",
+    "articles": {
+      "one": {
+        "title": "Más de 1300 estudiantes participan de los simulacros de la ONU y la OEA",
+        "subtitle": "Desde hoy y hasta el jueves la ONG Nexxos, en conjunto con la Universidad Nacional de Mar del Plata, llevará a cabo una nueva edición del simulacro de la Organización de las Naciones Unidas y del simulacro de la Organización de los Estados Americanos “Prof. María Celia Beneitez”...",
+        "from": "MDP Hoy"
+      },
+      "two": {
+        "title": "Reconocimiento del HCD a la ONG Nexxos",
+        "from": "Concejo MDP"
+      },
+      "three": {
+        "title": "Unos 250 jóvenes participan del SIM - ONU 2022 en Miramar",
+        "from": "La Capital"
+      },
+      "four": {
+        "title": "Llegó la OEA a Tandil",
+        "from": "El diario de Tandil"
+      }
+    },
+    "review": "Quienes nos conocen, opinan",
+    "reviews": {
+      "one": {
+        "author": "Lucila Acuña",
+        "position": "Estudiante",
+        "text": "Mi primera vez siendo parte de NEXXOS fue en 2022. Participé del sim.onu en Mar del Plata y fuimos Chile. Quería ir solo para ver cómo era la experiencia. Estaba negada a hablar, era muy tímida y estaba decidida a estudiar algo relacionado a las ciencias naturales. Un año después, decidí volver a intentarlo. Tenía que animarme a hablar, me iba a servir para un futuro. Fui a ambos sim.onu (Miramar y Mar del Plata) siendo China y Japón respectivamente. Me animé a hablar, pude socializar e hice amigos. Estaba más segura de mí misma al terminarlos. Sentía que ya era capaz de hablar y abrirme más con desconocidos. Incluso de discutir distintas posturas con gente que tiene una idea totalmente distinta a la de mi país. Ahora, considero estudiar algo más relacionado a lo humano o las ciencias sociales. No me arrepiento para nada de ser parte de estas experiencias y espero repetirlas el año que viene ❤️"
+      },
+      "two": {
+        "author": "Matias Milia",
+        "position": "Docente",
+        "text": "¡Hola! Soy Matías Milia, profesor de Prácticas del lenguaje y Literatura en escuelas secundarias, apasionado por el desarrollo de habilidades relacionadas con la comunicación.Aliento activamente a mis estudiantes a participar en los simulacros educativos. Estos ofrecen mucho más que simples actividades; son catalizadores para el desarrollo de habilidades fundamentales. Desde la investigación profunda hasta la escritura precisa y la habilidad para expresarse oralmente, estos eventos proporcionan un espacio ideal para emplear estas destrezas esenciales. Los simulacros de Nexxos han dejado una huella significativa en mis alumnos. No solo desean regresar, sino que también han demostrado un crecimiento notable en habilidades de resolución de problemas, confianza en sí mismos y una capacidad mejorada para expresar sus ideas de manera clara y efectiva. La demanda y el entusiasmo por participar, hablan por sí solos sobre la calidad y el impacto positivo de estos simulacros educativos. Invito a todos los interesados en potenciar sus habilidades a unirse a esta experiencia transformadora"
+      },
+      "three": {
+        "author": "Alfonsina Guardia",
+        "position": "Subsecretaria de vinculación y postgrado UNMDP",
+        "text": "Nexxos nació para brindar oportunidades de conocer nuevos caminos posibles de aprender y experimentar.A través de simulacros novedosos se vinculan instituciones, docentes y estudiantes. La ha visto crecer e ir por más, cada año. Me siento orgullosa de acompañar su camino ya que Nexxos es una esperanza posible de una sociedad mejor con excelencia académica, valorando la inclusión y respetando las diferencias"
+      },
+      "four": {
+        "author": "Marianela Romero",
+        "position": "Concejal - Honorable Concejo Deliberante de General Pueyrredón",
+        "text": "Soy Marianela Romero, tengo 37 años, soy abogada, concejal y presido el Bloque de la Unión Cívica Radical en el Honorable Concejo Deliberante de General Pueyrredon. Compromisos como los que tiene Nexxos hace que muchos jóvenes encuentren el interés en la educación, por medio de actividades alternativas, donde desarrollan intereses personales que los llevan a encontrarse consigo mismos, a desarrollar habilidades que muchas veces ni siquiera sabían que tenían, vincularse con sus pares desde otro lugar y crecer y aprender en un contexto amigable. Es la razón por la que alegra haberlos conocido, acompañar el crecimiento de la ONG y poder trabajar en conjunto en más de un proyecto."
+      }
+    },
+    "alliances": "Nuestras alianzas"
+  }
 }

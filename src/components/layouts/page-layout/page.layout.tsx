@@ -20,19 +20,17 @@ interface Props {
 
 function PageLayout({ children, activeTab, className }: Props): JSX.Element {
   return (
-    <>
-      <div
-        className={`col w-full h-full min-h-screen flex flex-col ${
-          className || ''
-        }`}
-      >
-        <NavBar activeTab={activeTab} />
-        <main className="col flex-1 flex min-h-[100vh]">
-          <div className="full flex-1">{children}</div>
-          <Footer />
-        </main>
-      </div>
-    </>
+    <div
+      className={`col w-full h-full min-h-screen col  max-w-[1920px] ${
+        className || ''
+      }`}
+    >
+      <NavBar activeTab={activeTab} />
+      <main className="col flex-1 min-h-[100vh]">
+        <div className="full flex-1">{children}</div>
+        <Footer />
+      </main>
+    </div>
   );
 }
 

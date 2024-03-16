@@ -54,7 +54,9 @@ const Layout = ({
         <meta content="utf-8" httpEquiv="encoding" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div data-theme="nexxos">{renderWithLayout({ name, children })}</div>
+      <div data-theme="nexxos" className="flex justify-center">
+        {renderWithLayout({ name, children })}
+      </div>
     </Providers>
   );
 };
