@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import PropTypes, { InferProps } from 'prop-types';
 import navBarTabs from '@/constants/navConstants';
 import BurgerIcon from '../../../../public/images/icons/burger-menu.svg';
 import LazyLoad from 'react-lazyload';
+
+interface Props {
+  activeTab: string;
+}
 
 function NavBar({ activeTab }: Props) {
   const activeButtonClass =
@@ -112,11 +115,5 @@ function NavBar({ activeTab }: Props) {
     </>
   );
 }
-
-NavBar.propTypes = {
-  activeTab: PropTypes.string.isRequired,
-};
-
-type Props = InferProps<typeof NavBar.propTypes>;
 
 export default NavBar;

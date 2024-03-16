@@ -1,150 +1,150 @@
 /* NEUE MACHINA */
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Ultralight.ttf');
-    font-weight: 200;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Ultralight.ttf');
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Light.ttf');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Medium.ttf');
-    font-weight: medium;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Medium.ttf');
+  font-weight: medium;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Bold.ttf');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Machina';
-    src: url('../asset/fonts/NeueMachina-Ultrabold.ttf');
-    font-weight: 900;
-    font-style: normal;
+  font-family: 'Neue Machina';
+  src: url('../asset/fonts/NeueMachina-Ultrabold.ttf');
+  font-weight: 900;
+  font-style: normal;
 }
 
 /* BE VIETNAM */
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-Thin.ttf');
-    font-weight: 200;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-Thin.ttf');
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-ThinItalic.ttf');
-    font-weight: 200;
-    font-style: italic;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-ThinItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-Light.ttf');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-LightItalic.ttf');
-    font-weight: 300;
-    font-style: italic;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-SemiBold.ttf');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-SemiBold.ttf');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-SemiBoldItalic.ttf');
-    font-weight: 500;
-    font-style: italic;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-SemiBoldItalic.ttf');
+  font-weight: 500;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-Bold.ttf');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-BoldItalic.ttf');
-    font-weight: bold;
-    font-style: italic;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-ExtraBold.ttf');
-    font-weight: 900;
-    font-style: normal;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-ExtraBold.ttf');
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Be Vietnam';
-    src: url('../asset/fonts/BeVietnam-ExtraBoldItalic.ttf');
-    font-weight: 900;
-    font-style: italic;
+  font-family: 'Be Vietnam';
+  src: url('../asset/fonts/BeVietnam-ExtraBoldItalic.ttf');
+  font-weight: 900;
+  font-style: italic;
 }
 
 /* ALDRICH */
 @font-face {
-    font-family: 'Aldrich';
-    src: url('../asset/fonts/Aldrich-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Aldrich';
+  src: url('../asset/fonts/Aldrich-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* MONTSERRAT */
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../asset/fonts/Montserrat-Bold.ttf');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Montserrat';
+  src: url('../asset/fonts/Montserrat-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../asset/fonts/Montserrat-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Montserrat';
+  src: url('../asset/fonts/Montserrat-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../asset/fonts/Montserrat-Light.ttf');
-    font-weight: light;
-    font-style: normal;
+  font-family: 'Montserrat';
+  src: url('../asset/fonts/Montserrat-Light.ttf');
+  font-weight: light;
+  font-style: normal;
 }

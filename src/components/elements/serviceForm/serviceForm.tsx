@@ -1,6 +1,10 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
-function ServiceForm({ onClose }: any) {
+
+interface Props {
+  onClose: () => void;
+}
+
+function ServiceForm({ onClose }: Props) {
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex items-center justify-center bg-BLUE_DARK">
       <div className="max-w-3xl mx-auto p-4">
@@ -24,11 +28,5 @@ function ServiceForm({ onClose }: any) {
     </div>
   );
 }
-
-ServiceForm.propTypes = {
-  onClose: PropTypes.func.isRequired,
-};
-
-type Props = InferProps<typeof ServiceForm.propTypes>;
 
 export default ServiceForm;

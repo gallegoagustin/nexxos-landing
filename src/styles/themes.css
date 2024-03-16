@@ -14,14 +14,12 @@
 }
 
 body {
-  --sb-track-color: #F6F8FF;
+  --sb-track-color: #f6f8ff;
   --sb-thumb-color: #989897;
   --sb-size: 7px;
-  scrollbar-color: var(--sb-thumb-color) 
-                   var(--sb-track-color);
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   overflow-x: hidden;
 }
-
 
 body::-webkit-scrollbar-track {
   background: var(--sb-track-color);

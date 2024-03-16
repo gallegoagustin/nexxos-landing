@@ -20,7 +20,7 @@
     @apply text-sm;
   }
 }
-      
+
 @layer components {
   .full {
     @apply w-full h-full;
@@ -43,9 +43,8 @@
   }
 
   .card-common-button {
-    @apply w-[8rem] lg:w-[8rem] mt-4 lg:mx-4 text-GREY_LIGHT row centered font-bold px-8 pt-1 pb-2 rounded-md text-sm
+    @apply w-[8rem] lg:w-[8rem] mt-4 lg:mx-4 text-GREY_LIGHT row centered font-bold px-8 pt-1 pb-2 rounded-md text-sm;
   }
-
 
   .header-image-container {
     @apply h-[31rem] w-full py-20;
@@ -54,7 +53,6 @@
   .keep-reading-button {
     @apply text-xs text-PURPLE_ONU hover:text-RED_MEDIUM font-bold;
   }
-
 
   .to-greyscale {
     filter: grayscale(100%);

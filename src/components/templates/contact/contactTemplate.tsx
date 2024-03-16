@@ -84,8 +84,8 @@ function ContactTemplate() {
     phoneNumber,
     message,
   }: {
-    phoneNumber: number,
-    message: string,
+    phoneNumber: number;
+    message: string;
   }) => {
     const phoneNumberSanitized = phoneNumber;
     const messageSanitized = message;

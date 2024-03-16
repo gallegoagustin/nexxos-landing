@@ -1,7 +1,13 @@
-import PropTypes, { InferProps } from 'prop-types';
 import NavBar from '../../elements/navBar/navBar.container';
 import Footer from '@/components/elements/footer/footer';
 import Head from 'next/head';
+import { ReactNode } from 'react';
+
+interface Props {
+  children: ReactNode;
+  activeTab: string;
+}
+
 function Layout({ children, activeTab }: Props) {
   return (
     <div className={'w-full min-h-[100vh] col'}>
@@ -22,12 +28,5 @@ function Layout({ children, activeTab }: Props) {
     </div>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.element,
-  activeTab: PropTypes.string.isRequired,
-};
-
-type Props = InferProps<typeof Layout.propTypes>;
 
 export default Layout;

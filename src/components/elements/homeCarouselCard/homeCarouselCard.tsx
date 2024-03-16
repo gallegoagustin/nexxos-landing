@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 import LazyLoad from 'react-lazyload';
@@ -12,7 +11,7 @@ function HomeCarouselCard({
   image,
   logo,
   link,
-}: Props) {
+}: any) {
   let colorClass = '';
 
   if (title === 'sim.onu') {
@@ -104,17 +103,5 @@ function HomeCarouselCard({
     </div>
   );
 }
-
-HomeCarouselCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  buttonText: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  logo: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-};
-
-type Props = InferProps<typeof HomeCarouselCard.propTypes>;
 
 export default HomeCarouselCard;
