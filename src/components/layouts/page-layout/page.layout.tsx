@@ -28,9 +28,7 @@ function PageLayout({ children, activeTab, className }: Props): JSX.Element {
       >
         <NavBar activeTab={activeTab} />
         <main className="col flex-1 flex min-h-[100vh]">
-          <div className="full flex-1 p-6 pl-10 pr-10 lg:pl-16 2xl:pl-44 2xl:pr-44 py-10">
-            {children}
-          </div>
+          <div className="full flex-1">{children}</div>
           <Footer />
         </main>
       </div>

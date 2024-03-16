@@ -40,7 +40,7 @@ export default function useDynamicTranslation() {
         components={{
           italic: <i />,
           bold: <strong />,
-          redText: <span className="text-theme-primary font-bold" />,
+          redText: <span className="text-RED_MEDIUM" />,
           blueText: <span className="text-theme-secondary font-bold" />,
           lightBlueText: <span className="text-BLUE_FOCUS" />,
           mediumText: <p className="font-medium mt-3" />,

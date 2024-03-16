@@ -1,126 +1,62 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
-import articles from '@/constants/articles';
-import alliances from '@/constants/alliances';
-import reviews from '@/constants/reviews';
 import LazyLoad from 'react-lazyload';
 
 import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
-import Icon1 from '@public/images/icons/isotipos/onu.svg';
-import Icon2 from '@public/images/icons/isotipos/oea.svg';
-import Icon3 from '@public/images/icons/isotipos/rastros.svg';
-import Icon4 from '@public/images/icons/isotipos/sena.svg';
-import Icon7 from '@public/images/icons/isotipos/hcd.svg';
-import Icon8 from '@public/images/icons/isotipos/un.svg';
 import ArrowRightSmall from '@public/images/icons/arrow-right-small.svg';
 
-export default function Home() {
-  const router = useRouter();
+interface Props {
+  isMobile: boolean;
+  carouselItems: {
+    title: string;
+    icon: StaticImport;
+  }[];
+  carouselCards: {
+    title: string;
+    subtitle: string;
+    text: string;
+    buttonText: string;
+    image: string;
+    logo: StaticImport;
+    link: string;
+  }[];
+  reviews: {
+    name: string;
+    type: string;
+    text: string;
+  }[];
+  alliances: {
+    id: string;
+    icon: StaticImport;
+  }[];
+  articles: {
+    title: string;
+    subtitle: string | null;
+    from: string;
+    link: string;
+    image: StaticImport;
+  }[];
+  handleRedirect: () => void;
+}
+
+export default function Home({
+  isMobile,
+  carouselItems,
+  carouselCards,
+  reviews,
+  alliances,
+  articles,
+  handleRedirect,
+}: Props) {
   const { i18nHome } = useDynamicTranslation();
-
-  // Agregar un estado para determinar si es pantalla pequeña o no
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Verificar el tamaño de la pantalla y actualizar el estado
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Llamarlo inicialmente para ajustar el estado
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const carouselItems = [
-    { title: 'sim.onu', icon: Icon1, id: 0 },
-    { title: 'sim.oea', icon: Icon2, id: 1 },
-    { title: 'sim.rastros', icon: Icon3, id: 2 },
-    { title: 'sim.sena', icon: Icon4, id: 3 },
-    { title: 'sim.hcd', icon: Icon7, id: 6 },
-    { title: 'sim.un', icon: Icon1, id: 8 },
-  ];
-
-  const carouselCards = [
-    {
-      id: 0,
-      title: 'sim.onu',
-      subtitle: 'Simulacro de la Organización de las Naciones Unidas',
-      text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016488/nexxos/onu_dmh4oj.jpg?_s=public-apps',
-      logo: Icon1,
-      link: '/activities',
-    },
-    {
-      id: 1,
-      title: 'sim.oea',
-      subtitle: 'Simulacro de la Organización de los Estados Americanos',
-      text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016490/nexxos/oea_efjlpi.jpg?_s=public-apps',
-      logo: Icon2,
-      link: '/activities',
-    },
-    {
-      id: 2,
-      title: 'sim.rastros',
-      subtitle: 'Simulacro de una Investigación Forense',
-      text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016622/nexxos/rastros_mlxigs.jpg?_s=public-apps',
-      logo: Icon3,
-      link: '/activities',
-    },
-    {
-      id: 3,
-      title: 'sim.sena',
-      subtitle: 'Simulacro de la honorable Cámara de Senadores de la Argentina',
-      text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016486/nexxos/senado_h3m0um.jpg?_s=public-apps',
-      logo: Icon4,
-      link: '/activities',
-    },
-    {
-      id: 6,
-      title: 'sim.hcd',
-      subtitle: 'Simulacro del Honorable Concejo Deliberante',
-      text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/hcd_owgp5v.jpg?_s=public-apps',
-      logo: Icon7,
-      link: '/activities',
-    },
-    {
-      id: 8,
-      title: 'sim.un',
-      subtitle:
-        'Simulacro de la Organización de las Naciones Unidas (en inglés)',
-      text: 'Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad.',
-      buttonText: 'saber más',
-      image:
-        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/g20_2_hen8kl.jpg?_s=public-apps',
-      logo: Icon8,
-      link: '/activities',
-    },
-  ];
 
   return (
     <section className={'full col justify-start items-center max-w-[1920px]'}>
@@ -139,12 +75,6 @@ export default function Home() {
         >
           <div className={'full'}>
             <div className={'mt-44 md:mt-0'}>
-              {/* <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
-                El lado
-              </h1>
-              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
-                correcto de
-              </h1> */}
               <h1 className={'text-WHITE text-4xl lg:text-6xl'}>
                 {i18nHome('headerTitle')}
               </h1>
@@ -155,7 +85,7 @@ export default function Home() {
               }
               href={'/contact'}
             >
-              SABER MÁS
+              {i18nHome('more', { plainText: true }).toUpperCase()}
             </Link>
           </div>
         </div>
@@ -165,33 +95,25 @@ export default function Home() {
       <div className={'col items-center py-6'}>
         <div className={'w-full row centered'}>
           <p className={'text-center text-lg w-5/6 lg:w-2/5 font-light'}>
-            Somos una ONG que busca la transformación educativa en la Argentina
-            y el mundo. Luchamos por una educación que tenga como eje principal
-            la formación en habilidades, capacidades, inteligencias múltiples,
-            autoconocimiento e interacciones sociales. Creemos en un mundo con
-            menos problemáticas, en el que mejoramos nuestras comunicaciones y
-            vinculaciones. Una de nuestras formas de demostrar que una educación
-            distinta es posible, es organizando simulacros educativos que ponen
-            a nuestros estudiantes a prueba y los empuja a crecer y aprender
-            para la vida.
+            {i18nHome('description')}
           </p>
         </div>
 
         {/* BLOCK 3 */}
         <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
-          Nuestras actividades
+          {i18nHome('activities')}
         </h1>
         <div className="hidden md:row w-full lg:w-2/3 mt-8 justify-center">
-          {carouselItems.map((item) => {
+          {carouselItems.map((item, index) => {
             return (
               <button
-                key={item.id}
+                key={index}
                 className={
                   isMobile
                     ? 'col-span-1 m-3 md:m-0 md:w-1/3 cursor-pointer'
                     : 'col items-center m-3 md:m-0 md:w-1/6 cursor-pointer'
                 }
-                onClick={() => router.push('/activities')}
+                onClick={handleRedirect}
               >
                 <div
                   className={
@@ -230,10 +152,10 @@ export default function Home() {
             loop={true}
             className={'w-[60rem] h-[40rem] mt-12'}
           >
-            {carouselCards.map((item) => {
+            {carouselCards.map((item, index) => {
               return (
-                <div key={item.id}>
-                  <SwiperSlide key={item.id} className={'pb-12 px-4'}>
+                <div key={index}>
+                  <SwiperSlide key={index} className={'pb-12 px-4'}>
                     <HomeCarouselCard
                       link={item.link}
                       title={item.title}
@@ -241,7 +163,7 @@ export default function Home() {
                       text={item.text}
                       buttonText={item.buttonText}
                       image={item.image}
-                      logo={item.logo.src}
+                      logo={item.logo}
                     />
                   </SwiperSlide>
                 </div>
@@ -263,7 +185,7 @@ export default function Home() {
             className={'w-[85vw] max-w-[500px]'}
           >
             <div className={'flex w-full bg-GREY_DARK'}>
-              {carouselCards.map((item) => {
+              {carouselCards.map((item, index) => {
                 const elementId = `card-${item.title}`;
 
                 let colorClass = '';
@@ -286,8 +208,8 @@ export default function Home() {
                   colorClass = 'VIOLET_UN';
                 }
                 return (
-                  <div key={item.id} className={'h-full col centered pb-2'}>
-                    <SwiperSlide key={item.id} className={'full pb-12 px-2'}>
+                  <div key={index} className={'h-full col centered pb-2'}>
+                    <SwiperSlide key={index} className={'full pb-12 px-2'}>
                       <div
                         className={
                           'full col gap-4 p-10 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
@@ -343,7 +265,7 @@ export default function Home() {
             'radial-gradient(50% 50% at 50% 50%, rgba(142, 142, 211, 0.16) 0%, rgba(232, 232, 232, 0.32) 100%)',
         }}
       >
-        <h1 className={'text-3xl text-RED_MEDIUM'}>En los medios</h1>
+        <h1 className={'text-3xl text-RED_MEDIUM'}> {i18nHome('inMedia')}</h1>
         <div className={'hidden lg:flex w-2/3 col'}>
           {articles.length && (
             <article className={'row w-full mt-8'}>
@@ -381,7 +303,9 @@ export default function Home() {
                           'keep-reading-button transition duration-300'
                         }
                       >
-                        SEGUIR LEYENDO
+                        {i18nHome('keepReading', {
+                          plainText: true,
+                        }).toUpperCase()}
                       </p>
                       <LazyLoad once>
                         <Image
@@ -435,14 +359,14 @@ export default function Home() {
                                 'keep-reading-button transition duration-300'
                               }
                             >
-                              SEGUIR LEYENDO
+                              {i18nHome('keepReading', {
+                                plainText: true,
+                              }).toUpperCase()}{' '}
                             </p>
                             <Image
                               src={ArrowRightSmall}
                               alt={'icon'}
                               className={'ml-2 mt-[1px] w-[13px]'}
-                              // width={13}
-                              // height={10}
                             />
                           </Link>
                         </div>
@@ -519,24 +443,17 @@ export default function Home() {
         className={'w-full col items-center py-12'}
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
       >
-        <h1 className={'hidden lg:inline text-3xl text-RED_MEDIUM'}>
-          Quienes nos conocen, opinan:
-        </h1>
-        <h1 className={'lg:hidden text-3xl text-RED_MEDIUM text-center'}>
-          Quienes nos conocen,
-          <br />
-          opinan:
-        </h1>
+        <h1 className={'text-3xl text-RED_MEDIUM'}>{i18nHome('review')}</h1>
         <div className={'w-full row centered'}>
           <div
             className={
               'hidden lg:flex mt-12 pb-2 row w-full flex-wrap gap-8 justify-center'
             }
           >
-            {reviews.map((item) => {
+            {reviews.map((item, index) => {
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   className={
                     'col bg-WHITE rounded-lg shadow-md p-4 justify-between w-[300px] min-h-[550px]'
                   }
@@ -563,10 +480,10 @@ export default function Home() {
               'lg:hidden mt-12 pb-2 col w-5/6 max-w-[500px] justify-between overflow-hidden'
             }
           >
-            {reviews.map((item) => {
+            {reviews.map((item, index) => {
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   className={
                     'col bg-WHITE rounded-lg shadow-md mx-5 p-4 my-4 min-h-[400px]'
                   }
@@ -592,7 +509,7 @@ export default function Home() {
 
       {/* BLOCK 6 */}
       <div className={'w-full col gap-8 items-center py-12 bg-WHITE'}>
-        <h1 className={'text-3xl text-RED_MEDIUM'}>Nuestras alianzas</h1>
+        <h1 className={'text-3xl text-RED_MEDIUM'}> {i18nHome('alliances')}</h1>
         <div className={'hidden lg:flex w-full overflow-hidden'}>
           <Swiper
             modules={[Autoplay]}
