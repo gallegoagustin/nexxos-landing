@@ -1,6 +1,9 @@
 import React from 'react';
-import FourOFourLayout from '@/components/templates/fourOFour/fourOFourLayout';
+import FourOFour from '@/components/modules/fourOFour';
+import { LayoutType } from '@/components/layouts/global/Layout';
 
-export default function FourOFour() {
-  return <FourOFourLayout />;
+export default function FourOFourPage() {
+  return <FourOFour />;
 }
+
+FourOFourPage.layout = LayoutType.FOUR_O_FOUR;

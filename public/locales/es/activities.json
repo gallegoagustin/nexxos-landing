@@ -1,0 +1,58 @@
+{
+  "activities": {
+    "header": "Nuestras Actividades",
+    "for": "¿Quiénes pueden participar?",
+    "info": "Más información",
+    "activities": {
+      "onu": {
+        "title": "onu",
+        "subtitle": "Simulacro de la Organización de las Naciones Unidas",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Fecha estimada primera edición: mes de septiembre",
+        "date2": "Fecha estimada segunda edición: mes de octubre"
+      },
+      "un": {
+        "title": "un",
+        "subtitle": "Simulacro de la Organización de las Naciones Unidas (en inglés)",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Fecha estimada: mes de junio"
+      },
+      "oea": {
+        "title": "oea",
+        "subtitle": "Simulacro de la Organización de Estados Americanos",
+        "participants": "1º, 2º y 3º año.",
+        "date": "Fecha estimada: mes de septiembre"
+      },
+      "rastros": {
+        "title": "rastros",
+        "subtitle": "Simulacro de la Investigación de un caso Forense",
+        "participants": "1º, 2º y 3º año.",
+        "date": "Fecha estimada: mes de agosto"
+      },
+      "hcd": {
+        "title": "hcd",
+        "subtitle": "Simulacro del Honorable Concejo Deliberante",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Fecha estimada: mes de julio"
+      },
+      "sena": {
+        "title": "sena",
+        "subtitle": "Simulacro del Senado de la Nación",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Fecha estimada: mes de octubre"
+      },
+      "g20": {
+        "title": "g20",
+        "subtitle": "Simulacro del Grupo de los 20",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Próxima edición 2025"
+      },
+      "electoral": {
+        "title": "electoral",
+        "subtitle": "Simulacro de Elecciones",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Próxima edición 2027"
+      }
+    }
+  }
+}

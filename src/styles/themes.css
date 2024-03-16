@@ -1,9 +1,6 @@
 :root {
-  /* --background: white;
-  --foreground: black; */
-  font-family: 'Neue Machina';
-  /* background-color: #FFF; */
   color: #000;
+  white-space: pre-line;
 }
 
 [data-theme='dark'] {
