@@ -1,15 +1,17 @@
 import React from 'react';
 
-export default function FourOFour() {
+interface Props {
+  title: string;
+  message: string;
+  message2: string;
+}
+
+export default function FourOFour({ title, message, message2 }: Props) {
   return (
-    <section className={'w-full h-full col centered text-center'}>
-      <h2 className={'text-TEXT_GREEN font-neue font-bold'}>ERROR 404</h2>
-      <h1 className={'text-3xl'}>
-        Se ha producido
-        <br />
-        un error inesperado
-      </h1>
-      <p className={'mt-4'}>No hemos podido encontrar la página que buscas.</p>
+    <section className={'h-[100vh] col centered text-center'}>
+      <h2 className={'text-TEXT_GREEN font-neue font-bold'}>{title}</h2>
+      <h1 className={'text-3xl'}>{message}</h1>
+      <p className={'mt-4'}>{message2}</p>
     </section>
   );
 }
