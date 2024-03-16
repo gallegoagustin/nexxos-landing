@@ -9,10 +9,14 @@ const customStyles: Styles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '300px',
-    padding: '20px',
+    width: '400px',
+    padding: '40px',
     textAlign: 'center',
     borderRadius: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '20px',
   },
 };
 
@@ -41,7 +45,13 @@ function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
       contentLabel="Success Modal"
     >
       <p>¡Formulario enviado con éxito!</p>
-      <button onClick={onClose}>Cerrar</button>
+      <p>Alguien del equipo de Nexxos se pondrá en contacto a la brevedad.</p>
+      <button
+        className="main-red-button text-WHITE py-2 px-4 rounded-lg transition duration-300 hover:bg-RED_G20 w-[200px]"
+        onClick={onClose}
+      >
+        Cerrar
+      </button>
     </Modal>
   );
 }

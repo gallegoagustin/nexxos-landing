@@ -1,39 +1,29 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
-
-import Image from 'next/image';
-import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import articles from '@/constants/articles';
 import alliances from '@/constants/alliances';
 import reviews from '@/constants/reviews';
+import LazyLoad from 'react-lazyload';
 
-import Landing1 from '../../../../public/images/landing1.jpeg';
+import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
 import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
 import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
 import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
-import Icon5 from '../../../../public/images/icons/isotipos/electoral.svg';
-import Icon6 from '../../../../public/images/icons/isotipos/g20.svg';
 import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
-import Icon8 from '../../../../public/images/icons/isotipos/juicio.svg';
-
-import ImageCarousel1 from '../../../../public/images/carousel-item-images/ONU.jpg';
-import ImageCarousel2 from '../../../../public/images/carousel-item-images/OEA.jpg';
-import ImageCarousel3 from '../../../../public/images/carousel-item-images/RASTROS.jpg';
-import ImageCarousel4 from '../../../../public/images/carousel-item-images/SENADO.jpg';
-import ImageCarousel5 from '../../../../public/images/carousel-item-images/ELECTORAL.jpg';
-import ImageCarousel6 from '../../../../public/images/carousel-item-images/G20_2.jpg';
-import ImageCarousel7 from '../../../../public/images/carousel-item-images/HCD.jpg';
-import ImageCarousel8 from '../../../../public/images/carousel-item-images/JUICIO.jpg';
+import Icon8 from '../../../../public/images/icons/isotipos/un.svg';
 import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
 
 function HomeTemplate() {
+  const router = useRouter();
+
   // Agregar un estado para determinar si es pantalla pequeña o no
   const [isMobile, setIsMobile] = useState(false);
 
@@ -56,10 +46,8 @@ function HomeTemplate() {
     { title: 'sim.oea', icon: Icon2, id: 1 },
     { title: 'sim.rastros', icon: Icon3, id: 2 },
     { title: 'sim.sena', icon: Icon4, id: 3 },
-    { title: 'sim.electoral', icon: Icon5, id: 4 },
-    { title: 'sim.g20', icon: Icon6, id: 5 },
     { title: 'sim.hcd', icon: Icon7, id: 6 },
-    { title: 'sim.juicio', icon: Icon8, id: 7 },
+    { title: 'sim.un', icon: Icon1, id: 8 },
   ];
 
   const carouselCards = [
@@ -69,7 +57,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de la Organización de las Naciones Unidas',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los últimos 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos de todo el globo, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas mundiales preseleccionadas.',
       buttonText: 'saber más',
-      image: ImageCarousel1,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016488/nexxos/onu_dmh4oj.jpg?_s=public-apps',
       logo: Icon1,
       link: '/activities',
     },
@@ -79,7 +68,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de la Organización de los Estados Americanos',
       text: 'Es una experiencia educativa pedagógica, en donde los estudiantes de los primeros 3 años de la secundaria se ponen en el papel de diplomáticos que representan distintos gobiernos del continente americano, y tienen el objetivo de trabajar en equipo para defender los intereses de su gobierno al debatir y consensuar sobre problemáticas americanas preseleccionadas.',
       buttonText: 'saber más',
-      image: ImageCarousel2,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016490/nexxos/oea_efjlpi.jpg?_s=public-apps',
       logo: Icon2,
       link: '/activities',
     },
@@ -89,7 +79,8 @@ function HomeTemplate() {
       subtitle: 'Simulacro de una Investigación Forense',
       text: 'El sim.rastros es el simulacro dedicado al aprendizaje innovador de las Ciencias Exactas y Naturales. De esta manera, la actividad se centra en el desarrollo de una investigación policial en donde los participantes asumen el rol de detectives con el objetivo de descubrir lo ocurrido en el crimen y determinar, por medio del análisis de pistas e indicios, quién es el culpable.',
       buttonText: 'saber más',
-      image: ImageCarousel3,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016622/nexxos/rastros_mlxigs.jpg?_s=public-apps',
       logo: Icon3,
       link: '/activities',
     },
@@ -97,30 +88,11 @@ function HomeTemplate() {
       id: 3,
       title: 'sim.sena',
       subtitle: 'Simulacro de la honorable Cámara de Senadores de la Argentina',
-      text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes interesados representarán a un senador ficticio, pero de un partido político real con representación en dicha cámara. Con dicha información, y poniéndose en el papel de dicho senador, deberá escribir una ley que presentará para debatir durante el simulacro. El participante tendrá primero una entrevista con los organizadores para que se le asigne un senador. Recibirá la información sobre el funcionario a representar, entre la cual habrá información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
+      text: 'Este es un simulacro de la Honorable Cámara de Senadores de la República Argentina, donde los estudiantes representarán a un senador ficticio, pero de un partido político real. El participante tendrá una entrevista con los organizadores para que se le asigne un senador y recibirá la información sobre el funcionario a representar: información personal, afinidades políticas, relaciones dentro y fuera del senado, leyes votadas o presentadas anteriormente, escándalos con la prensa, investigaciones anteriores, entre otros.',
       buttonText: 'saber más',
-      image: ImageCarousel4,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016486/nexxos/senado_h3m0um.jpg?_s=public-apps',
       logo: Icon4,
-      link: '/activities',
-    },
-    {
-      id: 4,
-      title: 'sim.electoral',
-      subtitle: 'Simulacro de un debate presidencial y ministerial',
-      text: 'sim.electoral es una edición especial ofrecida sólo en años electivos. El simulacro, focalizado dentro del área de las ciencias sociales, propone a los participantes la posibilidad de ponerse en la piel de los candidatos presidenciales y de su equipo de canciller y ministros, o bien participar del formato prensa, con el objetivo de cubrir el debate desde distintas líneas editoriales a través del relevamiento periodístico y fotográfico. A lo largo de la actividad los participantes que desempeñen el rol de políticos debatirán de distintas maneras sus respectivos proyectos de país.',
-      buttonText: 'saber más',
-      image: ImageCarousel5,
-      logo: Icon5,
-      link: '/activities',
-    },
-    {
-      id: 5,
-      title: 'sim.g20',
-      subtitle: 'Simulacro del Grupo de los 20',
-      text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el poderoso Grupo de los 20, que engloba a una veintena de las principales potencias mundiales. Quienes participen de esta actividad podrán hacerlo como cancilleres, presidentes o primeros ministros, y debatirán problemáticas preseleccionadas teniendo en cuenta la postura del gobierno al que representan con respecto a dicho tópico, así también como el contexto mundial y la geopolítica actual.',
-      buttonText: 'saber más',
-      image: ImageCarousel6,
-      logo: Icon6,
       link: '/activities',
     },
     {
@@ -129,58 +101,68 @@ function HomeTemplate() {
       subtitle: 'Simulacro del Honorable Concejo Deliberante',
       text: 'Esta actividad de simulación buscará recrear la dinámica y los debates que se dan en el Honorable Concejo Deliberante de la ciudad. Quienes participen de esta actividad podrán hacerlo como concejales, asesores o miembros de la prensa. Cada uno de esos roles trabaja dinámicas y habilidades distintas, todas muy enriquecedoras para la formación de nuestros jóvenes.',
       buttonText: 'saber más',
-      image: ImageCarousel7,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/hcd_owgp5v.jpg?_s=public-apps',
       logo: Icon7,
       link: '/activities',
     },
     {
-      id: 7,
-      title: 'sim.juicio',
-      subtitle: 'Simulacro de un Juicio por Jurados',
-      text: 'En esta actividad se recrea el desarrollo de un juicio por jurados, con sus respectivas dinámicas y momentos, a partir del tratamiento de un caso. A su vez se implementará en la actividad una modalidad de prensa, que se ocupará de cubrir el avance del juicio a lo largo de todas las jornadas.',
+      id: 8,
+      title: 'sim.un',
+      subtitle:
+        'Simulacro de la Organización de las Naciones Unidas (en inglés)',
+      text: 'Es un simulacro enfocado en la aplicación y la práctica del idioma inglés en las ciencias sociales, donde los y las participantes se pondrán en el lugar de quienes representan a los países del mundo en la Organización de las Naciones Unidas siguiendo el tradicional formato de esta actividad.',
       buttonText: 'saber más',
-      image: ImageCarousel8,
+      image:
+        'https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710016487/nexxos/g20_2_hen8kl.jpg?_s=public-apps',
       logo: Icon8,
       link: '/activities',
     },
   ];
 
   return (
-    <main className={'full col justify-start items-center'}>
+    <section className={'full col justify-start items-center max-w-[1920px]'}>
       {/* BLOCK 1 */}
-      <div
-        className={`header-image-container px-10 lg:py-32 lg:px-24`}
-        style={{
-          background: `url(${Landing1.src})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionY: 'center',
-          boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
-        }}
-      >
-        <div className={'full'}>
-          <div className={'mt-44 md:mt-0'}>
-            <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>El lado</h1>
-            <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
-              correcto de
-            </h1>
-            <h1 className={'text-WHITE text-4xl lg:text-6xl'}>la educacion</h1>
+      <LazyLoad once className="w-full">
+        <div
+          className="header-image-container px-10 lg:py-32 lg:px-24"
+          style={{
+            background:
+              'url(https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710012310/nexxos/atyb5cmr8y2v1j4idkpp.jpg?_s=public-apps)',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionY: 'center',
+            boxShadow: 'inset 0 0 0 1000px rgba(47, 47, 77, 0.4)',
+          }}
+        >
+          <div className={'full'}>
+            <div className={'mt-44 md:mt-0'}>
+              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
+                El lado
+              </h1>
+              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
+                correcto de
+              </h1>
+              <h1 className={'text-WHITE text-4xl lg:text-6xl'}>
+                la educación
+              </h1>
+            </div>
+            <Link
+              className={
+                'main-red-button mt-4 md:mt-8 py-2 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM w-[300px]'
+              }
+              href={'/contact'}
+            >
+              SABER MÁS
+            </Link>
           </div>
-          <Link
-            className={
-              'main-red-button mt-4 md:mt-8 py-2 w-full md:w-1/3 lg:w-1/6 transition duration-300 hover:bg-WHITE hover:text-RED_MEDIUM'
-            }
-            href={'/contact'}
-          >
-            SABER MÁS
-          </Link>
         </div>
-      </div>
+      </LazyLoad>
 
       {/* BLOCK 2 */}
       <div className={'col items-center py-6'}>
         <div className={'w-full row centered'}>
-          <p className={'text-center text-lg w-4/6 lg:w-2/5 font-light'}>
+          <p className={'text-center text-lg w-5/6 lg:w-2/5 font-light'}>
             Somos una ONG que busca la transformación educativa en la Argentina
             y el mundo. Luchamos por una educación que tenga como eje principal
             la formación en habilidades, capacidades, inteligencias múltiples,
@@ -192,30 +174,35 @@ function HomeTemplate() {
             para la vida.
           </p>
         </div>
-        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>Actividades 2023</h1>
-        <div
-          className={
-            isMobile
-              ? 'grid grid-cols-2 gap-4 mt-6'
-              : 'w-full lg:w-2/3 mt-8 row justify-evenly lg:justify-between'
-          }
-        >
+
+        {/* BLOCK 3 */}
+        <h1 className={'text-3xl mt-12 text-RED_MEDIUM'}>
+          Nuestras actividades
+        </h1>
+        <div className="hidden md:row w-full lg:w-2/3 mt-8 justify-center">
           {carouselItems.map((item) => {
             return (
               <button
                 key={item.id}
                 className={
                   isMobile
-                    ? 'col-span-1 m-1 md:m-0 md:w-1/3 cursor-default'
-                    : 'col items-center m-3 md:m-0 md:w-1/6 cursor-default'
+                    ? 'col-span-1 m-3 md:m-0 md:w-1/3 cursor-pointer'
+                    : 'col items-center m-3 md:m-0 md:w-1/6 cursor-pointer'
                 }
+                onClick={() => router.push('/activities')}
               >
                 <div
                   className={
-                    'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-t-lg rounded-br-lg'
+                    'p-4 row centered shadow-BLUE_LIGHT shadow-md rounded-lg'
                   }
                 >
-                  <Image src={item.icon} alt={'icon'} className={'h-12 w-12'} />
+                  <LazyLoad once>
+                    <Image
+                      src={item.icon}
+                      alt={'icon'}
+                      className={'h-12 w-12'}
+                    />
+                  </LazyLoad>
                 </div>
                 <p
                   className={
@@ -228,8 +215,8 @@ function HomeTemplate() {
             );
           })}
         </div>
-        {/* <div className={'hidden lg:inline w-1/2 overflow-hidden'} ref={emblaRef}> */}
-        <div className={'hidden w-full lg:inline overflow-hidden'}>
+
+        <div className={'hidden w-full lg:inline'}>
           <Swiper
             pagination={true}
             modules={[Pagination, Autoplay]}
@@ -241,36 +228,26 @@ function HomeTemplate() {
             loop={true}
             className={'w-[60rem] h-[40rem] mt-12'}
           >
-            <div className={'flex'}>
-              {carouselCards.map((item) => {
-                return (
-                  <div
-                    key={item.id}
-                    className={'full p-1'}
-                    style={{ flex: '0 0 100%' }}
-                  >
-                    <SwiperSlide
-                      key={item.id}
-                      className={'w-full h-full pb-12'}
-                    >
-                      <HomeCarouselCard
-                        link={item.link}
-                        title={item.title}
-                        subtitle={item.subtitle}
-                        text={item.text}
-                        buttonText={item.buttonText}
-                        image={item.image.src}
-                        logo={item.logo.src}
-                      />
-                    </SwiperSlide>
-                  </div>
-                );
-              })}
-            </div>
+            {carouselCards.map((item) => {
+              return (
+                <div key={item.id}>
+                  <SwiperSlide key={item.id} className={'pb-12 px-4'}>
+                    <HomeCarouselCard
+                      link={item.link}
+                      title={item.title}
+                      subtitle={item.subtitle}
+                      text={item.text}
+                      buttonText={item.buttonText}
+                      image={item.image}
+                      logo={item.logo.src}
+                    />
+                  </SwiperSlide>
+                </div>
+              );
+            })}
           </Swiper>
         </div>
 
-        {/* <div className={'lg:hidden row overflow-hidden mt-12'} ref={emblaRef2}> */}
         <div className={'lg:hidden row overflow-hidden mt-12'}>
           <Swiper
             pagination={true}
@@ -281,9 +258,9 @@ function HomeTemplate() {
               pauseOnMouseEnter: true,
             }}
             loop={true}
-            className={'w-[18rem] h-[45rem]'}
+            className={'w-[85vw] max-w-[500px]'}
           >
-            <div className={'flex w-[100vw] bg-GREY_DARK'}>
+            <div className={'flex w-full bg-GREY_DARK'}>
               {carouselCards.map((item) => {
                 const elementId = `card-${item.title}`;
 
@@ -304,61 +281,48 @@ function HomeTemplate() {
                 } else if (item.title === 'sim.oea') {
                   colorClass = 'TEAL_OEA';
                 } else {
-                  colorClass = 'GREEN_JUICIO';
+                  colorClass = 'VIOLET_UN';
                 }
                 return (
-                  <div
-                    key={item.id}
-                    className={'h-full col centered mx-8 pb-2'}
-                  >
-                    <SwiperSlide
-                      key={item.id}
-                      className={'h-full w-full pb-12'}
-                    >
+                  <div key={item.id} className={'h-full col centered pb-2'}>
+                    <SwiperSlide key={item.id} className={'full pb-12 px-2'}>
                       <div
                         className={
-                          'full h-full col p-2 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
+                          'full col gap-4 p-10 items-center lg:items-stretch lg:row lg:justify-between shadow-md rounded-2xl'
                         }
                       >
-                        <div className={'w-2/3 col h-full p-1 lg:p-4'}>
-                          <p
-                            className={`font-bold text-${colorClass} text-center my-4`}
-                          >
-                            {item.title.toUpperCase()}
+                        <p
+                          className={`font-bold text-${colorClass} text-center`}
+                        >
+                          {item.title.toUpperCase()}
+                        </p>
+                        <h1
+                          className={
+                            'text-BLUE_DARK text-2xl font-light text-center'
+                          }
+                        >
+                          {item.subtitle}
+                        </h1>
+                        <div className={'full'}>
+                          <p className={'font-light text-center'}>
+                            {item.text}
                           </p>
-                          <h1
-                            className={
-                              'text-BLUE_DARK text-2xl font-light text-center my-2'
-                            }
-                          >
-                            {item.subtitle}
-                          </h1>
-                          <div
-                            className={'overflow-y-scroll w-[200px]'}
-                            style={{ flex: '0 0 55%' }}
-                          >
-                            <p className={'font-light text-center'}>
-                              {item.text}
-                            </p>
-                          </div>
-                          <div className={'full col justify-end'}>
-                            {item.text ? (
-                              <Link
-                                className={`main-red-button bg-${colorClass}`}
-                                href={`/activities#${elementId}`}
-                              >
-                                {item.buttonText.toUpperCase()}
-                              </Link>
-                            ) : (
-                              <button
-                                className={'main-red-button bg-GREY_DARK mt-4'}
-                                disabled
-                              >
-                                {item.buttonText.toUpperCase()}
-                              </button>
-                            )}
-                          </div>
                         </div>
+                        {item.text ? (
+                          <Link
+                            className={`main-red-button bg-${colorClass} w-[200px]`}
+                            href={`/activities#${elementId}`}
+                          >
+                            {item.buttonText.toUpperCase()}
+                          </Link>
+                        ) : (
+                          <button
+                            className={'main-red-button bg-GREY_DARK w-[200px]'}
+                            disabled
+                          >
+                            {item.buttonText.toUpperCase()}
+                          </button>
+                        )}
                       </div>
                     </SwiperSlide>
                   </div>
@@ -369,7 +333,7 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 3 */}
+      {/* BLOCK 4 */}
       <div
         className={'col items-center py-12 w-full overflow-hidden'}
         style={{
@@ -380,13 +344,16 @@ function HomeTemplate() {
         <h1 className={'text-3xl text-RED_MEDIUM'}>En los medios</h1>
         <div className={'hidden lg:flex w-2/3 col'}>
           {articles.length && (
-            <div className={'row w-full mt-8'}>
+            <article className={'row w-full mt-8'}>
               <div className={'w-1/2 h-full row centered'}>
-                <Image
-                  src={articles[0].image}
-                  alt={'image'}
-                  className={'full'}
-                />
+                <LazyLoad once>
+                  <Image
+                    src={articles[0].image}
+                    alt={'image'}
+                    className={'full'}
+                    priority
+                  />
+                </LazyLoad>
               </div>
               <div className={'w-1/2 col p-4 justify-evenly'}>
                 <p className={'text-BLUE_DARK text-3xl font-bold'}>
@@ -414,30 +381,33 @@ function HomeTemplate() {
                       >
                         SEGUIR LEYENDO
                       </p>
-                      <Image
-                        src={ArrowRightSmall}
-                        alt={'icon'}
-                        className={'ml-2 mt-[1px] w-[13px]'}
-                        // width={13}
-                        // height={10}
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={ArrowRightSmall}
+                          alt={'icon'}
+                          className={'ml-2 mt-[1px] w-[13px]'}
+                        />
+                      </LazyLoad>
                     </Link>
                   </div>
                 )}
               </div>
-            </div>
+            </article>
           )}
           <div className={'w-full row justify-between'}>
             {articles.length &&
               articles.slice(1, articles.length).map((article, index) => {
                 return (
-                  <div key={index} className={'col w-1/3 mt-8 mr-4'}>
+                  <article key={index} className={'col w-1/3 mt-8 mr-4'}>
                     <div className={'w-full row centered'}>
-                      <Image
-                        src={article.image}
-                        alt={'image'}
-                        className={'full'}
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={article.image}
+                          alt={'image'}
+                          className={'full'}
+                          priority
+                        />
+                      </LazyLoad>
                     </div>
                     <div className={'full col px-4 justify-between'}>
                       <p className={'text-BLUE_DARK text-lg font-bold'}>
@@ -476,12 +446,12 @@ function HomeTemplate() {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </article>
                 );
               })}
           </div>
         </div>
-        {/* <div className={'lg:hidden row overflow-hidden'} ref={articlesRef}> */}
+
         <div className={'lg:hidden row overflow-hidden'}>
           <div className={'flex col'}>
             {articles.length &&
@@ -489,11 +459,14 @@ function HomeTemplate() {
                 return (
                   <div key={article.link} className={'col mt-8'}>
                     <div className={'w-full row centered px-4'}>
-                      <Image
-                        src={article.image}
-                        alt={'image'}
-                        className={'full'}
-                      />
+                      <LazyLoad once>
+                        <Image
+                          src={article.image}
+                          alt={'image'}
+                          className={'full'}
+                          priority
+                        />
+                      </LazyLoad>
                     </div>
                     <div className={'full h-1/2 justify-around col px-4 py-4'}>
                       <p className={'text-BLUE_DARK text-lg font-bold'}>
@@ -539,7 +512,7 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 4 */}
+      {/* BLOCK 5 */}
       <div
         className={'w-full col items-center py-12'}
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
@@ -552,29 +525,29 @@ function HomeTemplate() {
           <br />
           opinan:
         </h1>
-        {/* <div className={'w-5/6 row justify-between items-center'} ref={reviewsRef}> */}
-        <div className={'w-full row justify-between items-center'}>
+        <div className={'w-full row centered'}>
           <div
-            className={'hidden md:flex mt-12 pb-2 row w-full justify-between'}
+            className={
+              'hidden lg:flex mt-12 pb-2 row w-full flex-wrap gap-8 justify-center'
+            }
           >
             {reviews.map((item) => {
               return (
                 <div
                   key={item.id}
                   className={
-                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between w-1/4'
+                    'col bg-WHITE rounded-lg shadow-md p-4 justify-between w-[300px] min-h-[550px]'
                   }
                 >
-                  <p className={'text-xs font-light'}>
+                  <p className={'text-xs font-light text-justify'}>
                     {'"' + item.text + '"'}
                   </p>
                   <div
                     className={
-                      'row rounded-lg bg-GREY_LIGHT mt-8 items-center p-4'
+                      'row rounded-lg bg-GREY_LIGHT mt-8  p-4 gap-2 items-center'
                     }
                   >
-                    <Image src={item.image} alt={'image'} className={'w-1/5'} />
-                    <div className={'col ml-4'}>
+                    <div className={'col h-12 gap-1'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
                     </div>
@@ -585,7 +558,7 @@ function HomeTemplate() {
           </div>
           <div
             className={
-              'md:hidden mt-12 pb-2 col w-full justify-between overflow-hidden'
+              'lg:hidden mt-12 pb-2 col w-5/6 max-w-[500px] justify-between overflow-hidden'
             }
           >
             {reviews.map((item) => {
@@ -593,22 +566,19 @@ function HomeTemplate() {
                 <div
                   key={item.id}
                   className={
-                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 justify-between my-4'
+                    'col bg-WHITE rounded-lg shadow-md mx-5 p-4 my-4 min-h-[400px]'
                   }
                   style={{ flex: '0 0 90%' }}
                 >
                   <div
-                    className={
-                      'row rounded-lg bg-GREY_LIGHT mt-2 items-center p-4'
-                    }
+                    className={'row rounded-lg bg-GREY_LIGHT items-center p-4'}
                   >
-                    <Image src={item.image} alt={'image'} className={'w-1/5'} />
-                    <div className={'col ml-4'}>
+                    <div className={'col'}>
                       <p className={'font-bold'}>{item.name}</p>
                       <p className={'text-xs'}>{item.type}</p>
                     </div>
                   </div>
-                  <p className={'text-xs font-light mt-2'}>
+                  <p className={'text-xs font-light p-4 text-justify'}>
                     {'"' + item.text + '"'}
                   </p>
                 </div>
@@ -618,53 +588,45 @@ function HomeTemplate() {
         </div>
       </div>
 
-      {/* BLOCK 5 */}
-      <div className={'w-full col items-center py-12 bg-WHITE'}>
+      {/* BLOCK 6 */}
+      <div className={'w-full col gap-8 items-center py-12 bg-WHITE'}>
         <h1 className={'text-3xl text-RED_MEDIUM'}>Nuestras alianzas</h1>
-        {/* <div className={'hidden lg:flex w-full overflow-hidden'} ref={iconsRef}> */}
         <div className={'hidden lg:flex w-full overflow-hidden'}>
           <Swiper
             modules={[Autoplay]}
-            className={'w-5/6'}
+            className={'w-2/3'}
             slidesPerView={5}
             autoplay={{
-              delay: 2000,
               disableOnInteraction: false,
             }}
             loop={true}
           >
-            <div className={'mt-12 row w-full justify-between items-center'}>
-              {alliances.map((item) => {
-                return (
-                  <SwiperSlide key={item.id}>
-                    <div className={'w-[96px]'}>
-                      <Image
-                        src={item.icon}
-                        alt={'icon'}
-                        className={'h-full'}
-                      />
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
+            {alliances.map((item) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <LazyLoad once>
+                    <Image src={item.icon} alt={'icon'} width={96} />
+                  </LazyLoad>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
         <div className={'lg:hidden w-full overflow-hidden'}>
-          <div
-            className={'mt-12 row w-full justify-evenly flex-wrap items-center'}
-          >
+          <div className={'row w-full justify-evenly flex-wrap items-center'}>
             {alliances.map((item) => {
               return (
                 <div key={item.id} className={'m-6'}>
-                  <Image src={item.icon} alt={'icon'} height={64} />
+                  <LazyLoad once>
+                    <Image src={item.icon} alt={'icon'} height={64} />
+                  </LazyLoad>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 

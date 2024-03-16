@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import iconNexxos from '../../../../public/images/icons/nexxos-classic.png';
 import Image from 'next/image';
 import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
+import LazyLoad from 'react-lazyload';
 
 function ContactTemplate() {
   const [name, setName] = useState('');
@@ -84,8 +84,8 @@ function ContactTemplate() {
     phoneNumber,
     message,
   }: {
-    phoneNumber: number,
-    message: string,
+    phoneNumber: number;
+    message: string;
   }) => {
     const phoneNumberSanitized = phoneNumber;
     const messageSanitized = message;
@@ -96,15 +96,23 @@ function ContactTemplate() {
   };
 
   return (
-    <main
-      className={'full col lg:row centered py-8 md:py-24'}
+    <section
+      className={'full col lg:row centered py-8 md:py-24 min-h-[1000px]'}
       style={{
         background:
           'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
       }}
     >
       <div className={'columns-2 col w-3/4 min-w-[260px] lg:w-1/4'}>
-        <Image alt="icon nexxos" src={iconNexxos} className="w-1/2 h-1/2" />
+        <LazyLoad once>
+          <Image
+            alt="icon nexxos"
+            src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709937140/nexxos/xx_pauawm.jpg?_s=public-apps"
+            priority
+            width={282}
+            height={241}
+          />
+        </LazyLoad>
         <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
           Contacta con
           <br />
@@ -112,36 +120,42 @@ function ContactTemplate() {
         </h1>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/phone-icon.svg"
-              alt="Whatsapp"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/phone-icon.svg"
+                alt="Whatsapp"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
+            <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
-            href={'mailto: Centralnexxos@gmail.com'}
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+            href={'mailto: contacto@nexxos.com.ar'}
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/email-icon.svg"
-              alt="email"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/email-icon.svg"
+                alt="email"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
+            <p className={'text-BLACK font-bold my-1'}>
+              contacto@nexxos.com.ar
+            </p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>centralnexxos@gmail.com</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             href={sendWhatsappLink({
               phoneNumber: 542236020205,
               message: '¡Hola! Quisiera más información sobre la ONG',
@@ -149,30 +163,34 @@ function ContactTemplate() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/header-icon-whatsapp.svg"
-              alt="Whatsapp"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/header-icon-whatsapp.svg"
+                alt="Whatsapp"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
+            <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
           </a>
-          <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
         </div>
         <div className={'row items-center my-1'}>
           <a
-            className="hover:opacity-90 hover:underline cursor-pointer"
+            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
             href={'https://goo.gl/maps/xuPLKhq9wFPn9jFu8'}
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="/images/place-icon.svg"
-              alt="Location"
-              className="w-4 mr-2"
-            />
+            <LazyLoad once>
+              <img
+                src="/images/place-icon.svg"
+                alt="Location"
+                className="w-4 mr-2"
+              />
+            </LazyLoad>
+            <p className={'text-BLACK font-bold my-1'}>
+              Matheu 4051, Mar del Plata, Buenos Aires.
+            </p>
           </a>
-          <p className={'text-BLACK font-bold my-1'}>
-            Matheu 4051, Mar del Plata, Buenos Aires.
-          </p>
         </div>
       </div>
       <div
@@ -285,11 +303,12 @@ function ContactTemplate() {
             <option value="estudiante">Estudiante</option>
             <option value="docente">Docente</option>
             <option value="directivo">Directivo</option>
-            <option value="other">Otro</option>
+            <option value="sponsor">Sponsor</option>
+            <option value="otro">Otro</option>
           </select>
           <button
             type="submit"
-            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20"
+            className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20 w-full"
             disabled={isLoading}
           >
             {isLoading ? 'Enviando...' : 'Enviar'}
@@ -297,7 +316,7 @@ function ContactTemplate() {
         </form>
       </div>
       <SuccessModal isOpen={isSuccess} onClose={handleSuccessModalClose} />
-    </main>
+    </section>
   );
 }
 
