@@ -9,8 +9,8 @@
  */
 
 import React from 'react';
-import NavBar from '@/components/elements/navBar/navBar.container';
-import Footer from '@/components/elements/footer/footer';
+import NavBar from '@/components/elements/nav-bar';
+import Footer from '@/components/elements/footer';
 
 interface Props {
   children?: React.ReactNode;

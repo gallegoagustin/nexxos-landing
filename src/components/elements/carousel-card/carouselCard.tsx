@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LazyLoad from 'react-lazyload';
 
-function HomeCarouselCard({
+function CarouselCard({
   title,
   subtitle,
   text,
@@ -104,4 +104,4 @@ function HomeCarouselCard({
   );
 }
 
-export default HomeCarouselCard;
+export default CarouselCard;

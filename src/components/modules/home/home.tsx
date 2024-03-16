@@ -9,8 +9,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import LazyLoad from 'react-lazyload';
+import CarouselCard from '@/components/elements/carousel-card';
 
-import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
 import ArrowRightSmall from '@public/images/icons/arrow-right-small.svg';
 
 interface Props {
@@ -156,7 +156,7 @@ export default function Home({
               return (
                 <div key={index}>
                   <SwiperSlide key={index} className={'pb-12 px-4'}>
-                    <HomeCarouselCard
+                    <CarouselCard
                       link={item.link}
                       title={item.title}
                       subtitle={item.subtitle}

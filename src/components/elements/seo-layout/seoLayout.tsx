@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
 import { appTitle, appDescription } from '@/constants/modelConstants';
 import { NextSeo } from 'next-seo';
 

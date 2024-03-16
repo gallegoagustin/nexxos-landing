@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import React from 'react';
 import type { AppProps } from 'next/app';
 import Modal from 'react-modal';
-import SeoLayout from '../components/elements/seoTag/seoTag';
+import SeoLayout from '../components/elements/seo-layout';
 import { appWithTranslation } from 'next-i18next';
 import Layout, { LayoutType } from '@/components/layouts/global/Layout';
 
