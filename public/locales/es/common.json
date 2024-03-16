@@ -1,0 +1,16 @@
+{
+    "common": {
+        "footer": {
+            "nexxos": "NEXXOS",
+            "volunteer": "Sumate como voluntario",
+            "site": "Mapa del sitio",
+            "home": "Inicio",
+            "activities": "Actividades",
+            "about": "Conocenos",
+            "contact": "Contacto",
+            "legal": "Legal",
+            "paper": "Estatuto",
+            "copyright": "Copyright © 2024 Nexxos ONG"
+        }
+    }
+}
