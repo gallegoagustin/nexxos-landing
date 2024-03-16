@@ -1,99 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
 import LazyLoad from 'react-lazyload';
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 
-export default function Contact() {
-  const [name, setName] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [type, setType] = useState('voluntario');
-  const [isLoading, setIsLoading] = useState(false);
-  const [sendError, setSendError] = useState('');
-
-  // Estado para controlar el mensaje de éxito y el modal
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  // Función para abrir el modal de éxito
-  const handleSuccessModalOpen = () => {
-    setIsSuccess(true);
+interface Props {
+  name: string;
+  setName: (e: string) => void;
+  lastname: string;
+  setLastname: (e: string) => void;
+  email: string;
+  setEmail: (e: string) => void;
+  message: string;
+  setMessage: (e: string) => void;
+  type: string;
+  setType: (e: string) => void;
+  isLoading: boolean;
+  sendError: string;
+  formErrors: {
+    name: boolean;
+    lastname: boolean;
+    email: boolean;
+    message: boolean;
   };
+  handleBlur: (e: string) => void;
+  handleSubmit: (e: any) => void;
+  isSuccess: boolean;
+  handleSuccessModalClose: () => void;
+  sendWhatsappLink: Function;
+}
 
-  // Función para cerrar el modal de éxito
-  const handleSuccessModalClose = () => {
-    setIsSuccess(false);
-  };
-
-  const [formErrors, setFormErrors] = useState({
-    name: false,
-    lastname: false,
-    email: false,
-    message: false,
-    type: false,
-  });
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    // Antes de enviar, validaciones:
-    const hasErrors = !name || !lastname || !email || !message || !type;
-
-    if (hasErrors) {
-      setFormErrors({
-        name: !name,
-        lastname: !lastname,
-        email: !email,
-        message: !message,
-        type: !type,
-      });
-    } else {
-      setIsLoading(true);
-      try {
-        await sendContactForm({ name, lastname, email, message, type });
-        handleSuccessModalOpen();
-        setEmail('');
-        setName('');
-        setLastname('');
-        setMessage('');
-        // mostrar un mensaje de éxito.
-      } catch (error: any) {
-        setIsLoading(false);
-        setSendError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  const handleBlur = (field: any) => {
-    if (field === 'name') {
-      setFormErrors((prevErrors) => ({ ...prevErrors, name: !name }));
-    } else if (field === 'lastname') {
-      setFormErrors((prevErrors) => ({ ...prevErrors, lastname: !lastname }));
-    } else if (field === 'email') {
-      setFormErrors((prevErrors) => ({ ...prevErrors, email: !email }));
-    } else if (field === 'message') {
-      setFormErrors((prevErrors) => ({ ...prevErrors, message: !message }));
-    } else if (field === 'type') {
-      setFormErrors((prevErrors) => ({ ...prevErrors, type: !type }));
-    }
-  };
-
-  const sendWhatsappLink = ({
-    phoneNumber,
-    message,
-  }: {
-    phoneNumber: number;
-    message: string;
-  }) => {
-    const phoneNumberSanitized = phoneNumber;
-    const messageSanitized = message;
-
-    const url = `https://wa.me/${phoneNumberSanitized}?text=${messageSanitized}`;
-
-    return url;
-  };
+export default function Contact({
+  name,
+  setName,
+  lastname,
+  setLastname,
+  email,
+  setEmail,
+  message,
+  setMessage,
+  type,
+  setType,
+  isLoading,
+  sendError,
+  formErrors,
+  handleBlur,
+  handleSubmit,
+  isSuccess,
+  handleSuccessModalClose,
+  sendWhatsappLink,
+}: Props) {
+  const { i18nContact } = useDynamicTranslation();
 
   return (
     <section
@@ -114,9 +71,7 @@ export default function Contact() {
           />
         </LazyLoad>
         <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
-          Contacta con
-          <br />
-          nosotros
+          {i18nContact('header')}
         </h1>
         <div className={'row items-center my-1'}>
           <a
@@ -170,7 +125,7 @@ export default function Contact() {
                 className="w-4 mr-2"
               />
             </LazyLoad>
-            <p className={'text-GBLACK font-bold my-1'}>Envianos un Whatsapp</p>
+            <p className={'text-GBLACK font-bold my-1'}>{i18nContact('wpp')}</p>
           </a>
         </div>
         <div className={'row items-center my-1'}>
@@ -204,7 +159,7 @@ export default function Contact() {
         <form onSubmit={handleSubmit}>
           <div className="flex items-center mb-1">
             <p>
-              Nombre{' '}
+              {i18nContact('name')}{' '}
               <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
             </p>
           </div>
@@ -220,14 +175,14 @@ export default function Contact() {
               }`}
             />
             {formErrors.name ? (
-              <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+              <p className="text-RED_MEDIUM">{i18nContact('mandatory')}</p>
             ) : (
               <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
             <p>
-              Apellido{' '}
+              {i18nContact('surname')}{' '}
               <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
             </p>
           </div>
@@ -243,14 +198,15 @@ export default function Contact() {
               }`}
             />
             {formErrors.lastname ? (
-              <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+              <p className="text-RED_MEDIUM">{i18nContact('mandatory')}</p>
             ) : (
               <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
             <p>
-              Email <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
+              {i18nContact('email')}{' '}
+              <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
             </p>
           </div>
           <div className="mb-1">
@@ -265,14 +221,14 @@ export default function Contact() {
               }`}
             />
             {formErrors.email ? (
-              <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+              <p className="text-RED_MEDIUM">{i18nContact('mandatory')}</p>
             ) : (
               <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
             <p>
-              Mensaje{' '}
+              {i18nContact('message')}{' '}
               <span className="inline-block mr-1 text-RED_MEDIUM">*</span>
             </p>
           </div>
@@ -287,31 +243,31 @@ export default function Contact() {
               }`}
             />
             {formErrors.message ? (
-              <p className="text-RED_MEDIUM">Rellene este campo obligatorio</p>
+              <p className="text-RED_MEDIUM">{i18nContact('mandatory')}</p>
             ) : (
               <p className="text-[transparent]">-</p>
             )}
           </div>
           <div className="flex items-center mb-1">
-            <p>Rol</p>
+            <p>{i18nContact('role')}</p>
           </div>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
             className="w-full p-2 mt-2 rounded-lg"
           >
-            <option value="estudiante">Estudiante</option>
-            <option value="docente">Docente</option>
-            <option value="directivo">Directivo</option>
-            <option value="sponsor">Sponsor</option>
-            <option value="otro">Otro</option>
+            <option value="estudiante">{i18nContact('student')}</option>
+            <option value="docente">{i18nContact('teacher')}</option>
+            <option value="directivo">{i18nContact('manager')}</option>
+            <option value="sponsor">{i18nContact('sponsor')}</option>
+            <option value="otro">{i18nContact('other')}</option>
           </select>
           <button
             type="submit"
             className="main-red-button text-WHITE py-2 px-4 rounded-lg mt-6 transition duration-300 hover:bg-RED_G20 w-full"
             disabled={isLoading}
           >
-            {isLoading ? 'Enviando...' : 'Enviar'}
+            {isLoading ? i18nContact('sending') : i18nContact('send')}
           </button>
         </form>
       </div>
