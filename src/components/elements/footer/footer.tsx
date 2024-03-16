@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import LazyLoad from 'react-lazyload';
 
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
 import IconTwitter from '../../../../public/images/icons/social-media/twitterx.svg';
 import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
-import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 
 function Footer() {
   const { i18nCommon } = useDynamicTranslation();

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -23,6 +24,7 @@ import ArrowRightSmall from '@public/images/icons/arrow-right-small.svg';
 
 export default function Home() {
   const router = useRouter();
+  const { i18nHome } = useDynamicTranslation();
 
   // Agregar un estado para determinar si es pantalla pequeña o no
   const [isMobile, setIsMobile] = useState(false);
@@ -137,14 +139,14 @@ export default function Home() {
         >
           <div className={'full'}>
             <div className={'mt-44 md:mt-0'}>
-              <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
+              {/* <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
                 El lado
               </h1>
               <h1 className={'text-RED_MEDIUM text-4xl lg:text-6xl'}>
                 correcto de
-              </h1>
+              </h1> */}
               <h1 className={'text-WHITE text-4xl lg:text-6xl'}>
-                la educación
+                {i18nHome('headerTitle')}
               </h1>
             </div>
             <Link
