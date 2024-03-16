@@ -13,15 +13,15 @@ import reviews from '@/constants/reviews';
 import LazyLoad from 'react-lazyload';
 
 import HomeCarouselCard from '@/components/elements/homeCarouselCard/homeCarouselCard';
-import Icon1 from '../../../../public/images/icons/isotipos/onu.svg';
-import Icon2 from '../../../../public/images/icons/isotipos/oea.svg';
-import Icon3 from '../../../../public/images/icons/isotipos/rastros.svg';
-import Icon4 from '../../../../public/images/icons/isotipos/sena.svg';
-import Icon7 from '../../../../public/images/icons/isotipos/hcd.svg';
-import Icon8 from '../../../../public/images/icons/isotipos/un.svg';
-import ArrowRightSmall from '../../../../public/images/icons/arrow-right-small.svg';
+import Icon1 from '@public/images/icons/isotipos/onu.svg';
+import Icon2 from '@public/images/icons/isotipos/oea.svg';
+import Icon3 from '@public/images/icons/isotipos/rastros.svg';
+import Icon4 from '@public/images/icons/isotipos/sena.svg';
+import Icon7 from '@public/images/icons/isotipos/hcd.svg';
+import Icon8 from '@public/images/icons/isotipos/un.svg';
+import ArrowRightSmall from '@public/images/icons/arrow-right-small.svg';
 
-function HomeTemplate() {
+export default function Home() {
   const router = useRouter();
 
   // Agregar un estado para determinar si es pantalla pequeña o no
@@ -629,5 +629,3 @@ function HomeTemplate() {
     </section>
   );
 }
-
-export default HomeTemplate;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FourOFourLayout() {
+export default function FourOFour() {
   return (
     <section className={'w-full h-full col centered text-center'}>
       <h2 className={'text-TEXT_GREEN font-neue font-bold'}>ERROR 404</h2>

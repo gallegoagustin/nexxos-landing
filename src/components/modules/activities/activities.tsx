@@ -2,17 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-import ImageCard1 from '../../../../public/images/icons/isotipos/onu.svg';
-import ImageCard2 from '../../../../public/images/icons/isotipos/oea.svg';
-import ImageCard3 from '../../../../public/images/icons/isotipos/rastros.svg';
-import ImageCard4 from '../../../../public/images/icons/isotipos/g20.svg';
-import ImageCard5 from '../../../../public/images/icons/isotipos/electoral.svg';
-import ImageCard6 from '../../../../public/images/icons/isotipos/sena.svg';
-import ImageCard7 from '../../../../public/images/icons/isotipos/hcd.svg';
 import LazyLoad from 'react-lazyload';
+import ImageCard1 from '@public/images/icons/isotipos/onu.svg';
+import ImageCard2 from '@public/images/icons/isotipos/oea.svg';
+import ImageCard3 from '@public/images/icons/isotipos/rastros.svg';
+import ImageCard4 from '@public/images/icons/isotipos/g20.svg';
+import ImageCard5 from '@public/images/icons/isotipos/electoral.svg';
+import ImageCard6 from '@public/images/icons/isotipos/sena.svg';
+import ImageCard7 from '@public/images/icons/isotipos/hcd.svg';
 
-function ActivitiesTemplate() {
+export default function Activities() {
   const activitiesCards = [
     {
       title: 'onu',
@@ -238,5 +237,3 @@ function ActivitiesTemplate() {
     </section>
   );
 }
-
-export default ActivitiesTemplate;

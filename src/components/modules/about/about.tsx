@@ -1,16 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import Volunteer from '../../../../public/images/volunteer.png';
-import Sponsor from '../../../../public/images/support.png';
+import Volunteer from '@public/images/volunteer.png';
+import Sponsor from '@public/images/support.png';
 import Link from 'next/link';
-
+import LazyLoad from 'react-lazyload';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import LazyLoad from 'react-lazyload';
 
-function AboutTemplate() {
+export default function About() {
   const autorities = [
     {
       name: 'Alan Ezequiel Castillo',
@@ -256,5 +255,3 @@ function AboutTemplate() {
     </section>
   );
 }
-
-export default AboutTemplate;

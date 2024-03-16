@@ -1,8 +1,12 @@
 import React from 'react';
-import ActivitiesTemplate from '@/components/templates/activities/activitiesTemplate';
-import Layout from '@/components/templates/bodyLayout/layout';
+import PageLayout from '@/components/layouts/page-layout';
+import Activities from '@/components/modules/activities';
+import { LayoutType } from '@/components/layouts/global/Layout';
+import { NextPageContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { locales } from '@/config/i18n';
 
-export default function Home() {
+export default function ActivitiesPage() {
   const [hydrated, setHydrated] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -12,8 +16,20 @@ export default function Home() {
   if (!hydrated) return null;
 
   return (
-    <Layout activeTab={'activities'}>
-      <ActivitiesTemplate />
-    </Layout>
+    <PageLayout activeTab={'activities'}>
+      <Activities />
+    </PageLayout>
   );
 }
+
+ActivitiesPage.layout = LayoutType.ACTIVITIES;
+
+export const getServerSideProps = async (context: NextPageContext) => {
+  const { req, query, locale = 'es' } = context;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, locales)),
+    },
+  };
+};

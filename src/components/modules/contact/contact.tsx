@@ -4,7 +4,7 @@ import { sendContactForm } from '@/lib/api';
 import SuccessModal from '@/components/elements/modals/succesModal';
 import LazyLoad from 'react-lazyload';
 
-function ContactTemplate() {
+export default function Contact() {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -319,5 +319,3 @@ function ContactTemplate() {
     </section>
   );
 }
-
-export default ContactTemplate;
