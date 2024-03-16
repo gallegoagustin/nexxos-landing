@@ -54,13 +54,15 @@ export default function Contact({
 
   return (
     <section
-      className={'full col lg:row centered py-8 md:py-24 min-h-[1000px]'}
+      className={
+        'col lg:row gap-10 lg:gap-0 pb-20 lg:pb-0 centered min-h-[1000px] w-[100vw] max-w-[1920px]'
+      }
       style={{
         background:
           'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
       }}
     >
-      <div className={'columns-2 col w-3/4 min-w-[260px] lg:w-1/4'}>
+      <div className={'col w-full lg:w-1/2 items-center'}>
         <LazyLoad once>
           <Image
             alt="icon nexxos"
@@ -148,15 +150,14 @@ export default function Contact({
           </a>
         </div>
       </div>
-      <div
-        className={
-          'col w-3/4 min-w-[260px] lg:w-1/4 mt-8 lg:mt-0 bg-WHITE bg-opacity-[0.25] p-4 justify-between rounded-xl'
-        }
-      >
+      <div className="col w-full lg:w-1/2 items-center">
         {sendError && (
           <h1 className="text-center text-RED_MEDIUM">{sendError}</h1>
         )}
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          className="min-w-[300px] lg:min-w-[500px]"
+        >
           <div className="flex items-center mb-1">
             <p>
               {i18nContact('name')}{' '}
