@@ -80,6 +80,14 @@ function Footer() {
             >
               <p className={'my-1'}>{i18nCommon('footer.paper')}</p>
             </Link>
+            <Link
+              href={
+                'https://drive.google.com/file/d/1AtUkMvlfgXHSXtti1M2A0KCaorJFsh7Z/view?usp=drivesdk'
+              }
+              target="_blank"
+            >
+              <p className={'my-1'}>{i18nCommon('footer.reglament')}</p>
+            </Link>
           </div>
         </div>
       </div>
