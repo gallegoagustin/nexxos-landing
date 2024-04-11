@@ -15,19 +15,25 @@
         "title": "un",
         "subtitle": "Simulacro de la Organización de las Naciones Unidas (en inglés)",
         "participants": "4º, 5º y 6º año.",
-        "date": "Fecha estimada: mes de junio"
+        "date": "Fecha estimada: mes de agosto"
       },
       "oea": {
         "title": "oea",
         "subtitle": "Simulacro de la Organización de Estados Americanos",
         "participants": "1º, 2º y 3º año.",
-        "date": "Fecha estimada: mes de septiembre"
+        "date": "Fecha estimada: mes de agosto"
       },
       "rastros": {
         "title": "rastros",
-        "subtitle": "Simulacro de la Investigación de un caso Forense",
+        "subtitle": "Simulacro de la Investigación de un caso Forense (ciclo básico)",
         "participants": "1º, 2º y 3º año.",
-        "date": "Fecha estimada: mes de agosto"
+        "date": "Fecha estimada: mes de septiembre"
+      },
+      "rastros2": {
+        "title": "rastros",
+        "subtitle": "Simulacro de la Investigación de un caso Forense (ciclo superior)",
+        "participants": "4º, 5º y 6º año.",
+        "date": "Fecha estimada: mes de octubre"
       },
       "hcd": {
         "title": "hcd",

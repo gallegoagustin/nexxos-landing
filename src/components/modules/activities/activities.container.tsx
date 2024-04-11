@@ -65,6 +65,19 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.rastros.date', { plainText: true }),
     },
     {
+      title: i18nActivities('activities.rastros2.title', { plainText: true }),
+      subtitle: i18nActivities('activities.rastros2.subtitle', {
+        plainText: true,
+      }),
+      participants: i18nActivities('activities.rastros2.participants', {
+        plainText: true,
+      }),
+      image: ImageCard3,
+      link_utils:
+        'https://drive.google.com/drive/folders/1fO-pKsjNsHOk_-Jw9MNPzBsKAmu34EBi?usp=drive_link',
+      date: i18nActivities('activities.rastros2.date', { plainText: true }),
+    },
+    {
       title: i18nActivities('activities.hcd.title', { plainText: true }),
       subtitle: i18nActivities('activities.hcd.subtitle', { plainText: true }),
       participants: i18nActivities('activities.hcd.participants', {
