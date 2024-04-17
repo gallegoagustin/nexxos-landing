@@ -13,8 +13,10 @@ interface Props {
     participants: string;
     image: StaticImport;
     link_utils: string;
+    link_preinscription: string;
     date: string;
     date2?: string;
+    date3?: string;
   }[];
 }
 
@@ -88,10 +90,10 @@ export default function Activities({
                 key={index}
                 id={elementId}
                 className={
-                  'w-5/6 min-w-[260px] md:w-[28rem] h-[38rem] md:h-[31rem] lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center justify-between shadow-md shadow-BLUE_LIGHT rounded-lg bg-WHITE'
+                  'w-5/6 min-w-[260px] md:w-[28rem] h-[38rem] md:h-[31rem] lg:mt-0 col lg:mx-12 p-6 lg:p-10 items-center justify-between shadow-md shadow-BLUE_LIGHT rounded-2xl bg-WHITE'
                 }
               >
-                <div>
+                <div className="pb-4">
                   <div
                     className={
                       'self-center mb-3 col items-center justify-center'
@@ -123,13 +125,26 @@ export default function Activities({
                     {item.date2 ? <p>{item.date2}</p> : null}
                   </div>
                 </div>
-                <div className="w-full row centered justify-self-end">
+                <div
+                  className={`w-full col centered justify-self-end gap-4 text-${colorClass}`}
+                >
                   <Link
                     href={item.link_utils}
                     target="_blank"
                     className={'w-fit'}
                   >
-                    <button>{i18nActivities('info')}</button>
+                    <button className="hover:text-[18px]">
+                      {i18nActivities('info')}
+                    </button>
+                  </Link>
+                  <Link
+                    href={item.link_preinscription}
+                    target="_blank"
+                    className={'w-fit'}
+                  >
+                    <button className="hover:text-[18px]">
+                      {i18nActivities('preinscription')}
+                    </button>
                   </Link>
                 </div>
               </div>
