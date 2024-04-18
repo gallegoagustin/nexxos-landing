@@ -55,7 +55,7 @@ function Footer() {
             <p className={'font-bold text-GREY_LIGHT mb-2'}>
               {i18nCommon('footer.site')}
             </p>
-            <Link href={'/home'}>
+            <Link href={'/'}>
               <p className={'my-1'}>{i18nCommon('footer.home')}</p>
             </Link>
             <Link href={'/activities'}>

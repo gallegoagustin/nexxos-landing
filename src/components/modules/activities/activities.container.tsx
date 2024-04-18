@@ -26,8 +26,11 @@ export default function ActivitiesContainer() {
       image: ImageCard1,
       link_utils:
         'https://drive.google.com/drive/folders/1i6XlJmrZ4LwAYxeaAEVcv1t_yFRIT9Jm?usp=drive_link',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.onu.date', { plainText: true }),
       date2: i18nActivities('activities.onu.date2', { plainText: true }),
+      date3: i18nActivities('activities.onu.date3', { plainText: true }),
     },
     {
       title: i18nActivities('activities.un.title', { plainText: true }),
@@ -39,6 +42,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.un.date', { plainText: true }),
       link_utils:
         'https://drive.google.com/drive/folders/1PoSp8yJhVkY9Iqg-sEN323XJLPdTcT9O',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
     },
     {
       title: i18nActivities('activities.oea.title', { plainText: true }),
@@ -49,6 +54,8 @@ export default function ActivitiesContainer() {
       image: ImageCard2,
       link_utils:
         'https://drive.google.com/drive/folders/1crxRST6eTpo68h0Fux8VHIuqkhRiYxc2?usp=drive_link',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.oea.date', { plainText: true }),
     },
     {
@@ -62,6 +69,8 @@ export default function ActivitiesContainer() {
       image: ImageCard3,
       link_utils:
         'https://drive.google.com/drive/folders/1fO-pKsjNsHOk_-Jw9MNPzBsKAmu34EBi?usp=drive_link',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.rastros.date', { plainText: true }),
     },
     {
@@ -74,6 +83,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.hcd.date', { plainText: true }),
       link_utils:
         'https://drive.google.com/drive/folders/1oE_XR7_Pt1HOLZYvE1njqxoQCNbN_F7K?usp=drive_link',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
     },
     {
       title: i18nActivities('activities.sena.title', { plainText: true }),
@@ -85,6 +96,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.sena.date', { plainText: true }),
       link_utils:
         'https://drive.google.com/drive/folders/1wHK6uI7TSphJT3o8hgtOb73ihU1AFTms',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
     },
     {
       title: i18nActivities('activities.g20.title', { plainText: true }),
@@ -96,6 +109,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.g20.date', { plainText: true }),
       link_utils:
         'https://drive.google.com/drive/folders/1YCVeJzKToTeQVuExDOtp_rlidTC7rZIC',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
     },
     {
       title: i18nActivities('activities.electoral.title', { plainText: true }),
@@ -109,6 +124,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.electoral.date', { plainText: true }),
       link_utils:
         'https://drive.google.com/drive/folders/1DcoGqkA0XmZZhtul-WMiv-m_uIZvJ0FL',
+      link_preinscription:
+        'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
     },
   ];
 
