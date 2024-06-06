@@ -5,6 +5,8 @@ import navBarTabs from '@/constants/navConstants';
 import BurgerIcon from '../../../../public/images/icons/burger-menu.svg';
 import LazyLoad from 'react-lazyload';
 
+import IconNexxos from '@public/images/nexxos/nexxos_1.png';
+
 interface Props {
   activeTab: string;
 }
@@ -24,14 +26,9 @@ function NavBar({ activeTab }: Props) {
             'w-full h-16 bg-GREY_LIGHT row justify-between items-center'
           }
         >
-          <Link href={'/'}>
+          <Link href={'/'} className="pl-4">
             <LazyLoad once>
-              <Image
-                src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710015441/nexxos/nexxos-nav_jfnvie.jpg?_s=public-apps"
-                alt={'nexxos'}
-                width={160}
-                height={80}
-              />
+              <Image src={IconNexxos} alt={'nexxos'} width={160} height={80} />
             </LazyLoad>
           </Link>
           <nav className={'w-2/5 h-full row justify-between items-center'}>
