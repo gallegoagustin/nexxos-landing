@@ -6,9 +6,9 @@ import Link from 'next/link';
 import LazyLoad from 'react-lazyload';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 
 interface Props {
   autorities: {
@@ -45,7 +45,11 @@ export default function About({ autorities }: Props) {
       </LazyLoad>
 
       {/* BLOCK 2 */}
-      <div className={'full col lg:row items-center justify-center bg-WHITE'}>
+      <div
+        className={
+          'full col lg:row items-center justify-center bg-WHITE mt-10 md:mt-0'
+        }
+      >
         <Swiper
           pagination={true}
           modules={[Pagination, Autoplay]}
@@ -55,7 +59,7 @@ export default function About({ autorities }: Props) {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          className={'w-full h-[43rem] md:w-[50rem] md:h-[32rem]'}
+          className={'w-[100vw] h-[45rem] md:w-[50rem] md:h-[32rem]'}
         >
           {autorities.map((item, index) => {
             return (
@@ -69,7 +73,7 @@ export default function About({ autorities }: Props) {
               >
                 <div
                   className={
-                    'col items-center w-5/6 h-[38rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
+                    'col items-center w-5/6 h-[45rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
                   }
                   style={{
                     background: 'linear-gradient(to bottom, #CF142A, #5D2C80',
@@ -77,7 +81,7 @@ export default function About({ autorities }: Props) {
                 >
                   <div
                     className={
-                      'my-6 w-full md:w-4/5 row items-center justify-evenly md:justify-around'
+                      'my-6 w-full md:w-4/5 col md:row items-center justify-evenly md:justify-around text-center md:text-left'
                     }
                   >
                     <LazyLoad once>

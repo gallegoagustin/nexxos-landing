@@ -31,7 +31,7 @@ function Footer() {
             </LazyLoad>
           </Link>
         </div>
-        <div className="w-full lg:w-1/2 row items-start gap-8">
+        <div className="w-full lg:w-1/2 col lg:row items-center lg:items-start text-center gap-8">
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>
               {i18nCommon('footer.nexxos')}

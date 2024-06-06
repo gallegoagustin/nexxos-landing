@@ -60,12 +60,7 @@ function NavBar({ activeTab }: Props) {
         >
           <Link href={'/'}>
             <LazyLoad once>
-              <Image
-                src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710015441/nexxos/nexxos-nav_jfnvie.jpg?_s=public-apps"
-                alt={'nexxos'}
-                width={120}
-                height={60}
-              />
+              <Image src={IconNexxos} alt={'nexxos'} width={120} height={60} />
             </LazyLoad>
           </Link>
           <button className={'w-[48px] h-[48px] row justify-end items-center'}>
