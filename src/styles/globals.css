@@ -19,6 +19,9 @@
   p {
     @apply text-sm;
   }
+  textarea {
+    resize: none;
+  }
 }
 
 @layer components {
