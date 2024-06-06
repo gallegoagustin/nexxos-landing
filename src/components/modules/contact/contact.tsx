@@ -57,7 +57,7 @@ export default function Contact({
   return (
     <section
       className={
-        'col lg:row gap-10 lg:gap-0 pb-20 lg:pb-0 centered min-h-[1000px] w-[100vw] max-w-[1920px]'
+        'col lg:row gap-10 lg:gap-0 pb-20 lg:pb-0 pt-12 lg:pt-0 centered min-h-[700px] w-[100vw] max-w-[1920px]'
       }
       style={{
         background:

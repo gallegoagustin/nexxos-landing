@@ -5,11 +5,11 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import LazyLoad from 'react-lazyload';
+import CarouselCard from '@/components/elements/carousel-card';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
-import LazyLoad from 'react-lazyload';
-import CarouselCard from '@/components/elements/carousel-card';
 
 import ArrowRightSmall from '@public/images/icons/arrow-right-small.svg';
 
@@ -443,7 +443,9 @@ export default function Home({
         className={'w-full col items-center py-12'}
         style={{ background: 'rgba(176, 181, 211, 0.22)' }}
       >
-        <h1 className={'text-3xl text-RED_MEDIUM'}>{i18nHome('review')}</h1>
+        <h1 className={'text-3xl text-RED_MEDIUM text-center'}>
+          {i18nHome('review')}
+        </h1>
         <div className={'w-full row centered'}>
           <div
             className={
