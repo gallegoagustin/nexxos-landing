@@ -72,6 +72,7 @@ export default function ActivitiesContainer() {
       link_preinscription:
         'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.rastros.date', { plainText: true }),
+      date2: i18nActivities('activities.rastros.date2', { plainText: true }),
     },
     {
       title: i18nActivities('activities.hcd.title', { plainText: true }),

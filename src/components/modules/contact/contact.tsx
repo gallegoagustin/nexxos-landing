@@ -4,6 +4,8 @@ import SuccessModal from '@/components/elements/modals/succesModal';
 import LazyLoad from 'react-lazyload';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 
+import IconNexxos from '@public/images/nexxos/nexxos_3.png';
+
 interface Props {
   name: string;
   setName: (e: string) => void;
@@ -55,99 +57,99 @@ export default function Contact({
   return (
     <section
       className={
-        'col lg:row gap-10 lg:gap-0 pb-20 lg:pb-0 centered min-h-[1000px] w-[100vw] max-w-[1920px]'
+        'col lg:row gap-10 lg:gap-0 pb-20 lg:pb-0 pt-12 lg:pt-0 centered min-h-[700px] w-[100vw] max-w-[1920px]'
       }
       style={{
         background:
           'radial-gradient(69.47% 209.97% at 88.3% 52.38%, #F6F8FF 0%, #989897 100%)',
       }}
     >
-      <div className={'col w-full lg:w-1/2 items-center'}>
+      <div className={'col w-full lg:w-1/2 items-center gap-8'}>
         <LazyLoad once>
-          <Image
-            alt="icon nexxos"
-            src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709937140/nexxos/xx_pauawm.jpg?_s=public-apps"
-            priority
-            width={282}
-            height={241}
-          />
+          <Image alt="icon nexxos" src={IconNexxos} priority width={129} />
         </LazyLoad>
-        <h1 className={'text-GREY_LIGHT text-4xl mb-4'}>
-          {i18nContact('header')}
-        </h1>
-        <div className={'row items-center my-1'}>
-          <a
-            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LazyLoad once>
-              <img
-                src="/images/phone-icon.svg"
-                alt="Whatsapp"
-                className="w-4 mr-2"
-              />
-            </LazyLoad>
-            <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
-          </a>
+        <div className="w-full text-center">
+          <h1 className={'text-GREY_LIGHT text-4xl'}>
+            {i18nContact('header')}
+          </h1>
         </div>
-        <div className={'row items-center my-1'}>
-          <a
-            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
-            href={'mailto: contacto@nexxos.com.ar'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LazyLoad once>
-              <img
-                src="/images/email-icon.svg"
-                alt="email"
-                className="w-4 mr-2"
-              />
-            </LazyLoad>
-            <p className={'text-BLACK font-bold my-1'}>
-              contacto@nexxos.com.ar
-            </p>
-          </a>
-        </div>
-        <div className={'row items-center my-1'}>
-          <a
-            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
-            href={sendWhatsappLink({
-              phoneNumber: 542236020205,
-              message: '¡Hola! Quisiera más información sobre la ONG',
-            })}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LazyLoad once>
-              <img
-                src="/images/header-icon-whatsapp.svg"
-                alt="Whatsapp"
-                className="w-4 mr-2"
-              />
-            </LazyLoad>
-            <p className={'text-GBLACK font-bold my-1'}>{i18nContact('wpp')}</p>
-          </a>
-        </div>
-        <div className={'row items-center my-1'}>
-          <a
-            className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
-            href={'https://goo.gl/maps/xuPLKhq9wFPn9jFu8'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LazyLoad once>
-              <img
-                src="/images/place-icon.svg"
-                alt="Location"
-                className="w-4 mr-2"
-              />
-            </LazyLoad>
-            <p className={'text-BLACK font-bold my-1'}>
-              Matheu 4051, Mar del Plata, Buenos Aires.
-            </p>
-          </a>
+        <div>
+          <div className={'row items-center my-1'}>
+            <a
+              className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LazyLoad once>
+                <img
+                  src="/images/phone-icon.svg"
+                  alt="Whatsapp"
+                  className="w-4 mr-2"
+                />
+              </LazyLoad>
+              <p className={'text-BLACK font-bold my-1'}>+54 9 223 6020205</p>
+            </a>
+          </div>
+          <div className={'row items-center my-1'}>
+            <a
+              className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+              href={'mailto: contacto@nexxos.com.ar'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LazyLoad once>
+                <img
+                  src="/images/email-icon.svg"
+                  alt="email"
+                  className="w-4 mr-2"
+                />
+              </LazyLoad>
+              <p className={'text-BLACK font-bold my-1'}>
+                contacto@nexxos.com.ar
+              </p>
+            </a>
+          </div>
+          <div className={'row items-center my-1'}>
+            <a
+              className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+              href={sendWhatsappLink({
+                phoneNumber: 542236020205,
+                message: '¡Hola! Quisiera más información sobre la ONG',
+              })}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LazyLoad once>
+                <img
+                  src="/images/header-icon-whatsapp.svg"
+                  alt="Whatsapp"
+                  className="w-4 mr-2"
+                />
+              </LazyLoad>
+              <p className={'text-GBLACK font-bold my-1'}>
+                {i18nContact('wpp')}
+              </p>
+            </a>
+          </div>
+          <div className={'row items-center my-1'}>
+            <a
+              className="hover:opacity-90 hover:underline cursor-pointer row gap-2"
+              href={'https://goo.gl/maps/xuPLKhq9wFPn9jFu8'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LazyLoad once>
+                <img
+                  src="/images/place-icon.svg"
+                  alt="Location"
+                  className="w-4 mr-2"
+                />
+              </LazyLoad>
+              <p className={'text-BLACK font-bold my-1'}>
+                Matheu 4051, Mar del Plata, Buenos Aires.
+              </p>
+            </a>
+          </div>
         </div>
       </div>
       <div className="col w-full lg:w-1/2 items-center">

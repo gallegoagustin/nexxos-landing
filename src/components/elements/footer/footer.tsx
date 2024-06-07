@@ -4,6 +4,7 @@ import Image from 'next/image';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import LazyLoad from 'react-lazyload';
 
+import IconNexxos from '../../../../public/images/nexxos/nexxos_4.png';
 import IconInstagram from '../../../../public/images/icons/social-media/instagram.svg';
 import IconTwitter from '../../../../public/images/icons/social-media/twitterx.svg';
 import IconYoutube from '../../../../public/images/icons/social-media/youtube.svg';
@@ -17,27 +18,20 @@ function Footer() {
         'w-full py-8 lg:py-20 bg-RED_MEDIUM col centered font-thin text-WHITE text-xs'
       }
     >
-      <div
-        className={
-          'col lg:row w-5/6 lg:w-1/2 h-full justify-between items-center'
-        }
-      >
-        <Link href={'/'}>
-          <LazyLoad once>
-            <Image
-              src="https://res.cloudinary.com/gallegoagustin/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710015441/nexxos/nexxos-footer_pguij0.jpg?_s=public-apps"
-              alt={'icon'}
-              className={'mb-8 mx-auto lg:mb-0'}
-              width={282}
-              height={241}
-            />
-          </LazyLoad>
-        </Link>
-        <div
-          className={
-            'w-full lg:w-3/5 text-center lg:text-left col lg:row gap-4 justify-between'
-          }
-        >
+      <div className="w-full col lg:row">
+        <div className="w-full lg:w-1/2 row centered">
+          <Link href={'/'}>
+            <LazyLoad once>
+              <Image
+                src={IconNexxos}
+                alt={'icon'}
+                className={'mb-8 lg:mb-0'}
+                width={200}
+              />
+            </LazyLoad>
+          </Link>
+        </div>
+        <div className="w-full lg:w-1/2 col lg:row items-center lg:items-start text-center gap-8">
           <div className={'col'}>
             <p className={'font-bold text-GREY_LIGHT mb-2'}>
               {i18nCommon('footer.nexxos')}
@@ -91,7 +85,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className={'w-4/6 lg:w-2/12 row justify-between mt-12'}>
+      <div className={'w-4/6 lg:w-1/2 row justify-center gap-12 mt-12'}>
         <Link href={'https://www.instagram.com/nexxosar/'} target={'_blank'}>
           <LazyLoad once>
             <Image src={IconInstagram} alt={'icon'} />
