@@ -21,6 +21,10 @@ function SeoLayout({ title, description }: Props) {
           name={'msapplication-TileImage'}
           content={'/ms-icon-144x144.png'}
         ></meta>
+        <meta
+          name="keywords"
+          content="nexxos, educacion, simulacion, simulacro, educativo, educativa, educativos, educativas, simulaciones, simulacros, actividades educativas, jovenes, politica, debate, internacional"
+        />
       </Head>
       <NextSeo
         title={title ?? appTitle}
