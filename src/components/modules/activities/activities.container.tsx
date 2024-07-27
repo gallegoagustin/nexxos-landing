@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import { useRouter } from 'next/router';
 import Activities from './activities';
@@ -11,10 +11,18 @@ import ImageCard5 from '@public/images/icons/isotipos/electoral.svg';
 import ImageCard6 from '@public/images/icons/isotipos/sena.svg';
 import ImageCard7 from '@public/images/icons/isotipos/hcd.svg';
 
+export enum ImagesCarouselType {
+  HCD = 'HCD',
+}
+
 export default function ActivitiesContainer() {
   const router = useRouter();
   const activitiesContainerRef = useRef(null);
   const { i18nActivities } = useDynamicTranslation();
+
+  const [imagesVisible, setImagesVisible] = useState<ImagesCarouselType | null>(
+    null,
+  );
 
   const activitiesCards = [
     {
@@ -86,6 +94,7 @@ export default function ActivitiesContainer() {
         'https://drive.google.com/drive/folders/1oE_XR7_Pt1HOLZYvE1njqxoQCNbN_F7K?usp=drive_link',
       link_preinscription:
         'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
+      images: () => setImagesVisible(ImagesCarouselType.HCD),
     },
     {
       title: i18nActivities('activities.sena.title', { plainText: true }),
@@ -162,6 +171,8 @@ export default function ActivitiesContainer() {
   const childProps = {
     activitiesCards,
     activitiesContainerRef,
+    imagesVisible,
+    setImagesVisible,
   };
 
   return <Activities {...childProps} />;
