@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'gallegoagustin.github.io',
+      },
     ],
   },
   i18n,
