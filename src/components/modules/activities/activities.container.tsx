@@ -13,6 +13,7 @@ import ImageCard7 from '@public/images/icons/isotipos/hcd.svg';
 
 export enum ImagesCarouselType {
   HCD = 'HCD',
+  UN = 'UN',
 }
 
 export default function ActivitiesContainer() {
@@ -52,6 +53,7 @@ export default function ActivitiesContainer() {
         'https://drive.google.com/drive/folders/1PoSp8yJhVkY9Iqg-sEN323XJLPdTcT9O',
       link_preinscription:
         'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
+      images: () => setImagesVisible(ImagesCarouselType.UN),
     },
     {
       title: i18nActivities('activities.oea.title', { plainText: true }),

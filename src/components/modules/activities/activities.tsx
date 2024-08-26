@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import useDynamicTranslation from '@/components/hooks/useDynamicTranslation';
 import LazyLoad from 'react-lazyload';
-import HcdImageCarousel from '../../elements/hcd-images-carousel/imagesCarousel';
+import HcdImageCarousel from '../../elements/hcd-images-carousel';
 import { ImagesCarouselType } from './activities.container';
+import UnImageCarousel from '@/components/elements/un-images-carousel';
 
 interface Props {
   activitiesContainerRef: RefObject<HTMLDivElement>;
@@ -37,6 +38,9 @@ export default function Activities({
     <>
       {imagesVisible === ImagesCarouselType.HCD ? (
         <HcdImageCarousel onClose={() => setImagesVisible(null)} />
+      ) : null}
+      {imagesVisible === ImagesCarouselType.UN ? (
+        <UnImageCarousel onClose={() => setImagesVisible(null)} />
       ) : null}
       <section
         ref={activitiesContainerRef}
