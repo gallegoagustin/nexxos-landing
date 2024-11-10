@@ -14,6 +14,10 @@ import ImageCard7 from '@public/images/icons/isotipos/hcd.svg';
 export enum ImagesCarouselType {
   HCD = 'HCD',
   UN = 'UN',
+  RASTROS = 'RASTROS',
+  OEA = 'OEA',
+  ONU = 'ONU',
+  ONUMGA = 'ONUMGA',
 }
 
 export default function ActivitiesContainer() {
@@ -40,6 +44,8 @@ export default function ActivitiesContainer() {
       date: i18nActivities('activities.onu.date', { plainText: true }),
       date2: i18nActivities('activities.onu.date2', { plainText: true }),
       date3: i18nActivities('activities.onu.date3', { plainText: true }),
+      images: () => setImagesVisible(ImagesCarouselType.ONU),
+      images2: () => setImagesVisible(ImagesCarouselType.ONUMGA),
     },
     {
       title: i18nActivities('activities.un.title', { plainText: true }),
@@ -67,6 +73,7 @@ export default function ActivitiesContainer() {
       link_preinscription:
         'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.oea.date', { plainText: true }),
+      images: () => setImagesVisible(ImagesCarouselType.OEA),
     },
     {
       title: i18nActivities('activities.rastros.title', { plainText: true }),
@@ -83,6 +90,7 @@ export default function ActivitiesContainer() {
         'https://docs.google.com/forms/d/e/1FAIpQLSe_bUz5lvB4VTiMSrNa-gC_WKI1gLQ0KvpkbeDGFFjBnl8yuA/viewform',
       date: i18nActivities('activities.rastros.date', { plainText: true }),
       date2: i18nActivities('activities.rastros.date2', { plainText: true }),
+      images: () => setImagesVisible(ImagesCarouselType.RASTROS),
     },
     {
       title: i18nActivities('activities.hcd.title', { plainText: true }),

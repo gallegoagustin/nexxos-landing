@@ -7,6 +7,10 @@ import LazyLoad from 'react-lazyload';
 import HcdImageCarousel from '../../elements/hcd-images-carousel';
 import { ImagesCarouselType } from './activities.container';
 import UnImageCarousel from '@/components/elements/un-images-carousel';
+import RastrosImageCarousel from '@/components/elements/rastros-images-carousel';
+import OeaImageCarousel from '@/components/elements/oea-images-carousel';
+import OnuImageCarousel from '@/components/elements/onu-images-carousel';
+import OnuMgaImageCarousel from '@/components/elements/onumga-images-carousel';
 
 interface Props {
   activitiesContainerRef: RefObject<HTMLDivElement>;
@@ -21,6 +25,7 @@ interface Props {
     date2?: string;
     date3?: string;
     images?: Function;
+    images2?: Function;
   }[];
   imagesVisible: ImagesCarouselType | null;
   setImagesVisible: (value: ImagesCarouselType | null) => void;
@@ -42,6 +47,19 @@ export default function Activities({
       {imagesVisible === ImagesCarouselType.UN ? (
         <UnImageCarousel onClose={() => setImagesVisible(null)} />
       ) : null}
+      {imagesVisible === ImagesCarouselType.RASTROS ? (
+        <RastrosImageCarousel onClose={() => setImagesVisible(null)} />
+      ) : null}
+      {imagesVisible === ImagesCarouselType.OEA ? (
+        <OeaImageCarousel onClose={() => setImagesVisible(null)} />
+      ) : null}
+      {imagesVisible === ImagesCarouselType.ONU ? (
+        <OnuImageCarousel onClose={() => setImagesVisible(null)} />
+      ) : null}
+      {imagesVisible === ImagesCarouselType.ONUMGA ? (
+        <OnuMgaImageCarousel onClose={() => setImagesVisible(null)} />
+      ) : null}
+
       <section
         ref={activitiesContainerRef}
         className={'full col justify-start items-center'}
@@ -139,10 +157,10 @@ export default function Activities({
                       <h2 className={'font-bold'}>{i18nActivities('for')}</h2>
                       <p className={'my-2'}>{item.participants}</p>
                     </div>
-                    <div className="text-center col gap-2">
+                    {/* <div className="text-center col gap-2">
                       <p>{item.date}</p>
                       {item.date2 ? <p>{item.date2}</p> : null}
-                    </div>
+                    </div> */}
                   </div>
                   <div
                     className={`w-full col centered justify-self-end gap-4 text-${colorClass}`}
@@ -165,11 +183,18 @@ export default function Activities({
                         {i18nActivities('preinscription')}
                       </button>
                     </Link>
-                    {!!item.images ? (
-                      <button onClick={() => item.images && item.images()}>
-                        {i18nCommon('photos')}
-                      </button>
-                    ) : null}
+                    <div className="flex flex-row gap-4">
+                      {!!item.images ? (
+                        <button onClick={() => item.images && item.images()}>
+                          {i18nCommon('photos')}
+                        </button>
+                      ) : null}
+                      {!!item.images2 ? (
+                        <button onClick={() => item.images2 && item.images2()}>
+                          {i18nCommon('photos')} (Edición MGA)
+                        </button>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               );
