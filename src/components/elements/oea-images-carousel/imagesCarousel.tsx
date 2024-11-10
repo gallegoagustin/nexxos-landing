@@ -7,16 +7,16 @@ interface Props {
   onClose: Function;
 }
 
-const UnImageCarousel = ({ onClose }: Props) => {
+const OeaImageCarousel = ({ onClose }: Props) => {
   const { i18nCommon } = useDynamicTranslation();
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
     const loadImages = async () => {
-      const list = new Array(55).fill(null);
+      const list = new Array(23).fill(null);
 
       const urls = list.map((_, index) => {
-        return `${process.env.NEXT_PUBLIC_UN2024_GALLERY_URL}${index + 1}.JPG`;
+        return `${process.env.NEXT_PUBLIC_OEA2024_GALLERY_URL}${index + 1}.JPG`;
       });
 
       setImages(urls);
@@ -128,4 +128,4 @@ const UnImageCarousel = ({ onClose }: Props) => {
   );
 };
 
-export default UnImageCarousel;
+export default OeaImageCarousel;
