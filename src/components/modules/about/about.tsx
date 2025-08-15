@@ -13,9 +13,7 @@ import 'swiper/css/pagination';
 interface Props {
   autorities: {
     name: string;
-    age: string;
     position: string;
-    info: string;
     image: string;
   }[];
 }
@@ -45,13 +43,18 @@ export default function About({ autorities }: Props) {
       </LazyLoad>
 
       {/* BLOCK 2 */}
-      <div
-        className={
-          'full col lg:row items-center justify-center bg-WHITE mt-10 md:mt-0'
-        }
-      >
+      <div className="w-full text-center mt-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
+          {i18nAbout('directives')}
+        </h2>
+      </div>
+      <div className={'full col lg:row items-center justify-center bg-WHITE'}>
         <Swiper
-          pagination={true}
+          pagination={{
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+          }}
           modules={[Pagination, Autoplay]}
           autoplay={{
             delay: 4000,
@@ -59,7 +62,12 @@ export default function About({ autorities }: Props) {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          className={'w-[100vw] h-[45rem] md:w-[50rem] md:h-[32rem]'}
+          className={'w-[100vw] h-[40rem] md:w-[50rem] md:h-[24rem]'}
+          style={
+            {
+              '--swiper-pagination-bottom': '2rem',
+            } as React.CSSProperties
+          }
         >
           {autorities.map((item, index) => {
             return (
@@ -73,36 +81,43 @@ export default function About({ autorities }: Props) {
               >
                 <div
                   className={
-                    'col items-center w-5/6 h-[45rem] md:w-[40rem] md:h-[28rem] justify-start rounded-lg'
+                    'col items-center w-5/6 md:w-[45rem] justify-start rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6'
                   }
-                  style={{
-                    background: 'linear-gradient(to bottom, #CF142A, #5D2C80',
-                  }}
                 >
                   <div
                     className={
-                      'my-6 w-full md:w-4/5 col md:row items-center justify-evenly md:justify-around text-center md:text-left'
+                      'my-8 w-full md:w-4/5 col md:row items-center justify-evenly md:justify-around text-center md:text-left gap-6'
                     }
                   >
                     <LazyLoad once>
                       <Image
                         src={item.image}
                         alt={'image'}
-                        width={150}
-                        height={150}
-                        className={'rounded-full md:w-40 md:h-40 w-28 h-28'}
+                        width={200}
+                        height={200}
+                        className={
+                          'rounded-full md:w-48 md:h-48 w-36 h-36 object-cover shadow-xl border-4 border-white/20'
+                        }
                         priority
                       />
                     </LazyLoad>
-                    <div className={'w-[8rem] md:w-1/2 text-WHITE'}>
-                      <h1>{item.name}</h1>
-                      <p>{item.position}</p>
-                      <p>Edad: {item.age} años.</p>
+                    <div className={'w-[10rem] md:w-1/2 space-y-3'}>
+                      <h1
+                        className={
+                          'text-2xl md:text-3xl font-bold text-white tracking-wide'
+                        }
+                      >
+                        {item.name}
+                      </h1>
+                      <p
+                        className={
+                          'text-lg md:text-xl text-gray-300 font-medium'
+                        }
+                      >
+                        {item.position}
+                      </p>
                     </div>
                   </div>
-                  <p className={'text-WHITE w-5/6 text-justify md:p-4'}>
-                    {item.info}
-                  </p>
                 </div>
               </SwiperSlide>
             );
